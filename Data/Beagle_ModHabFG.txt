@@ -1,0 +1,146 @@
+Sp	Mod	Hab	FG
+14	3	benthic	benthos
+53	4	benthic	basal taxa
+10	2	benthic	non-living
+15	1	benthopelagic	zooplankton
+16	3	benthic	benthos
+81	3	benthic	benthos
+17	3	benthic	benthos
+138	3	benthic	benthos
+18	3	benthic	benthos
+139	4	benthic	fish
+120	4	benthic	basal taxa
+85	1	benthic	fish
+67	1	benthic	fish
+75	1	benthic	fish
+76	1	benthic	fish
+19	3	benthic	benthos
+131	3	benthic	basal taxa
+121	4	benthic	basal taxa
+46	3	benthic	benthos
+1	3	benthic	benthos
+92	4	benthic	basal taxa
+113	1	benthic	benthos
+77	1	benthic	fish
+58	1	benthopelagic	benthos
+93	4	benthic	basal taxa
+122	4	benthic	basal taxa
+136	1	benthopelagic	fish
+137	3	benthic	benthos
+130	2	benthic	benthos
+117	3	benthic	benthos
+94	3	benthic	basal taxa
+106	3	benthic	basal taxa
+134	1	benthic	fish
+47	1	benthopelagic	zooplankton
+140	3	benthic	benthos
+68	1	benthic	fish
+20	3	benthic	benthos
+2	1	benthopelagic	benthos
+119	1	pelagic	zooplankton
+48	2	benthic	benthos
+95	4	benthic	basal taxa
+132	3	benthic	basal taxa
+109	2	benthic	basal taxa
+52	2	benthopelagic	basal taxa
+59	1	benthopelagic	fish
+90	1	benthic	benthos
+96	4	benthic	basal taxa
+141	4	benthic	fish
+60	1	pelagic	zooplankton
+21	3	benthic	benthos
+22	3	benthic	benthos
+23	2	benthic	benthos
+24	3	benthic	benthos
+3	3	benthic	benthos
+12	3	benthopelagic	non-living
+25	3	benthic	benthos
+108	1	benthopelagic	fish
+61	2	benthic	zooplankton
+4	1	benthic	benthos
+69	1	benthic	fish
+142	2	benthic	benthos
+62	2	benthic	benthos
+123	4	benthic	basal taxa
+26	3	benthic	benthos
+118	4	benthic	basal taxa
+54	2	benthic	fish
+104	3	benthic	benthos
+124	4	benthic	basal taxa
+91	1	benthic	benthos
+105	2	benthic	benthos
+125	4	benthic	basal taxa
+114	1	pelagic	zooplankton
+5	4	benthic	benthos
+27	2	benthic	benthos
+143	3	benthic	benthos
+82	4	benthic	benthos
+6	3	benthic	basal taxa
+7	4	benthic	basal taxa
+70	1	benthopelagic	fish
+8	3	benthic	benthos
+49	3	benthic	benthos
+71	1	benthopelagic	fish
+126	4	benthic	basal taxa
+55	4	benthopelagic	zooplankton
+127	4	benthic	basal taxa
+28	3	benthic	benthos
+63	1	benthic	fish
+29	4	benthic	benthos
+30	4	benthic	benthos
+31	3	benthic	benthos
+32	2	benthopelagic	non-living
+57	2	benthic	benthos
+97	2	benthic	benthos
+98	4	benthic	basal taxa
+83	3	benthic	benthos
+33	3	benthic	benthos
+144	1	pelagic	fish
+110	2	benthic	benthos
+64	1	benthic	benthos
+13	2	benthopelagic	zooplankton
+34	3	benthic	benthos
+84	3	benthic	benthos
+86	2	benthopelagic	fish
+35	3	benthic	benthos
+87	1	benthic	fish
+56	2	benthic	fish
+78	1	benthopelagic	fish
+88	1	benthopelagic	fish
+79	1	benthopelagic	fish
+72	1	benthopelagic	fish
+80	4	benthopelagic	fish
+65	3	benthic	benthos
+36	3	benthic	benthos
+50	3	pelagic	basal taxa
+37	3	benthic	benthos
+38	1	benthic	benthos
+99	2	benthic	benthos
+39	4	benthic	benthos
+111	2	benthic	basal taxa
+107	1	benthic	benthos
+112	2	benthic	basal taxa
+73	1	benthic	benthos
+40	3	benthic	benthos
+135	1	benthic	fish
+100	4	benthic	basal taxa
+89	1	benthic	fish
+145	1	benthic	fish
+101	4	benthic	basal taxa
+51	3	benthic	benthos
+41	4	benthic	benthos
+128	4	benthic	basal taxa
+42	3	benthic	benthos
+74	1	pelagic	fish
+115	1	benthopelagic	fish
+102	2	benthic	benthos
+66	2	benthic	benthos
+43	3	benthic	benthos
+129	4	benthic	basal taxa
+44	3	benthic	benthos
+133	3	benthic	basal taxa
+103	4	benthic	basal taxa
+11	4	benthic	basal taxa
+45	4	benthic	benthos
+9	3	benthopelagic	zooplankton
+116	1	benthic	benthos

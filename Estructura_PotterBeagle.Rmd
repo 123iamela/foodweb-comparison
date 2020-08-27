@@ -1,0 +1,502 @@
+---
+title: "EstructuraPotterBeagle"
+author: "Iara"
+date: "31 de marzo de 2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Setup.
+
+```{r setup, eval=T,echo=FALSE }
+
+knitr::opts_chunk$set(echo = TRUE)
+
+load(".RData")
+
+```
+
+
+## Lee y grafica la red trofica de Potter y Beagle.
+
+```{r readNet, echo=FALSE, message=FALSE, results='asis'}
+
+require(igraph)
+require(NetIndices)
+require(stringr)
+require(dplyr)
+require(ggplot2)
+require(future.apply)
+require(knitr)
+require(devtools)
+require(multiweb)
+require(cowplot)
+require(RColorBrewer)
+
+# Lee las redes troficas
+# predador -> presa
+
+p <- readNetwork("Data/Potter_FW.txt", edgeListFormat=1)
+b <- readNetwork("Data/Beagle_FW.txt", edgeListFormat=1)
+
+# Elimina loops e interacciones repetidas
+
+p <- simplify(p)
+b <- simplify(b)
+
+```
+
+
+
+## Calcula indices topologicos e intervalos de confianza usando curveBall.
+
+```{r calcMetricsCurveball, eval=T, echo=F, message=T, warning=T}
+
+# Calculo de indices topologicos
+
+if(!file.exists("Data/ti.rds")){
+
+  tip <- bind_cols(calc_topological_indices(p), calc_incoherence(p), calc_modularity(p), calc_QSS(p, 10000, 4)) %>% mutate(Name="Potter")
+  tib <- bind_cols(calc_topological_indices(b), calc_incoherence(b), calc_modularity(b), calc_QSS(b, 10000, 4)) %>% mutate(Name="Beagle")
+
+  ti <- bind_rows(tip, tib) %>% rename(Network=Name)
+
+  saveRDS(ti,"Data/ti.rds")
+  write.csv(ti, file="Figures/ti.csv")
+  rm(tip, tib)
+  
+} else {
+  
+  ti <- readRDS("Data/ti.rds")
+
+}
+
+# Small-Worldness y Z-score
+
+prandom <- generateERbasal(p, nsim=1000)
+brandom <- generateERbasal(b, nsim=1000)
+
+if(!file.exists("Data/smallWorldness.rds")) {
+  
+  pp <- calc_modularity_swness_zscore(p, nullDist=prandom, ncore=6)
+  bb <- calc_modularity_swness_zscore(b, nullDist=brandom, ncore=6)
+  
+  pswm <- pp[["da"]] %>% mutate(Name="Potter")
+  bswm <- bb[["da"]] %>% mutate(Name="Beagle")
+  
+  #pswm <- pp[["sims"]] %>% mutate(Name="Potter")
+  #bswm <- bb[["sims"]] %>% mutate(Name="Beagle")
+  
+  smallWorldness <- rbind(pswm, bswm) %>% rename(Network=Name)
+  
+  saveRDS(smallWorldness,"Data/smallWorldness.rds")
+  write.csv(smallWorldness, file="Figures/smallWorldness.csv") 
+  rm(pswm, bswm)
+  
+} else {
+  
+  smallWorldness <- readRDS("Data/smallWorldness.rds")
+
+}
+
+# Intervalos de confianza de los parámetros topológicos
+
+pRedCB <- curveBall(p, 1000)
+bRedCB <- curveBall(b, 1000)
+
+if(!file.exists("Data/tiIC95.rds")){
+  
+  ptiIC <- bind_cols(calc_topological_indices(pRedCB), calc_incoherence(pRedCB)) %>% mutate(Name="Potter") 
+  btiIC <- bind_cols(calc_topological_indices(bRedCB), calc_incoherence(bRedCB)) %>% mutate(Name="Beagle") 
+
+  tiIC <- bind_rows(ptiIC, btiIC) %>% rename(Network=Name)
+
+  pM <- calc_modularity(pRedCB) %>% mutate(Name="Potter")
+  bM <- calc_modularity(bRedCB) %>% mutate(Name="Beagle") 
+
+  ModularityIC <- bind_rows(pM, bM) %>% rename(Red=Name)
+
+  tiMIC <- cbind(tiIC, ModularityIC)
+
+  saveRDS(tiMIC,"Data/tiIC95.rds")
+  rm(ptiIC,btiIC,tiIC,ModularityIC,pM,bM)
+  
+} else {
+  
+  tiMIC <- readRDS("Data/tiIC95.rds")
+
+  }
+
+```
+
+
+
+## Grafica intervalos de confianza.
+
+```{r plotCurveBall, eval=T, echo=F, message=T, warning=T}
+
+pf <- tiMIC %>% group_by(Network)
+pf %>% summarise_if(is.numeric, median)
+
+# Incoherencia Q vs Network
+g <- ggplot(pf, aes(Q, x=Network)) + geom_jitter(alpha=0.2, size=1.8, aes(color=Network), position=position_jitter (width=0.4)) + geom_point(data=ti[1:2,], aes(Network, Q), color="black", size=2) + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.15, color="black") + theme_bw()+ ylab("Coherencia trófica (Q)") + theme(axis.title.x=element_text(size=15, face="bold"), axis.title.y=element_text(size=15, face="bold"), legend.position="none", axis.text.x=element_text(size=12, color="black"), axis.text.y=element_text(size=12, color="black")) + xlab("Red") + scale_colour_manual(values=c("cyan4", "orange"))
+
+ggsave("Figures/Q.png",g,width=6,height=5,units="in",dpi=1000)
+
+# TLmean vs Network
+g1 <- ggplot(pf, aes(TLmean, x=Network)) + geom_jitter(alpha=0.2, size=1.8, aes(color=Network), position=position_jitter (width=0.4)) + geom_point(data=ti[1:2,], aes(Network, TLmean), color="black", size=2) + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.15, color="black") + theme_bw() + ylab("Nivel trófico medio") + theme(axis.title.x=element_text(size=15, face="bold"), axis.title.y=element_text(size=15, face="bold"), legend.position="none", axis.text.x=element_text(size=12, color="black"), axis.text.y=element_text(size=12, color="black")) + xlab("Red") + scale_colour_manual(values=c("cyan4", "orange"))
+
+ggsave("Figures/TLmean.png",g1,width=6,height=5,units="in",dpi=1000)
+
+# TLmax vs Network
+g2 <- ggplot(pf, aes(TLmax, x=Network)) + geom_jitter(alpha=0.2, size=1.8, aes(color=Network), position=position_jitter (width=0.4)) + geom_point(data=ti[1:2,], aes(Network, TLmax), color="black", size=2) + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.15, color="black") + theme_bw() + ylab("Nivel trófico máximo") + theme(axis.title.x=element_text(size=15, face="bold"), axis.title.y=element_text(size=15, face="bold"), legend.position="none", axis.text.x=element_text(size=12, color="black"), axis.text.y=element_text(size=12, color="black")) + xlab("Red") + scale_colour_manual(values=c("cyan4", "orange"))
+
+ggsave("Figures/TLmax.png",g2,width=6,height=5,units="in",dpi=1000)
+
+# PathLength vs Network
+g3 <- ggplot(pf, aes(PathLength, x=Network)) + geom_jitter(alpha=0.2, size=1.8, aes(color=Network), position=position_jitter (width=0.4)) + geom_point(data=ti[1:2,], aes(Network, PathLength), color="white", size=2) + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.15, color="black") + theme_bw() + ylab("CPL") + theme(axis.title.x=element_text(size=15, face="bold"), axis.title.y=element_text(size=15, face="bold"), legend.position="none", axis.text.x=element_text(size=12, color="black"), axis.text.y=element_text(size=12, color="black")) + scale_colour_manual(values=c("cyan4", "orange")) + geom_point(data=smallWorldness[1:2,], aes(Network, CPlow), size=1.5) + geom_point(data=smallWorldness[1:2,], aes(Network, CPhigh), size=1.5)
+
+ggsave("Figures/CP.png",g3,width=6,height=5,units="in",dpi=1000)
+
+# Clustering vs Network
+g4 <- ggplot(pf, aes(Clustering, x=Network)) + geom_jitter(alpha=0.2, size=1.8, aes(color=Network), position=position_jitter (width=0.4)) + geom_point(data=ti[1:2,], aes(Network, Clustering), color="white", size=2) + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.15, color="black") + theme_bw() + ylab("CC") + theme(axis.title.x=element_text(size=15, face="bold"), axis.title.y=element_text(size=15, face="bold"), legend.position="none", axis.text.x=element_text(size=12, color="black"), axis.text.y=element_text(size=12, color="black")) + scale_colour_manual(values=c("cyan4", "orange")) + geom_point(data=smallWorldness[1:2,], aes(Network, CClow), size=1.5) + geom_point(data=smallWorldness[1:2,], aes(Network, CChigh), size=1.5)
+
+ggsave("Figures/CC.png",g4,width=6,height=5,units="in",dpi=1000)
+
+# Omnivory vs Network
+g5 <- ggplot(pf, aes(Omnivory, x=Network)) + geom_jitter(alpha=0.2, size=1.8, aes(color=Network), position=position_jitter (width=0.4)) + geom_point(data=ti[1:2,], aes(Network, Omnivory), color="black", size=2) + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.15, color="black") + theme_bw() + ylab("Omnivoría") + theme(axis.title.x=element_text(size=15, face="bold"), axis.title.y=element_text(size=15, face="bold"), legend.position="none", axis.text.x=element_text(size=12, color="black"), axis.text.y=element_text(size=12, color="black")) + xlab("Red") + scale_colour_manual(values=c("cyan4", "orange"))
+
+ggsave("Figures/omn.png",g5,width=6,height=5,units="in",dpi=1000)
+
+
+require(cowplot)
+#gg <- plot_grid(g + theme(legend.position="none"),
+#                g1 + theme(legend.position="none"),
+#                g2 + theme(legend.position="none"),
+#                g3 + theme(legend.position="none"),
+#                g4 + theme(legend.position="none"),
+#                g5 + theme(legend.position="none"), 
+#                g6 + theme(legend.position="none"), align="h", ncol=4)
+
+#gg <- plot_grid(g1 + theme(legend.position="none"),
+#                g2 + theme(legend.position="none"),
+#                g5 + theme(legend.position="none"), align = "h", ncol =3)
+#save_plot("Figures/TL_Om.png", gg, base_width=15, base_height=5, dpi=1000)
+
+gg1 <- plot_grid(g3 + theme(legend.position="none"),
+                g4 + theme(legend.position="none"), align = "h", ncol =2)
+save_plot("Figures/CC_PL.png", gg1, base_width=8, base_height=5, dpi=1000)
+
+rm(g,g1,g2,g3,g4,g5,g6)
+
+# Test de Anderson-Darling
+
+require(kSamples)
+require(tidyr)
+require(purrr)
+require(dplyr)
+
+tiMIC %>% dplyr::select(TLmean) %>% map(~ad.test(. ~ Network, data=tiMIC, method="simulated", Nsim =1000)) %>% map_df(~.$ad[1,])
+
+xx <- tiMIC  %>% group_by(Network)  %>% select(Q)  %>% group_split()
+ 
+ks.test(xx[1]$Q, xx[2]$Q)
+
+# Effect size
+
+df <- tiMIC %>% group_by(Network) %>% dplyr::select(Q,TLmean,TLmax,Omnivory,PathLength,Clustering,Modularity) %>% summarize_if(is.numeric, median)  %>% gather("metric","medianDif" ,-Network) %>% group_by(metric) %>% summarize_if(is.numeric,~diff(.))
+
+df1 <- tiMIC %>% dplyr::select(Network,Q,TLmean,TLmax,Omnivory,PathLength,Clustering,Modularity) %>% gather("metric","value", -Network) %>% group_by(metric) %>% summarize(sdM = sd(value))
+   
+df <- inner_join(df,df1)  %>%  mutate(effectSize=medianDif/sdM)
+
+knitr::kable(df)
+
+# Confidence interval for QSS
+
+require(binom)
+df <- ti %>% dplyr::select(Network, QSS) %>% group_by(Network) %>% do(binom.confint(.$QSS*10000,  10000, methods="wilson"))
+
+prop.test(x=ti$QSS*10000, n=c(10000, 10000))
+
+ggplot(df, aes(Network, mean, color=Network)) + geom_point() + geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2) + theme_bw() + ylab("Estabilidad quasi-signo (QSS)")  + theme(axis.title.x=element_text(size=29, face="bold"), axis.title.y=element_text(size=20, face="bold"), legend.position="none", axis.text.x=element_text(size=15, color="black"), axis.text.y=element_text(size=15, color="black")) + xlab("Red") + scale_colour_manual(values=c("cyan4", "orange"))
+
+ggsave("Figures/QSS.png",width=6,height=5,units="in",dpi=1000)
+
+```
+
+
+## Calcula los roles topologicos.
+
+```{r RolesTopo, echo=FALSE, message=FALSE, results='asis'}
+
+source("R/network_fun.r")
+
+mod_by_red <- vector(mode="list", length=2)
+set.seed(123)
+
+modulos <- cluster_spinglass(p)
+mti <- data_frame(Name="Potter", Groups=length(modulos$csize), Modularity=modulos$modularity)
+mod_by_red[[1]] <- modulos
+
+modulos <- cluster_spinglass(b)
+mti <- mti %>% add_row(Name="Beagle", Groups=length(modulos$csize), Modularity=modulos$modularity)
+mod_by_red[[2]] <- modulos
+
+
+# Calcula roles topologicos
+
+# POTTER
+if(!file.exists("Data/rolesTopologicos.rds")){
+
+  tR1 <- calc_topological_roles(p, 100)
+  tR  <- tR1 %>% group_by(node) %>% summarize(wtmLowCI=quantile(within_module_degree, 0.005, na.rm=TRUE),
+                                          wtmHiCI=quantile(within_module_degree, 0.995, na.rm=TRUE),
+                                          amcLowCI=quantile(among_module_conn, 0.005, na.rm=TRUE),
+                                          amcHiCI=quantile(among_module_conn, 0.995, na.rm=TRUE),
+                                          within_module_degree=mean(within_module_degree, na.rm=TRUE),
+                                          among_module_conn=mean(among_module_conn, na.rm=TRUE))
+  
+  topoRoles <- tR %>% mutate(Name="Potter")
+  
+  # BEAGLE
+  tR1 <- calc_topological_roles(b, 100)
+  tR  <- tR1 %>% group_by(node) %>% summarize(wtmLowCI=quantile(within_module_degree, 0.005, na.rm=TRUE),
+                                          wtmHiCI=quantile(within_module_degree, 0.995, na.rm=TRUE),
+                                          amcLowCI=quantile(among_module_conn, 0.005, na.rm=TRUE),
+                                          amcHiCI=quantile(among_module_conn, 0.995, na.rm=TRUE),
+                                          within_module_degree=mean(within_module_degree, na.rm=TRUE),
+                                          among_module_conn=mean(among_module_conn, na.rm=TRUE))
+  
+  topoRoles <- bind_rows(topoRoles, tR %>% mutate(Name="Beagle"))
+  
+  saveRDS(topoRoles,"Data/rolesTopologicos.rds")
+  
+} else {
+  
+  topoRoles <- readRDS("Data/rolesTopologicos.rds")
+
+}
+
+# Grafica y clasifica roles topologicos
+
+require(ggplot2)
+require(igraph)
+require(dplyr)
+require(knitr)
+require(tibble)
+
+hub_conn <- data.frame()
+
+hc <- plot_topological_roles(filter(topoRoles, Name=="Potter"), p, mod_by_red[[1]])
+hc <-  hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
+hub_connp <- bind_rows(hub_conn, hc)
+
+hc <-   plot_topological_roles(filter(topoRoles, Name=="Beagle"), b, mod_by_red[[2]]) 
+hc <-  hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
+hub_connb <- bind_rows(hub_conn, hc)
+
+# Grafica redes por modulo, roles topologicos y nivel trófico
+
+hub_conn <- rename(hub_conn, Network=Name)
+
+write.csv(hub_conn, file="Figures/rolestop.csv") 
+
+# POTTER
+png("Figures/potter.png",width=10,height=12,units="in",res=1000)
+par(mar=c(2,2,2,0),oma=c(2,2,0,0))
+plotTopoRolesByTLByMod(p, "Potter", c("Fresh detritus","Aged detritus","Necromass"), mod_by_red[[1]], hub_conn, redl=p)
+mtext("Módulos", side=1, outer=TRUE, line=0.1, cex=1.2, font=2)
+mtext("Nivel trófico", side=2, outer=TRUE, line=0.5, cex=1.2, font=2)
+dev.off()
+
+# BEAGLE
+png("Figures/beagle.png",width=10,height=10,units="in",res=1000)
+par(mar=c(2,2,2,0),oma=c(2,2,0,0))
+plotTopoRolesByTLByMod(b, "Beagle",c("Fresh detritus","Aged detritus","Necromass"), mod_by_red[[2]], hub_conn, redl=b)
+mtext("Módulos", side=1, outer=TRUE, line=0.1, cex=1.2, font=2)
+mtext("Nivel trófico", side=2, outer=TRUE, line=0.5, cex=1.2, font=2)
+dev.off()
+
+# POTTER&BEAGLE
+#png("Figures/AllTopoRoles_TL_MOD.png", width=8, height=8, units="in", res=1000)
+#par(mfrow=c(1,2), mar=c(0,2,0,0), oma=c(2,2,0,0))
+#plotTopoRolesByTLByMod(p, "Potter", c("Fresh detritus","Aged detritus","Necromass"), mod_by_red[[1]], hub_conn, redl=p)
+#plotTopoRolesByTLByMod(b, "Beagle", c("Fresh detritus","Aged detritus","Necromass"), mod_by_red[[2]], hub_conn, redl=b)
+
+#require(RColorBrewer)
+#colnet <- brewer.pal(4,"RdYlGn")
+
+#mtext("Módulos", side=1, outer=TRUE, line=0.1, cex=1.2, font=2)
+#mtext("Nivel trófico", side=2, outer=TRUE, line=0.5, cex=1.2, font=2)
+
+#par(fig=c(0,1,0,1), oma=c(2,2,0,0), mar=c(0,0,0,0), new=TRUE)
+#plot(0, 0, type="n", bty="n", xaxt="n", yaxt="n")
+#legend("bottom", legend = c("Hub connectors", "Module Connectors", "Module Hubs", "Module Specialists"), col=colnet, pch=19, cex=1.2, xpd=TRUE, inset=c(0,0))
+#dev.off()
+
+rm(dt,modulo,colnet,mti,tR,tR1,dt,hc)
+
+```
+
+## Grafica Modulos vs Habitat y Grupo funcional.
+
+```{r HabitatFG, echo=FALSE, message=FALSE, results='asis'}
+
+require(dplyr)
+require(ggplot2)
+require(knitr)
+require(cowplot)
+
+cp <- read.delim(file = "Data/Potter_ModHabFG.txt", stringsAsFactors = FALSE)
+cb <- read.delim(file = "Data/Beagle_ModHabFG.txt", stringsAsFactors = FALSE)
+
+cp <- lapply(cp, factor)
+cpH <- as.data.frame(table(cp$Mod, cp$Hab))
+colnames(cpH) <- c("Mod", "Habitat", "Freq")
+cpFG <- as.data.frame(table(cp$Mod, cp$FG))
+colnames(cpFG) <- c("Mod", "FG", "Freq")
+
+cb <- lapply(cb, factor)
+cbH <- as.data.frame(table(cb$Mod, cb$Hab))
+colnames(cbH) <- c("Mod", "Habitat", "Freq")
+cbFG <- as.data.frame(table(cb$Mod, cb$FG))
+colnames(cbFG) <- c("Mod", "FG", "Freq")
+  
+# Módulos vs habitat
+
+g <- ggplot(cpH, aes(Mod, Freq, fill=Habitat)) + 
+  geom_bar(stat="identity", position="stack") + theme_minimal() + 
+  scale_fill_manual(values=c("red", "orange", "gold"), 
+                    limits=c("pelagic", "benthopelagic", "benthic"), 
+                    breaks=c("pelagic", "benthopelagic", "benthic"), 
+                    name="Habitat", 
+                    labels=c("Pelágico", "Bentopelágico", "Bentónico")) + 
+  theme(axis.title.y = element_text(face="bold", size=rel(2), vjust=rel(3)),
+        axis.text.y=element_text(color="black", size=rel(1.25)), 
+        axis.title.x=element_text(face="bold", size=rel(2), vjust=rel(2.)),
+        axis.text.x=element_text(face="bold", color="black", size=rel(2)),
+        legend.title=element_text(face="bold", size=rel(2)), 
+        legend.text=element_text(size=rel(2))) +
+  labs(y="Especies", x="Módulos") + 
+  ggtitle ("Caleta Potter: Módulos vs Hábitat")
+
+save_plot("Figures/Potter_ModHab.png", g, base_width=8, base_height=5, dpi=1000)
+
+g <- ggplot(cbH, aes(Mod, Freq, fill=Habitat)) + 
+  geom_bar(stat="identity", position="stack") + theme_minimal() + 
+  scale_fill_manual(values=c("red", "orange", "gold"), 
+                    limits=c("pelagic", "benthopelagic", "benthic"), 
+                    breaks=c("pelagic", "benthopelagic", "benthic"), 
+                    name="Habitat", 
+                    labels=c("Pelágico", "Bentopelágico", "Bentónico")) + 
+  theme(axis.title.y = element_text(face="bold", size=rel(2), vjust=rel(3)),
+        axis.text.y=element_text(color="black", size=rel(1.25)), 
+        axis.title.x=element_text(face="bold", size=rel(2), vjust=rel(2.)),
+        axis.text.x=element_text(face="bold", color="black", size=rel(2)),
+        legend.title=element_text(face="bold", size=rel(2)), 
+        legend.text=element_text(size=rel(2))) +
+  labs(y="Especies", x="Módulos") + 
+  ggtitle ("Canal de Beagle: Módulos vs Hábitat")
+
+save_plot("Figures/Beagle_ModHab.png", g, base_width=8, base_height=5, dpi=1000)
+
+# Módulos vs grupos funcionales
+
+g <- ggplot(cpFG, aes(Mod, Freq, fill=FG)) + 
+  geom_bar(stat="identity", position="stack") + theme_minimal() + 
+  scale_fill_manual(values=c("grey", "forestgreen", "gold", "firebrick2", "dodgerblue1"), 
+                    limits=c("non-living", "basal taxa", "zooplankton", "benthos", "fish"), 
+                    breaks=c("non-living", "basal taxa", "zooplankton", "benthos", "fish"), 
+                    name="Grupo funcional", 
+                    labels=c("Detrito", "Taxones basales", "Zooplancton", "Bentos", "Peces")) + 
+  theme(axis.title.y = element_text(face="bold", size=rel(2), vjust=rel(3)),
+        axis.text.y=element_text(color="black", size=rel(1.25)), 
+        axis.title.x=element_text(face="bold", size=rel(2), vjust=rel(2.)),
+        axis.text.x=element_text(face="bold", color="black", size=rel(2)),
+        legend.title=element_text(face="bold", size=rel(2)), 
+        legend.text=element_text(size=rel(2))) +
+  labs(y="Especies", x="Módulos") + 
+  ggtitle ("Caleta Potter: Módulos vs Grupos funcionales")
+
+save_plot("Figures/Potter_ModFG.png", g, base_width=8, base_height=5, dpi=1000)
+
+g <- ggplot(cbFG, aes(Mod, Freq, fill=FG)) + 
+  geom_bar(stat="identity", position="stack") + theme_minimal() + 
+  scale_fill_manual(values=c("grey", "forestgreen", "gold", "firebrick2", "dodgerblue1"), 
+                    limits=c("non-living", "basal taxa", "zooplankton", "benthos", "fish"), 
+                    breaks=c("non-living", "basal taxa", "zooplankton", "benthos", "fish"), 
+                    name="Grupo funcional", 
+                    labels=c("Detrito", "Taxones basales", "Zooplancton", "Bentos", "Peces")) + 
+  theme(axis.title.y = element_text(face="bold", size=rel(2), vjust=rel(3)),
+        axis.text.y=element_text(color="black", size=rel(1.25)), 
+        axis.title.x=element_text(face="bold", size=rel(2), vjust=rel(2.)),
+        axis.text.x=element_text(face="bold", color="black", size=rel(2)),
+        legend.title=element_text(face="bold", size=rel(2)), 
+        legend.text=element_text(size=rel(2))) +
+  labs(y="Especies", x="Módulos") + 
+  ggtitle ("Canal de Beagle: Módulos vs Grupos funcionales")
+
+save_plot("Figures/Beagle_ModFG.png", g, base_width=8, base_height=5, dpi=1000)
+
+rm(g,cp,cb)
+
+```
+
+
+## Setup ajuste de distribución de grado 
+
+```{r setupFitDegree, eval=T, echo=F, message=T, warning=T}
+
+require(pander)
+require(plyr)
+require(dplyr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.style', 'multiline')
+options("scipen"=6, "digits"=4)
+
+library(poweRlaw)
+source("R/dist_fun.r")
+
+# Carga funciones para distribuciones continuas
+
+source("R/powerlaw/discpowerexp.R")
+source("R/powerlaw/discexp.R")
+source("R/powerlaw/zeta.R")
+source("R/powerlaw/powerexp.R")
+source("R/powerlaw/exp.R")
+source("R/powerlaw/pareto.R")
+
+```
+
+
+# Ajuste de distribución de grado
+
+```{r FitDegree, eval=T, echo=F, message=T, warning=T}
+dgp <- data.frame(degree(p)) %>% mutate(Name="Potter")
+colnames(dgp) <- c("Degree", "Network")
+dgb <- data.frame(degree(b)) %>% mutate(Name="Beagle")
+colnames(dgb) <- c("Degree", "Network")
+dg <- bind_rows(dgp, dgb)
+
+rm(dgp,dgb)
+
+opt.output <- vector("list", length=0)
+opt.output$GOF <- 0
+opt.output$ploting <- 1
+
+fit <- dg %>% group_by(Network) %>% do(fit_ht_dplyr_helper(.))
+fitML <- fit
+
+# Correct negative uniform parameter
+
+fitML <- fitML %>% mutate(par1=ifelse(ModelNames=="Uniform",abs(par1),par1))
+
+fitML1 <- filter(fitML, Delta_AICc==0) %>% mutate_if(is.numeric, round, digits=4) 
+
+write.csv(fitML, file="NetworksFit.csv")
+write.csv(fitML1, file="NetworksLowerAICc.csv")
+
+```
+

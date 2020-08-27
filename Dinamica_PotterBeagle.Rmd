@@ -1,0 +1,541 @@
+---
+title: "DinamicaPotterBeagle"
+author: "Iara"
+date: "7 de junio de 2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r readNet, echo=FALSE, message=FALSE, results='asis'}
+
+require(igraph)
+require(NetIndices)
+#require(EcoNetwork)
+require(multiweb)
+require(stringr)
+require(dplyr)
+require(ggplot2)
+require(future.apply)
+require(MetaWebAssemblyModels)
+require(knitr)
+require(devtools)
+
+# Leer las redes troficas
+# predador -> presa
+
+p <- readNetwork("Data/Potter_FW.txt", edgeListFormat=1)
+b <- readNetwork("Data/Beagle_FW.txt", edgeListFormat=1)
+
+# Eliminar loops e interacciones repetidas
+
+p <- simplify(p)
+b <- simplify(b)
+
+```
+
+
+## Lee life spans y los asocia a las especies.
+
+```{r LifeSpans, eval=T, echo=F, message=T, warning=T}
+
+pls <- read.delim("Data/Potter_LifeSpan.txt") %>% mutate(Species=str_to_sentence(str_trim(Species)))
+bls <- read.delim("Data/Beagle_LifeSpan.txt") %>% mutate(Species=str_to_sentence(str_trim(Species)))
+
+V(p)
+V(b)
+
+# Potter
+vp <- as.numeric(V(p)[])
+
+pls1 <- data_frame(vNumber=vp, Species=str_to_sentence(str_trim(V(p)[vp]$name)))
+pLifeSpan <- left_join(pls1, pls)
+pLifeSpan <- pLifeSpan %>% mutate(r=1/LifeSpan)
+
+# Beagle
+vb <- as.numeric(V(b)[])
+
+bls1 <- data_frame(vNumber=vb, Species=str_to_sentence(str_trim(V(b)[vb]$name)))
+bLifeSpan <- left_join(bls1, bls)
+bLifeSpan <- bLifeSpan %>% mutate(r=1/LifeSpan)
+
+rm(list=ls(pattern="pls"))
+rm(list=ls(pattern="bls"))
+rm(vp, vb)
+
+```
+
+
+## Potter. Ajuste con ABC.
+
+```{r PotterABCGLV, eval=T, echo=F, message=T, warning=T}
+
+source("R/network_fun.r")
+
+# Crea un objeto de interaccion multiple con 3 capas para construir la matriz de adyacencia GLV
+
+cpRed <- list(make_empty_graph(n=vcount(p)), make_empty_graph(n=vcount(p)), p)
+
+# Crea matriz de adjacencia GLV
+
+cpRed <- fromIgraphToMgraph(cpRed, c("empty","empty","Antagonistic"))
+A <- toGLVadjMat(cpRed, c("empty","empty","Antagonistic"))
+
+# Prueba de que sea una matriz de interaccion antagonica unica = Red trofica
+
+calcPropInteractionsGLVadjMat(A, rep(1, times=nrow(A)))==c(0,1,0,0,0)
+
+# Comprueba que los predadores y las presas esten bien codificados
+
+A[1,4] # Presa    -1
+A[4,1] # Predador  1
+V(p)[1]
+V(p)[nei(V(p)[1],"out")]
+V(p)[4]
+
+pLifeSpan$Species[4]
+pLifeSpan$LifeSpan[1]
+
+A_Potter <- A
+
+# Ajuste del modelo ABC 
+
+sum(A)==sum(diag(A)) # Solo predador - presa
+
+# Set de datos de Potter
+
+if(!file.exists("Data/ABCGLV_Potter.rds")){
+
+  data <- list(S=ti[1,]$Size, L=ti[1,]$Links)
+
+  pMin <- c(intensity=0.0001, migration=0.1, selfLimBasal=0.0001, selfLimPred=0.0001)
+  pMax <- c(intensity=0.1, migration=0.9, selfLimBasal=0.1, selfLimPred=0.1)
+
+  ff <- estima_ABC_GLVIntMigr(A_Potter, data, pMin, pMax, intGrowthRate=pLifeSpan$r, fixedM=FALSE, dlim=2, sim=40000)
+  
+  saveRDS(ff,"Data/ABCGLV_Potter.rds")
+  
+} else {
+  
+  ff <- readRDS("Data/ABCGLV_Potter.rds")
+
+}
+
+abcGLVMetaWebModel <- data_frame()
+abcGLVMetaWebModel <- bind_rows(abcGLVMetaWebModel, ff %>% mutate(Network="Potter", fixedM=FALSE))
+
+```
+
+
+## Beagle. Ajuste con ABC.
+
+```{r BeagleABCGLV, eval=T, echo=F, message=T, warning=T}
+
+# Crea un objeto de interaccion multiple con 3 capas para construir la matriz de adyacencia GLV
+
+cbRed <- list(make_empty_graph(n=vcount(b)), make_empty_graph(n=vcount(b)), b) 
+
+# Crea la matriz de adjacencia GLV
+
+cbRed <- fromIgraphToMgraph(cbRed, c("empty","empty","Antagonistic"))
+A <- toGLVadjMat(cbRed, c("empty","empty","Antagonistic"))
+
+# Prueba de que sea una matriz de interaccion antagonica unica = Red trofica
+
+calcPropInteractionsGLVadjMat(A, rep(1,times=nrow(A)))==c(0,1,0,0,0)
+
+# Comprueba que los predadores y las presas estan bien codificados
+
+A[2,33] # Presa    -1
+A[33,2] # Predador  1 
+V(b)[33]
+V(b)[nei(V(b)[33],"out")]
+
+bLifeSpan$Species[33]
+bLifeSpan$LifeSpan[2]
+
+A_Beagle <- A
+
+sum(A)==sum(diag(A)) # Solo predador - presa
+
+# Ajuste del modelo ABC 
+
+if(!file.exists("Data/ABCGLV_Beagle.rds")){
+
+  data <- list(S=ti[1,]$Size, L=ti[1,]$Links)
+
+  pMin <- c(intensity=0.0001, migration=0.1, selfLimBasal=0.0001, selfLimPred=0.0001)
+  pMax <- c(intensity=0.1, migration=0.9, selfLimBasal=0.1, selfLimPred=0.1)
+
+  ff <- estima_ABC_GLVIntMigr(A_Beagle, data, pMin, pMax, intGrowthRate=bLifeSpan$r, fixedM=FALSE, dlim=2, sim=40000)
+  
+  saveRDS(ff,"Data/ABCGLV_Beagle.rds")
+  
+} else {
+  
+  ff <- readRDS("Data/ABCGLV_Beagle.rds")
+
+}
+
+abcGLVMetaWebModel <- bind_rows(abcGLVMetaWebModel, ff %>% mutate(Network="Beagle", fixedM=FALSE))
+
+```
+
+
+# Resultados del ajuste del modelo para ambos ecosistemas
+
+```{r PotterBeagleABCGLV, eval=T, echo=F, message=T, warning=T}
+
+abcGLVMetaWebModel %>% group_by(Network) %>% top_n(-10,cost)
+
+ff <- abcGLVMetaWebModel %>% filter(cost<1.1)
+ff %>% group_by(Network) %>% summarise_if(is.numeric, mean)
+
+#  Network  cost intensity migration selfLimBasal selfLimPred     S     L      C
+#  <chr>   <dbl>     <dbl>     <dbl>        <dbl>       <dbl> <dbl> <dbl>  <dbl>
+# Beagle  0.983   0.00197     0.761       0.0244      0.0327  63.7  277. 0.0682
+# Potter  1.03    0.00147     0.764       0.0408      0.0323  71.2  214. 0.0422
+
+ff %>% group_by(Network) %>% filter(cost==min(cost))
+
+# Graficos densidad vs costo, conectancia y especies
+
+ggplot(ff, aes(cost, colour=Network)) + geom_density() + scale_color_brewer(palette="Dark2") + theme_bw()
+
+ggplot(ff, aes(C, color=Network)) + geom_density() + scale_color_brewer(palette="Dark2") + theme_bw() + geom_point(data=ti[1:2,], aes(Connectance, 0, color=Network), shape=21, fill="white", size=2)
+
+ggplot(ff, aes(S, color=Network)) + geom_density() + scale_color_brewer(palette="Dark2") + theme_bw() + geom_point(data=ti[1:2,], aes(Size, 0, color=Network), shape=21, fill="white", size=2)
+
+```
+
+## Grafico de las series de tiempo para los parametros ajustados.
+
+```{r calcTopologicalIndices, eval=T,echo=F,message=T,warning=T}}
+
+set.seed(4231)
+
+# Corrige diagonal de matrices GLV 
+
+diag(A_Potter) <- 0
+diag(A_Beagle) <- 0
+
+# Para calcular el nivel trofico, es necesario convertir la matriz de adyacencia de GLV en una matriz de adyacencia trofica clasica.
+#
+# Ademas chequea que la matriz GLV tenga el mismo nivel trofico que la matriz a partir de la adyacencia del objeto igraph 
+#
+tlp <- TrophInd(ifelse(A_Potter<0, 1, 0))$TL
+tlp1 <- TrophInd(get.adjacency(p,sparse=F))$TL
+all(tlp==tlp1)
+
+
+tlb <- TrophInd(ifelse(A_Beagle<0, 1, 0))$TL
+tlb1 <- TrophInd(get.adjacency(b,sparse=F))$TL
+all(tlb==tlb1)
+
+# Si existen diferencias es debido a que hay loops de tipo A -> B, B -> A
+# En el modelo de Lotka-volterra solo toma una de las dos
+
+# Simula obtener una serie temporal del modelo de Lotka Volterra generalizado a partir de una metaweb que varía la intensidad de las interacciones y la migración.
+
+dp <- simulateGLVIntMigr_TS(A_Potter, 0.00147, 0.764, fixedM=FALSE, selfLim=c(0, 0.0408, 0.0323), intGrowthRate=pLifeSpan$r, tl=tlp)
+dp$S
+dp$L
+
+db <- simulateGLVIntMigr_TS(A_Beagle, 0.00197, 0.761, fixedM=FALSE, selfLim=c(0, 0.0244, 0.0327), intGrowthRate=bLifeSpan$r, tl=tlb)
+db$S
+db$L
+
+# Gráficos de las series temporales para los parámetros ajustados
+
+require(cowplot)
+
+g6 <- plot_grid(dp$g1,dp$g2,dp$g3, labels=c("A","B","C"), align="h")
+save_plot("Figures/GLV_Potter.png", g6, base_width=8, base_height=5, dpi=1000)
+
+g7 <- plot_grid(db$g1,db$g2,db$g3, labels=c("A","B","C"), align="h")
+save_plot("Figures/GLV_Beagle.png", g7, base_width=8, base_height=5, dpi=1000)
+
+rm(db,dp,tlp,tlb,g6,g7)
+
+```
+
+
+## Calculo de indices topologicos para simulaciones de modelos.
+
+```{r calcTopologicalIndices, eval=T,echo=F,message=T,warning=T}}
+
+# Indices topologicos Potter
+  
+set.seed(4231)
+
+if(!file.exists("Data/GLVti.rds")){
+
+  dp <- simulateGLVIntMigr(A_Potter, 0.00147, 0.764, nsim=1000, ncores=8, fixedM=FALSE, selfLim=c(0, 0.0408, 0.0323), intGrowRate=pLifeSpan$r, eliminateLowMean=0) 
+  
+  pti <- calcTopologicalIndices(dp$g,ncores = 8)
+  pti <- bind_cols(pti, calc_Cq_fromGLVsims(dp,ncores = 8))
+  pti <- bind_cols(pti, calcIncoherence(dp$g,ncores = 8))
+  pti <- bind_cols(pti, calc_Variability_fromGLVsims(dp,ncores = 8)) %>% mutate(Network="Potter")
+  
+  GLVti <- pti
+  
+  GLVti_abund <- calc_abund_distr(dp$modelRes) %>% mutate(Network="Potter")
+  
+  # Indices topologicos Beagle
+  
+  db <- simulateGLVIntMigr(A_Beagle, 0.00197, 0.761, nsim=1000, ncore=8, fixedM=FALSE, selfLim=c(0, 0.0244, 0.0327), intGrowRate=bLifeSpan$r, eliminateLowMean=0)
+  
+  bti <- calcTopologicalIndices(db$g, ncore=8)
+  bti <- bind_cols(bti, calc_Cq_fromGLVsims(db, ncore=8))
+  bti <- bind_cols(bti, calcIncoherence(db$g, ncore=8))
+  bti <- bind_cols(bti, calc_Variability_fromGLVsims(db, ncore=8)) %>% mutate(Network="Beagle")
+  
+  GLVti <- bind_rows(GLVti, bti)
+  
+  GLVti_abund <- bind_rows(GLVti_abund, calc_abund_distr(db$modelRes) %>% mutate(Network="Beagle"))
+  
+  saveRDS(GLVti,"Data/GLVti.rds")
+  saveRDS(GLVti_abund,"Data/GLVti_abund.rds")
+  
+} else {
+  
+  GLVti <- readRDS("Data/GLVti.rds")
+  GLVti_abund <- readRDS("Data/GLVti_abund.rds")
+
+}
+
+
+rm(dp,pti,db,bti)
+
+# Graficos de métricas topológicas de las simulaciones.
+
+ff <- GLVti %>% group_by(Network) %>%  mutate(Cdiff=tC-Cq, maxS=max(Size), Permanence=tS/maxS) 
+
+ff %>% select(-Components,-Cannib) %>% summarise_if(is.numeric, median)
+
+# C vs S
+
+(g8 <- ggplot(ff, aes(tC, tS, colour=Network)) + scale_color_brewer(palette="Dark2") + geom_point(alpha=0.5) + stat_ellipse() + geom_point(data=ti[1:2,], aes(Connectance, Size), shape=21, fill="white", size=2) + theme_bw() + xlab("Total C") + ylab("Total S") + theme(axis.title.x = element_text(size=12, face="bold"), axis.title.y = element_text(size=12, face="bold"), legend.text = element_text(size=12), legend.title = element_text(size=12)))
+ggsave("Figures/GLVassembly_CS.png",g8,width=7,height=5,units="in",dpi=1000)
+
+# Q vs Network
+(g9 <- ggplot(ff, aes(Q, x=Network, colour=Network))+ geom_jitter(alpha=0.2) + scale_color_brewer(palette="Dark2")+ theme_bw() + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.1, color="Black") +  geom_point(data=ti[1:2,], aes(Network, Q), shape = 21, fill="white", size=2) + ylab("Incoherencia (Q)") + theme(axis.title.x = element_text(size=12, face="bold"), axis.title.y = element_text(size=12, face="bold"), legend.text = element_text(size=12), legend.title = element_text(size=12)))
+ggsave("Figures/GLVassembly_Q.png",g9,width=7,height=5,units="in",dpi=1000)
+
+# TLmean vs Network
+(g10 <- ggplot(ff, aes(TLmean, x=Network, colour=Network)) + geom_jitter(alpha=0.2) + scale_color_brewer(palette="Dark2") + theme_bw() + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.1, color="Black") + geom_point(data=ti[1:2,], aes(Network, TLmean), shape=21, fill="white", size=2) + ylab("Nivel trófico medio (TLmean)") + theme(axis.title.x = element_text(size=12, face="bold"), axis.title.y = element_text(size=12, face="bold"), legend.text = element_text(size=12), legend.title = element_text(size=12)))
+ggsave("Figures/GLVassembly_TLmean.png",g10,width=7,height=5,units="in",dpi=1000)
+
+# TLmax vs Network
+(g11 <- ggplot(ff, aes(TLmax, x=Network, colour=Network)) + geom_jitter(alpha=0.2) + scale_color_brewer(palette="Dark2") + theme_bw() + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.1, color="Black") + geom_point(data=ti[1:2,], aes(Network, TLmax), shape=21, fill="white", size=2) + ylab("Nivel trófico máximo (TLmax)") + theme(axis.title.x = element_text(size=12, face="bold"), axis.title.y = element_text(size=12, face="bold"), legend.text = element_text(size=12), legend.title = element_text(size=12)))
+ggsave("Figures/GLVassembly_TLmax.png",g11,width=7,height=5,units="in",dpi=1000)
+
+
+# PathLenght vs Network
+(g12 <- ggplot(ff, aes(PathLength, x=Network, colour=Network))+ geom_jitter(alpha=0.2) + scale_color_brewer(palette="Dark2") + theme_bw() + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.1, color="Black") + geom_point(data=ti[1:2,], aes(Network, PathLength), shape=21, fill="white", size=2) + ylab("Path Length") + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)))
+ggsave("Figures/GLVassembly_PL.png",g12,width=7,height=5,units="in",dpi=1000)
+
+# Clustering vs Network
+(g13 <- ggplot(ff, aes(Clustering, x=Network, colour=Network)) + geom_jitter(alpha=0.2) + scale_color_brewer(palette="Dark2") + theme_bw() + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.1, color="Black") + geom_point(data=ti[1:2,], aes(Network, Clustering), shape=21, fill="white", size=2)+ ylab("Clustering") + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)))
+ggsave("Figures/GLVassembly_Clust.png",g13,width=7,height=5,units="in",dpi=1000)
+
+# Omnivory vs Network
+(g14 <- ggplot(ff, aes(Omnivory, x=Network, colour=Network)) + geom_jitter(alpha=0.2) + scale_color_brewer(palette="Dark2") + theme_bw() + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", size=0.1, color="Black") + geom_point(data=ti[1:2,], aes(Network, Omnivory), shape=21, fill="white", size=2)+ ylab("Omnivoría") + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)))
+ggsave("Figures/GLVassembly_Om.png",g14,width=7,height=5,units="in",dpi=1000)
+
+require(cowplot)
+
+ggg <- plot_grid(g10 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g11 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g14 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g12 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g13 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g9 + theme(legend.position="none", axis.title.x=element_blank()), align="h", ncol=3)
+
+save_plot("Figures/GLVti.png", ggg, base_width=7, base_height=5, dpi=1000)
+rm(gg1,g8,g9,g10,g11,g12,g13,g14)
+
+# Test de Anderson-Darling y diferencia de medianas de effect size/desviacion estandar
+
+require(kSamples)
+require(tidyr)
+require(purrr)
+
+ff %>% ungroup() %>% dplyr::select(Q,TLmean,TLmax,Omnivory,PathLength,Clustering) %>% map(~ad.test(. ~ Network, data=ff)) %>% map_df(~.$ad[1,])
+
+df <- ff %>% dplyr::select(Q,TLmean,TLmax,Omnivory,PathLength,Clustering) %>% summarize_if(is.numeric, median)  %>% gather("metric", "medianDif", -Network) %>% group_by(metric) %>% summarize_if(is.numeric, ~diff(.))
+
+df1 <- ff %>% ungroup() %>% dplyr::select(Network,Q,TLmean,TLmax,Omnivory,PathLength,Clustering) %>% gather("metric", "value", -Network) %>% group_by(metric) %>% summarize(sdM=sd(value))
+   
+df <- inner_join(df, df1) %>% mutate(effectSize=medianDif/sdM)
+
+knitr::kable(df)
+
+# Grafica el flujo y la variabilidad
+
+# Cq vs Network
+(g15 <- ggplot(ff, aes(Cq, x=Network, colour=Network)) + geom_jitter(alpha=0.2) + scale_color_brewer(palette="Dark2") + theme_bw() + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", width=0.8) + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)))
+ggsave("Figures/GLVassembly_Cq.png",g15,width=7,height=5,units="in",dpi=1000)
+
+# tC-Cq vs Network
+(g16 <- ggplot(ff,aes(tC-Cq, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_brewer(palette="Dark2")+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", width = 0.8) + ylab("C - Cq") + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)))
+ggsave("Figures/GLVassembly_C_Cq.png",g16,width=7,height=5,units="in",dpi=1000)
+
+# VDens vs Network
+(g17 <- ggplot(ff,aes(VDens, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_brewer(palette="Dark2")+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", width = 0.8)+ylab("Variabilidad de abundancia") + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)))
+ggsave("Figures/GLVassembly_VarAbun.png",g17,width=7,height=5,units="in",dpi=1000)
+
+# VSpecies vs Network
+(g18 <- ggplot(ff,aes(VSpecies, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_brewer(palette="Dark2")+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", width = 0.8)+ylab("Variabilidad de especies") + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)))
+ggsave("Figures/GLVassembly_VarSpp.png",g18,width=7,height=5,units="in",dpi=1000)
+
+# tS vs Network
+(g19 <- ggplot(ff,aes(tS , x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_brewer(palette="Dark2")+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", width = 0.8)+ylab("Permanencia de especies") + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)))
+ggsave("Figures/GLVassembly_Perm.png",g19,width=7,height=5,units="in",dpi=1000)
+
+require(cowplot)
+gg2 <- plot_grid(g15 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g16 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g17 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g18 + theme(legend.position="none", axis.title.x=element_blank()),
+                 g19 + theme(legend.position="none", axis.title.x=element_blank()), align = "h",ncol=3)
+
+save_plot("Figures/FlujoVarGLV.png", gg2, base_width=8, base_height=5, dpi=1000)
+rm(gg2,g15,g16,g17,g18,g19)
+
+# Test de Anderson-Darling y diferencia de medianas de effect size/desviacion estandar
+
+require(kSamples)
+require(tidyr)
+require(purrr)
+
+ff %>% ungroup() %>% dplyr::select(Cq,Cdiff,VDens,VSpecies,Permanence) %>% map(~ad.test(. ~ Network, data=ff)) %>% map_df(~.$ad[1,])
+
+df <- ff %>% dplyr::select(Cq,Cdiff,VDens,VSpecies,Permanence) %>% summarize_if(is.numeric, median)  %>% gather("metric","medianDif" ,-Network) %>% group_by(metric) %>% summarize_if(is.numeric,~diff(.))
+
+df1 <- ff %>% ungroup() %>% dplyr::select(Network,Cq,Cdiff,VDens,VSpecies,Permanence) %>% gather("metric","value" ,-Network) %>%   group_by(metric) %>% summarize(sdM = sd(value))
+   
+df <- inner_join(df,df1)  %>%  mutate(effectSize=medianDif/sdM)
+
+knitr::kable(df)
+
+# Grafico rango-abundancia 
+
+require(ggrepel)
+
+ff <- GLVti_abund %>% group_by(Network,Species) %>% summarise(densSD=sd(Dens), Dens=mean(Dens),rankSD=sd(Rank), Rank=median(Rank), cvDens=densSD/Dens) %>% arrange(Network,desc(Dens))
+
+totLifeSpan <- bind_rows(pLifeSpan %>% mutate(Network="Potter"), bLifeSpan %>% mutate(Network="Beagle")) %>% rename(spName=Species, Species=vNumber)
+
+# Agrega el nombre de la especies
+
+ff <- inner_join(ff, totLifeSpan, by=c("Network","Species")) 
+
+ggplot(ff %>% filter(Rank<40), aes(Rank,log(Dens),color=Network,label=spName))+ geom_point() +  scale_color_brewer(palette = "Dark2")+ theme_bw() + geom_text_repel(size=2)
+ggsave("Figures/AbundanceDistributionLT40_Wlabels.png", width=10, height=5, units="in",dpi=1000)
+
+ggplot(ff %>% filter(Rank>=40,Rank<70), aes(Rank,log(Dens),color=Network,label=spName))+ geom_point() +  scale_color_brewer(palette = "Dark2")+ theme_bw() + geom_text_repel(size=2)
+ggsave("Figures/AbundanceDistributionGT40_70_Wlabels.png", width=10, height=5, units="in", dpi=1000)
+
+ggplot(ff %>% filter(Rank>=70), aes(Rank,log(Dens),color=Network,label=spName))+ geom_point() +  scale_color_brewer(palette = "Dark2")+ theme_bw() + geom_text_repel(size=2)
+ggsave("Figures/AbundanceDistributionGT70_Wlabels.png", width=10, height=5, units="in", dpi=1000)
+
+ggplot(ff, aes(Rank,log(Dens),color=Network,label=Species))+ geom_point() +  scale_color_brewer(palette = "Dark2")+ theme_bw() 
+ggsave("Figures/AbundanceDistributionNolabels.png", width=10, height=5, units="in", dpi=1000)
+
+require(kSamples)
+ad.test(Dens~Network, data=ff)
+wilcox.test(Dens~Network, data=ff, paired=FALSE)
+
+# Exporta la distribución de abundancias del modelo GLV
+
+# require(readr)
+# write_csv(ff, "Data/GLV_AbundanceDistribution.csv")
+
+require(vegan)
+ff <- GLVti_abund %>% group_by(Network,Rep) %>% summarise(H=vegan::diversity(Dens)) %>% mutate(expH=exp(H)) 
+
+ggplot(ff,aes(H, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_brewer(palette="Dark2")+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", width = 0.8) + theme(axis.title.x=element_text(size=12, face="bold"), axis.title.y=element_text(size=12, face="bold"), legend.text=element_text(size=12), legend.title=element_text(size=12)) + ylab("Índice de diversidad de Shannon (H)")
+ggsave("Figures/GLV_H.png", width=7, height=5, units="in", dpi=1000)
+
+wilcox.test(H~Network, data=ff, paired=FALSE)
+ad.test(H~Network, data=ff)
+
+rm(ff)
+save.image()
+
+```
+
+## Estimar la influencia de la migracion en la permanencia y estabilidad.
+
+```{r InfluenciaMigracion, eval=T, echo=F, message=T, warning=T}}
+
+# Evalular la influencia de la colonización en la dinámica
+
+if(!file.exists("Data/simGLVmigration.rds")){
+  # Potter #
+  dp <- simulateGLVIntMigr(A_Potter, 0.00147, 0.76, nsim=100, ncores=4, fixedM=FALSE, selfLim=c(0, 0.0408, 0.0323), intGrowRate=pLifeSpan$r, eliminateLowMean=0)
+  dp <- bind_rows(dp, simulateGLVIntMigr(A_Potter, 0.00147, 0.56, nsim=100, ncores=4, fixedM=FALSE, selfLim=c(0, 0.0408, 0.0323), intGrowRate=pLifeSpan$r, eliminateLowMean=0))
+  dp <- bind_rows(dp, simulateGLVIntMigr(A_Potter, 0.00147, 0.36, nsim=100, ncores=4, fixedM=FALSE, selfLim=c(0, 0.0408, 0.0323), intGrowRate=pLifeSpan$r, eliminateLowMean=0))
+  dp <- bind_rows(dp, simulateGLVIntMigr(A_Potter, 0.00147, 0.16, nsim=100, ncores=4, fixedM=FALSE, selfLim=c(0, 0.0408, 0.0323), intGrowRate=pLifeSpan$r, eliminateLowMean=0))
+  dp <- bind_rows(dp, simulateGLVIntMigr(A_Potter, 0.00147, 0.06, nsim=100, ncores=4, fixedM=FALSE, selfLim=c(0, 0.0408, 0.0323), intGrowRate=pLifeSpan$r, eliminateLowMean=0))
+  
+  psti <- calcTopologicalIndices(dp$g, 4) 
+  psti <- bind_cols(psti, calc_Cq_fromGLVsims(dp))
+  ######ERROR#####
+  #Error in { : task 1 failed - "$ operator is invalid for atomic vectors"
+  #psti <- bind_cols(psti, calcIncoherence(dp[g], 4))
+  psti <- bind_cols(psti, calc_Variability_fromGLVsims(dp, 4)) %>% mutate(Network="Potter") 
+  psti <- bind_cols(psti, dp %>% dplyr::select(migration))
+  
+  simGLVmigration <- psti
+  
+  # Beagle #
+  db <- simulateGLVIntMigr(A_Beagle, 0.00197, 0.76, nsim=100, ncore=4, fixedM=FALSE, selfLim=c(0, 0.0244, 0.0327), intGrowRate=bLifeSpan$r, eliminateLowMean=0)
+  db <- bind_rows(db, simulateGLVIntMigr(A_Beagle, 0.00197, 0.56, nsim=100, ncore=4, fixedM=FALSE, selfLim=c(0, 0.0244, 0.0327), intGrowRate=bLifeSpan$r, eliminateLowMean=0))
+  db <- bind_rows(db, simulateGLVIntMigr(A_Beagle, 0.00197, 0.36, nsim=100, ncore=4, fixedM=FALSE, selfLim=c(0, 0.0244, 0.0327), intGrowRate=bLifeSpan$r, eliminateLowMean=0))
+  db <- bind_rows(db, simulateGLVIntMigr(A_Beagle, 0.00197, 0.16, nsim=100, ncore=4, fixedM=FALSE, selfLim=c(0, 0.0244, 0.0327), intGrowRate=bLifeSpan$r, eliminateLowMean=0))
+  db <- bind_rows(db, simulateGLVIntMigr(A_Beagle, 0.00197, 0.06, nsim=100, ncore=4, fixedM=FALSE, selfLim=c(0, 0.0244, 0.0327), intGrowRate=bLifeSpan$r, eliminateLowMean=0))
+  
+  bsti <- calcTopologicalIndices(db$g, 4)
+  bsti <- bind_cols(bsti,calc_Cq_fromGLVsims(db))
+  ######ERROR#####
+  #Error in { : task 1 failed - "$ operator is invalid for atomic vectors"
+  #bsti <- bind_cols(bsti,calcIncoherence(db$g, 4))
+  bsti <- bind_cols(bsti, calc_Variability_fromGLVsims(db, 4)) %>% mutate(Network="Beagle") 
+  bsti <- bind_cols(bsti, db %>% dplyr::select(migration))
+  
+  simGLVmigration <- bind_rows(simGLVmigration, bsti)
+  
+  simGLVmigration <- simGLVmigration %>% group_by(Network) %>% mutate(Permanence=tS/max(Size)) 
+  
+  saveRDS(simGLVmigration,"Data/simGLVmigration.rds")
+    
+} else {
+  
+  simGLVmigration <- readRDS("Data/simGLVmigration.rds")
+
+}
+
+# Gráficos
+ggplot(simGLVmigration, aes(migration, VDens, colour=Network)) + scale_color_brewer(palette="Dark2") + geom_jitter(alpha=0.5)
+ggplot(simGLVmigration, aes(migration, VSpecies, colour=Network)) + scale_color_brewer(palette="Dark2") + geom_jitter(alpha=0.5)
+ggplot(simGLVmigration, aes(migration, Cq, colour=Network)) + scale_color_brewer(palette="Dark2") + geom_jitter(alpha=0.5)
+ggplot(simGLVmigration, aes(migration, tS, colour=Network)) + scale_color_brewer(palette="Dark2") + geom_jitter(alpha=0.5)
+ggplot(simGLVmigration, aes(migration, tC, colour=Network)) + scale_color_brewer(palette="Dark2") + geom_point(alpha=0.5)
+
+ggplot(simGLVmigration,aes(tC, tS, colour=Network)) + scale_color_brewer(palette="Dark2") + geom_point(alpha=0.5) + stat_ellipse(type="t") + theme_bw() + xlab("Total C") + ylab("Total S") + facet_wrap(~migration) + geom_point(data=ti[1:2,], aes(Connectance,Size), shape=21, fill="white", size=2)
+ggsave("Figures/GLVassembly_migration_CS.png", width=6, height=5, units="in",dpi=1000)
+
+ggplot(simGLVmigration,aes(Permanence, x=Network, colour=Network)) + geom_jitter(alpha=0.2) +  scale_color_brewer(palette="Dark2")+ theme_bw() + stat_summary(fun.y=median, fun.ymin=median, fun.ymax=median, geom="crossbar", width=0.8) + ylab("Species Permanence") + facet_wrap(~migration)
+ggsave("Figures/GLVassembly_migration_Permanence.png", width=6, height=5, units="in", dpi=1000)
+
+rm(psti,bsti,dp,db)
+```
+

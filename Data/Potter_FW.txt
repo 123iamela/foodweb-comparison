@@ -1,0 +1,1358 @@
+Predator	Prey
+Aequiyoldia eightsii	Aged detritus
+Aequiyoldia eightsii	Aged detritus
+Aequiyoldia eightsii	Aged detritus
+Aequiyoldia eightsii	Benthic Diatomea
+Aequiyoldia eightsii	Fresh detritus
+Aequiyoldia eightsii	Fresh detritus
+Aequiyoldia eightsii	Fresh detritus
+Aequiyoldia eightsii	Fresh detritus
+Aequiyoldia eightsii	Phytoplankton
+Aequiyoldia eightsii	Phytoplankton
+Aequiyoldia eightsii	Polychaeta
+Aglaophamus trissophyllus	Aged detritus
+Aglaophamus trissophyllus	Benthic Diatomea
+Aglaophamus trissophyllus	Copepoda
+Aglaophamus trissophyllus	Fresh detritus
+Aglaophamus trissophyllus	Polychaeta
+Aglaophamus trissophyllus	Polynoidae
+Ascidiacea	Fresh detritus
+Ascidiacea	Phytoplankton
+Ascidiacea	Phytoplankton
+Ascidiacea	Zooplankton
+Ascidiacea	Fresh detritus
+Ascidiacea	Phytoplankton
+Ascidiacea	Fresh detritus
+Ascidiacea	Phytoplankton
+Ascidiacea	Phytoplankton
+Ascidiacea	Zooplankton
+Ascidiacea	Fresh detritus
+Ascidiacea	Zooplankton
+Ascidiacea	Benthic Diatomea
+Barrukia cristata	Copepoda
+Barrukia cristata	Fresh detritus
+Barrukia cristata	Fresh detritus
+Barrukia cristata	Gastropoda
+Barrukia cristata	Hydrozoa
+Barrukia cristata	Polychaeta
+Barrukia cristata	Polychaeta
+Barrukia cristata	Polychaeta
+Barrukia cristata	Porifera
+Bovallia gigantea	Benthic Diatomea
+Bovallia gigantea	Bovallia gigantea
+Bovallia gigantea	Charcotia obesa
+Bovallia gigantea	Copepoda
+Bovallia gigantea	Copepoda
+Bovallia gigantea	Eurymera monticulosa
+Bovallia gigantea	Fresh detritus
+Bovallia gigantea	Gitanopsis squamosa
+Bovallia gigantea	Gondogeneia antarctica
+Bovallia gigantea	Gondogeneia antarctica
+Bovallia gigantea	Gondogeneia antarctica
+Bovallia gigantea	Paradexamine sp.
+Bovallia gigantea	Paradexamine sp.
+Bovallia gigantea	Prostebbingia gracilis
+Bovallia gigantea	Prostebbingia sp.
+Bovallia gigantea	Prostebbingia sp.
+Bovallia gigantea	Eurymera monticulosa
+Bovallia gigantea	Pariphimedia integricauda
+Bryozoa	Fresh detritus
+Bryozoa	Phytoplankton
+Bryozoa	Fresh detritus
+Bryozoa	Phytoplankton
+Bryozoa	Phytoplankton
+Bryozoa	Fresh detritus
+Bryozoa	Phytoplankton
+Bryozoa	Fresh detritus
+Bryozoa	Phytoplankton
+Bryozoa	Phytoplankton
+Bryozoa	Fresh detritus
+Bryozoa	Phytoplankton
+Cephalopoda	Copepoda
+Cephalopoda	Euphausia superba
+Cephalopoda	Phytoplankton
+Cephalopoda	Polychaeta
+Cephalopoda	Polychaeta
+Cephalopoda	Priapulida
+Cephalopoda	Zooplankton
+Chaenocephalus aceratus	Chaenocephalus aceratus
+Chaenocephalus aceratus	Chaenocephalus aceratus
+Chaenocephalus aceratus	Euphausia superba
+Chaenocephalus aceratus	Euphausia superba
+Chaenocephalus aceratus	Euphausia superba
+Chaenocephalus aceratus	Euphausia superba
+Chaenocephalus aceratus	Euphausia superba
+Chaenocephalus aceratus	Euphausia superba
+Chaenocephalus aceratus	Gobionotothen gibberifrons
+Chaenocephalus aceratus	Gobionotothen gibberifrons
+Chaenocephalus aceratus	Gobionotothen gibberifrons
+Chaenocephalus aceratus	Harpagifer antarcticus
+Chaenocephalus aceratus	Lindbergichthys nudifrons
+Chaenocephalus aceratus	Lindbergichthys nudifrons
+Chaenocephalus aceratus	Mysida
+Chaenocephalus aceratus	Mysida
+Chaenocephalus aceratus	Mysida
+Chaenocephalus aceratus	Notothenia rossii
+Chaenocephalus aceratus	Notothenia rossii
+Chaenocephalus aceratus	Octopoda
+Chaenocephalus aceratus	Ophionotus victoriae
+Chaenocephalus aceratus	Parachaenichthys charcoti
+Chaenocephalus aceratus	Parachaenichthys charcoti
+Chalinidae	Benthic Diatomea
+Chalinidae	Fresh detritus
+Charcotia obesa	Benthic Diatomea
+Charcotia obesa	Benthic Diatomea
+Charcotia obesa	Fresh detritus
+Charcotia obesa	Fresh detritus
+Charcotia obesa	Necromass
+Charcotia obesa	Necromass
+Charcotia obesa	Necromass
+Charcotia obesa	Necromass
+Charcotia obesa	Necromass
+Charcotia obesa	Necromass
+Charcotia obesa	Necromass
+Charcotia obesa	Phytoplankton
+Charcotia obesa	Porifera
+Charcotia obesa	Porifera
+Cheirimedon femoratus	Aged detritus
+Cheirimedon femoratus	Copepoda
+Cheirimedon femoratus	Fresh detritus
+Cheirimedon femoratus	Gondogeneia antarctica
+Cheirimedon femoratus	Gondogeneia antarctica
+Cheirimedon femoratus	Necromass
+Cheirimedon femoratus	Necromass
+Cheirimedon femoratus	Necromass
+Copepoda	Phytoplankton
+Copepoda	Fresh detritus
+Copepoda	Phytoplankton
+Copepoda	Fresh detritus
+Copepoda	Phytoplankton
+Copepoda	Phytoplankton
+Copepoda	Zooplankton
+Copepoda	Fresh detritus
+Copepoda	Phytoplankton
+Cumacea	Aged detritus
+Cumacea	Benthic Diatomea
+Cumacea	Aged detritus
+Cumacea	Aged detritus
+Cumacea	Aged detritus
+Dendrilla antarctica	Benthic Diatomea
+Dendrilla antarctica	Fresh detritus
+Dendrilla antarctica	Benthic Diatomea
+Diplasterias brucei	Aequiyoldia eightsii
+Diplasterias brucei	Fresh detritus
+Diplasterias brucei	Gastropoda
+Diplasterias brucei	Gastropoda
+Diplasterias brucei	Necromass
+Diplasterias brucei	Necromass
+Diplasterias brucei	Necromass
+Diplasterias brucei	Neobuccinum eatoni
+Diplasterias brucei	Porifera
+Djerboa furcipes	Benthic Diatomea
+Djerboa furcipes	Fresh detritus
+Djerboa furcipes	Fresh detritus
+Djerboa furcipes	Phytoplankton
+Djerboa furcipes	Benthic Diatomea
+Doris kerguelenensis	Chalinidae
+Doris kerguelenensis	Chalinidae
+Doris kerguelenensis	Chalinidae
+Doris kerguelenensis	Chalinidae
+Doris kerguelenensis	Chalinidae
+Doris kerguelenensis	Chalinidae
+Doris kerguelenensis	Dendrilla antarctica
+Doris kerguelenensis	Dendrilla antarctica
+Doris kerguelenensis	Dendrilla antarctica
+Doris kerguelenensis	Necromass
+Doris kerguelenensis	Porifera
+Doris kerguelenensis	Porifera
+Doris kerguelenensis	Porifera
+Doris kerguelenensis	Porifera
+Doris kerguelenensis	Rosella antartica
+Doris kerguelenensis	Rosella antartica
+Doris kerguelenensis	Rosella antartica
+Doris kerguelenensis	Rosella antartica
+Doris kerguelenensis	Rosella antartica
+Doris kerguelenensis	Rosella antartica
+Doris kerguelenensis	Rosella antartica
+Doris kerguelenensis	Rossella sp.
+Doris kerguelenensis	Stylo_Myca
+Doris kerguelenensis	Stylo_Myca
+Doris kerguelenensis	Stylo_Myca
+Doris kerguelenensis	Stylo_Myca
+Doris kerguelenensis	Stylo_Myca
+Doris kerguelenensis	Benthic Diatomea
+Eatoniella sp.	Bryozoa
+Eatoniella sp.	Epiphytic Diatomea
+Eatoniella sp.	Fresh detritus
+Eatoniella sp.	Epiphytic Diatomea
+Euphausia superba	Copepoda
+Euphausia superba	Copepoda
+Euphausia superba	Copepoda
+Euphausia superba	Euphausia superba
+Euphausia superba	Phytoplankton
+Euphausia superba	Phytoplankton
+Euphausia superba	Phytoplankton
+Euphausia superba	Phytoplankton
+Euphausia superba	Salpidae
+Euphausia superba	Salpidae
+Euphausia superba	Zooplankton
+Euphausia superba	Zooplankton
+Eurymera monticulosa	Fresh detritus
+Eurymera monticulosa	Necromass
+Eurymera monticulosa	Epiphytic Diatomea
+Eurymera monticulosa	Benthic Diatomea
+Gammaridea	Aged detritus
+Gammaridea	Copepoda
+Gammaridea	Desmarestia anceps
+Gammaridea	Desmarestia antarctica
+Gammaridea	Desmarestia menziesii
+Gammaridea	Gammaridea
+Gammaridea	Ostracoda
+Gammaridea	Palmaria decipiens
+Gammaridea	Epiphytic Diatomea
+Gammaridea	Benthic Diatomea
+Gammaridea	Aged detritus
+Gammaridea	Phytoplankton
+Gammaridea	Phytoplankton
+Gammaridea	Phytoplankton
+Gammaridea	Aged detritus
+Gammaridea	Oligochaeta
+Gastropoda	Fresh detritus
+Gastropoda	Polyplacophora
+Gastropoda	Porifera
+Gastropoda	Tanaidacea
+Gitanopsis squamosa	Aged detritus
+Gitanopsis squamosa	Fresh detritus
+Gitanopsis squamosa	Necromass
+Gitanopsis squamosa	Phytoplankton
+Glyptonotus antarcticus	Bovallia gigantea
+Glyptonotus antarcticus	Bovallia gigantea
+Glyptonotus antarcticus	Euphausia superba
+Glyptonotus antarcticus	Euphausia superba
+Glyptonotus antarcticus	Fresh detritus
+Glyptonotus antarcticus	Gastropoda
+Glyptonotus antarcticus	Gastropoda
+Glyptonotus antarcticus	Glyptonotus antarcticus
+Glyptonotus antarcticus	Glyptonotus antarcticus
+Glyptonotus antarcticus	Gondogeneia antarctica
+Glyptonotus antarcticus	Necromass
+Glyptonotus antarcticus	Necromass
+Glyptonotus antarcticus	Necromass
+Glyptonotus antarcticus	Necromass
+Glyptonotus antarcticus	Nereididae
+Glyptonotus antarcticus	Polychaeta
+Glyptonotus antarcticus	Polychaeta
+Gobionotothen gibberifrons	Aequiyoldia eightsii
+Gobionotothen gibberifrons	Aequiyoldia eightsii
+Gobionotothen gibberifrons	Aged detritus
+Gobionotothen gibberifrons	Bovallia gigantea
+Gobionotothen gibberifrons	Copepoda
+Gobionotothen gibberifrons	Copepoda
+Gobionotothen gibberifrons	Cumacea
+Gobionotothen gibberifrons	Gammaridea
+Gobionotothen gibberifrons	Gammaridea
+Gobionotothen gibberifrons	Gammaridea
+Gobionotothen gibberifrons	Gammaridea
+Gobionotothen gibberifrons	Gammaridea
+Gobionotothen gibberifrons	Gastropoda
+Gobionotothen gibberifrons	Gastropoda
+Gobionotothen gibberifrons	Gastropoda
+Gobionotothen gibberifrons	Gastropoda
+Gobionotothen gibberifrons	Gastropoda
+Gobionotothen gibberifrons	Gondogeneia antarctica
+Gobionotothen gibberifrons	Gondogeneia antarctica
+Gobionotothen gibberifrons	Oradarea bidentata
+Gobionotothen gibberifrons	Oradarea bidentata
+Gobionotothen gibberifrons	Ostracoda
+Gobionotothen gibberifrons	Ostracoda
+Gobionotothen gibberifrons	Polychaeta
+Gobionotothen gibberifrons	Polychaeta
+Gobionotothen gibberifrons	Polychaeta
+Gobionotothen gibberifrons	Polychaeta
+Gobionotothen gibberifrons	Polychaeta
+Gobionotothen gibberifrons	Polychaeta
+Gobionotothen gibberifrons	Polychaeta
+Gobionotothen gibberifrons	Polychaeta
+Gobionotothen gibberifrons	Probolisca ovata
+Gobionotothen gibberifrons	Probolisca ovata
+Gobionotothen gibberifrons	Prostebbingia gracilis
+Gobionotothen gibberifrons	Prostebbingia gracilis
+Gobionotothen gibberifrons	Serolis sp.
+Gobionotothen gibberifrons	Serolis sp.
+Gobionotothen gibberifrons	Serolis sp.
+Gobionotothen gibberifrons	Cumacea
+Gondogeneia antarctica	Adenocystis utricularis
+Gondogeneia antarctica	Adenocystis utricularis
+Gondogeneia antarctica	Desmarestia anceps
+Gondogeneia antarctica	Desmarestia anceps
+Gondogeneia antarctica	Desmarestia anceps
+Gondogeneia antarctica	Desmarestia antarctica
+Gondogeneia antarctica	Desmarestia antarctica
+Gondogeneia antarctica	Desmarestia menziesii
+Gondogeneia antarctica	Desmarestia menziesii
+Gondogeneia antarctica	Desmarestia menziesii
+Gondogeneia antarctica	Gigartina skottsbergii
+Gondogeneia antarctica	Iridaea cordata
+Gondogeneia antarctica	Iridaea cordata
+Gondogeneia antarctica	Myriogramme manginii
+Gondogeneia antarctica	Myriogramme manginii
+Gondogeneia antarctica	Palmaria decipiens
+Gondogeneia antarctica	Palmaria decipiens
+Gondogeneia antarctica	Palmaria decipiens
+Gondogeneia antarctica	Palmaria decipiens
+Gondogeneia antarctica	Phaeurus antarcticus 
+Gondogeneia antarctica	Plocamium cartilagineum
+Gondogeneia antarctica	Plocamium cartilagineum
+Harpagifer antarcticus	Bovallia gigantea
+Harpagifer antarcticus	Bovallia gigantea
+Harpagifer antarcticus	Bovallia gigantea
+Harpagifer antarcticus	Cheirimedon femoratus
+Harpagifer antarcticus	Cheirimedon femoratus
+Harpagifer antarcticus	Copepoda
+Harpagifer antarcticus	Copepoda
+Harpagifer antarcticus	Djerboa furcipes
+Harpagifer antarcticus	Djerboa furcipes
+Harpagifer antarcticus	Eatoniella sp.
+Harpagifer antarcticus	Euphausia superba
+Harpagifer antarcticus	Euphausia superba
+Harpagifer antarcticus	Euphausia superba
+Harpagifer antarcticus	Eurymera monticulosa
+Harpagifer antarcticus	Eurymera monticulosa
+Harpagifer antarcticus	Gastropoda
+Harpagifer antarcticus	Gastropoda
+Harpagifer antarcticus	Gastropoda
+Harpagifer antarcticus	Gastropoda
+Harpagifer antarcticus	Glyptonotus antarcticus
+Harpagifer antarcticus	Gondogeneia antarctica
+Harpagifer antarcticus	Gondogeneia antarctica
+Harpagifer antarcticus	Gondogeneia antarctica
+Harpagifer antarcticus	Gondogeneia antarctica
+Harpagifer antarcticus	Gondogeneia antarctica
+Harpagifer antarcticus	Gondogeneia antarctica
+Harpagifer antarcticus	Gondogeneia antarctica
+Harpagifer antarcticus	Laevilacunaria antarctica
+Harpagifer antarcticus	Margarella antarctica
+Harpagifer antarcticus	Mysida
+Harpagifer antarcticus	Nacella concinna
+Harpagifer antarcticus	Neobuccinum eatoni
+Harpagifer antarcticus	Nereididae
+Harpagifer antarcticus	Nereididae
+Harpagifer antarcticus	Nereididae
+Harpagifer antarcticus	Orchomenella sp.
+Harpagifer antarcticus	Orchomenella sp.
+Harpagifer antarcticus	Paradexamine fissicauda
+Harpagifer antarcticus	Paradexamine fissicauda
+Harpagifer antarcticus	Pariphimedia integricauda
+Harpagifer antarcticus	Polychaeta
+Harpagifer antarcticus	Polychaeta
+Harpagifer antarcticus	Polychaeta
+Harpagifer antarcticus	Polychaeta
+Harpagifer antarcticus	Polychaeta
+Harpagifer antarcticus	Polychaeta
+Harpagifer antarcticus	Polychaeta
+Harpagifer antarcticus	Polynoidae
+Harpagifer antarcticus	Polyplacophora
+Harpagifer antarcticus	Probolisca ovata
+Harpagifer antarcticus	Probolisca ovata
+Harpagifer antarcticus	Prostebbingia gracilis
+Harpagifer antarcticus	Prostebbingia gracilis
+Harpagifer antarcticus	Prostebbingia sp.
+Harpagifer antarcticus	Serolis sp.
+Harpagifer antarcticus	Serolis sp.
+Harpagifer antarcticus	Nemertea
+Hemiarthrum setulosum	Bryozoa
+Hemiarthrum setulosum	Bryozoa
+Hemiarthrum setulosum	Epiphytic Diatomea
+Hemiarthrum setulosum	Porifera
+Hemiarthrum setulosum	Porifera
+Hemiarthrum setulosum	Zooplankton
+Hemiarthrum setulosum	Epiphytic Diatomea
+Hemiarthrum setulosum	Benthic Diatomea
+Hippomedon kergueleni	Aged detritus
+Hippomedon kergueleni	Aged detritus
+Hippomedon kergueleni	Necromass
+Hippomedon kergueleni	Necromass
+Hippomedon kergueleni	Necromass
+Hippomedon kergueleni	Necromass
+Hippomedon kergueleni	Necromass
+Hippomedon kergueleni	Necromass
+Hydrozoa	Benthic Diatomea
+Hydrozoa	Copepoda
+Hydrozoa	Euphausia superba
+Hydrozoa	Fresh detritus
+Hydrozoa	Gammaridea
+Hydrozoa	Nemertea
+Hydrozoa	Ostracoda
+Hydrozoa	Polynoidae
+Hydrozoa	Zooplankton
+Hydrozoa	Benthic Diatomea
+Hydrozoa	Fresh detritus
+Hydrozoa	Phytoplankton
+Hydrozoa	Zooplankton
+Hydrozoa	Benthic Diatomea
+Hydrozoa	Fresh detritus
+Hydrozoa	Phytoplankton
+Hydrozoa	Fresh detritus
+Hydrozoa	Zooplankton
+Hydrozoa	Fresh detritus
+Hyperiidea	Copepoda
+Hyperiidea	Copepoda
+Hyperiidea	Copepoda
+Hyperiidea	Euphausia superba
+Hyperiidea	Euphausia superba
+Hyperiidea	Ostracoda
+Hyperiidea	Zooplankton
+Hyperiidea	Zooplankton
+Hyperiidea	Zooplankton
+Laevilacunaria antarctica	Adenocystis utricularis
+Laevilacunaria antarctica	Curdiea racovitzae
+Laevilacunaria antarctica	Desmarestia menziesii
+Laevilacunaria antarctica	Georgiella confluens 
+Laevilacunaria antarctica	Gigartina skottsbergii
+Laevilacunaria antarctica	Iridaea cordata
+Laevilacunaria antarctica	Monostroma hariotii
+Laevilacunaria antarctica	Palmaria decipiens
+Laevilacunaria antarctica	Plocamium cartilagineum
+Laternula elliptica	Aged detritus
+Laternula elliptica	Aged detritus
+Laternula elliptica	Phytoplankton
+Laternula elliptica	Benthic Diatomea
+Laternula elliptica	Benthic Diatomea
+Laternula elliptica	Benthic Diatomea
+Lindbergichthys nudifrons	Ascidiacea
+Lindbergichthys nudifrons	Bovallia gigantea
+Lindbergichthys nudifrons	Charcotia obesa
+Lindbergichthys nudifrons	Charcotia obesa
+Lindbergichthys nudifrons	Copepoda
+Lindbergichthys nudifrons	Copepoda
+Lindbergichthys nudifrons	Copepoda
+Lindbergichthys nudifrons	Euphausia superba
+Lindbergichthys nudifrons	Euphausia superba
+Lindbergichthys nudifrons	Euphausia superba
+Lindbergichthys nudifrons	Euphausia superba
+Lindbergichthys nudifrons	Euphausia superba
+Lindbergichthys nudifrons	Euphausia superba
+Lindbergichthys nudifrons	Euphausia superba
+Lindbergichthys nudifrons	Euphausia superba
+Lindbergichthys nudifrons	Gammaridea
+Lindbergichthys nudifrons	Gammaridea
+Lindbergichthys nudifrons	Gastropoda
+Lindbergichthys nudifrons	Gastropoda
+Lindbergichthys nudifrons	Gastropoda
+Lindbergichthys nudifrons	Glyptonotus antarcticus
+Lindbergichthys nudifrons	Gondogeneia antarctica
+Lindbergichthys nudifrons	Gondogeneia antarctica
+Lindbergichthys nudifrons	Gondogeneia antarctica
+Lindbergichthys nudifrons	Nereididae
+Lindbergichthys nudifrons	Ostracoda
+Lindbergichthys nudifrons	Polychaeta
+Lindbergichthys nudifrons	Polychaeta
+Lindbergichthys nudifrons	Polychaeta
+Lindbergichthys nudifrons	Polychaeta
+Lindbergichthys nudifrons	Polychaeta
+Lindbergichthys nudifrons	Polychaeta
+Lindbergichthys nudifrons	Prostebbingia gracilis
+Lindbergichthys nudifrons	Prostebbingia sp.
+Lindbergichthys nudifrons	Pseudorchomene plebs
+Lindbergichthys nudifrons	Salpidae
+Lindbergichthys nudifrons	Serolis sp.
+Lindbergichthys nudifrons	Tanaidacea
+Lindbergichthys nudifrons	Cumacea
+Lindbergichthys nudifrons	Cumacea
+Malacobelemnon daytoni	Phytoplankton
+Malacobelemnon daytoni	Zooplankton
+Margarella antarctica	Benthic Diatomea
+Mysida	Copepoda
+Mysida	Fresh detritus
+Mysida	Fresh detritus
+Mysida	Necromass
+Mysida	Ostracoda
+Mysida	Phytoplankton
+Mysida	Zooplankton
+Mysida	Zooplankton
+Mysida	Benthic Diatomea
+Mysida	Oligochaeta
+Nacella concinna	Ascoseira mirabilis
+Nacella concinna	Ulothrix sp.
+Nacella concinna	Epiphytic Diatomea
+Nacella concinna	Benthic Diatomea
+Nemertea	Aged detritus
+Nemertea	Necromass
+Nemertea	Copepoda
+Nemertea	Gammaridea
+Nemertea	Nereididae
+Nemertea	Polynoidae
+Nemertea	Spionidae
+Nemertea	Terebellidae
+Nemertea	Nemertea
+Nemertea	Oligochaeta
+Neobuccinum eatoni	Laternula elliptica
+Neobuccinum eatoni	Laternula elliptica
+Neobuccinum eatoni	Laternula elliptica
+Neobuccinum eatoni	Laternula elliptica
+Neobuccinum eatoni	Necromass
+Neobuccinum eatoni	Necromass
+Nereididae	Aged detritus
+Nereididae	Necromass
+Nereididae	Aged detritus
+Nereididae	Cumacea
+Nereididae	Gammaridea
+Nereididae	Hydrozoa
+Nereididae	Nereididae
+Nereididae	Spionidae
+Nereididae	Benthic Diatomea
+Nereididae	Aged detritus
+Nereididae	Zooplankton
+Nereididae	Aged detritus
+Nereididae	Gigartina skottsbergii
+Nereididae	Fresh detritus
+Nereididae	Aged detritus
+Nereididae	Fresh detritus
+Nereididae	Benthic Diatomea
+Nereididae	Oligochaeta
+Nereididae	Oligochaeta
+Notothenia coriiceps	Nemertea
+Notothenia coriiceps	Nemertea
+Notothenia coriiceps	Adenocystis utricularis
+Notothenia coriiceps	Adenocystis utricularis
+Notothenia coriiceps	Adenocystis utricularis
+Notothenia coriiceps	Adenocystis utricularis
+Notothenia coriiceps	Adenocystis utricularis
+Notothenia coriiceps	Aequiyoldia eightsii
+Notothenia coriiceps	Aequiyoldia eightsii
+Notothenia coriiceps	Aged detritus
+Notothenia coriiceps	Ascidiacea
+Notothenia coriiceps	Ascidiacea
+Notothenia coriiceps	Ascidiacea
+Notothenia coriiceps	Ascidiacea
+Notothenia coriiceps	Ascidiacea
+Notothenia coriiceps	Ascidiacea
+Notothenia coriiceps	Ascoseira mirabilis
+Notothenia coriiceps	Ascoseira mirabilis
+Notothenia coriiceps	Ascoseira mirabilis
+Notothenia coriiceps	Ascoseira mirabilis
+Notothenia coriiceps	Bovallia gigantea
+Notothenia coriiceps	Bovallia gigantea
+Notothenia coriiceps	Bovallia gigantea
+Notothenia coriiceps	Bovallia gigantea
+Notothenia coriiceps	Bovallia gigantea
+Notothenia coriiceps	Bovallia gigantea
+Notothenia coriiceps	Bovallia gigantea
+Notothenia coriiceps	Bryozoa
+Notothenia coriiceps	Callophyllis atrosanguinea 
+Notothenia coriiceps	Cephalopoda
+Notothenia coriiceps	Cephalopoda
+Notothenia coriiceps	Cephalopoda
+Notothenia coriiceps	Cephalopoda
+Notothenia coriiceps	Charcotia obesa
+Notothenia coriiceps	Charcotia obesa
+Notothenia coriiceps	Cheirimedon femoratus
+Notothenia coriiceps	Cheirimedon femoratus
+Notothenia coriiceps	Cheirimedon femoratus
+Notothenia coriiceps	Cheirimedon femoratus
+Notothenia coriiceps	Copepoda
+Notothenia coriiceps	Copepoda
+Notothenia coriiceps	Copepoda
+Notothenia coriiceps	Copepoda
+Notothenia coriiceps	Copepoda
+Notothenia coriiceps	Curdiea racovitzae
+Notothenia coriiceps	Curdiea racovitzae
+Notothenia coriiceps	Desmarestia anceps
+Notothenia coriiceps	Desmarestia anceps
+Notothenia coriiceps	Desmarestia antarctica
+Notothenia coriiceps	Desmarestia antarctica
+Notothenia coriiceps	Desmarestia antarctica
+Notothenia coriiceps	Desmarestia antarctica
+Notothenia coriiceps	Desmarestia antarctica
+Notothenia coriiceps	Desmarestia antarctica
+Notothenia coriiceps	Desmarestia menziesii
+Notothenia coriiceps	Desmarestia menziesii
+Notothenia coriiceps	Desmarestia menziesii
+Notothenia coriiceps	Desmarestia menziesii
+Notothenia coriiceps	Desmarestia menziesii
+Notothenia coriiceps	Desmarestia menziesii
+Notothenia coriiceps	Desmarestia menziesii
+Notothenia coriiceps	Desmarestia menziesii
+Notothenia coriiceps	Djerboa furcipes
+Notothenia coriiceps	Eatoniella sp.
+Notothenia coriiceps	Euphausia superba
+Notothenia coriiceps	Euphausia superba
+Notothenia coriiceps	Euphausia superba
+Notothenia coriiceps	Euphausia superba
+Notothenia coriiceps	Euphausia superba
+Notothenia coriiceps	Euphausia superba
+Notothenia coriiceps	Euphausia superba
+Notothenia coriiceps	Euphausia superba
+Notothenia coriiceps	Eurymera monticulosa
+Notothenia coriiceps	Eurymera monticulosa
+Notothenia coriiceps	Eurymera monticulosa
+Notothenia coriiceps	Eurymera monticulosa
+Notothenia coriiceps	Eurymera monticulosa
+Notothenia coriiceps	Gammaridea
+Notothenia coriiceps	Gammaridea
+Notothenia coriiceps	Gammaridea
+Notothenia coriiceps	Gastropoda
+Notothenia coriiceps	Gastropoda
+Notothenia coriiceps	Gastropoda
+Notothenia coriiceps	Gastropoda
+Notothenia coriiceps	Gastropoda
+Notothenia coriiceps	Gastropoda
+Notothenia coriiceps	Georgiella confluens 
+Notothenia coriiceps	Georgiella confluens 
+Notothenia coriiceps	Gigartina skottsbergii
+Notothenia coriiceps	Gigartina skottsbergii
+Notothenia coriiceps	Gigartina skottsbergii
+Notothenia coriiceps	Gitanopsis squamosa
+Notothenia coriiceps	Gitanopsis squamosa
+Notothenia coriiceps	Glyptonotus antarcticus
+Notothenia coriiceps	Glyptonotus antarcticus
+Notothenia coriiceps	Glyptonotus antarcticus
+Notothenia coriiceps	Glyptonotus antarcticus
+Notothenia coriiceps	Glyptonotus antarcticus
+Notothenia coriiceps	Glyptonotus antarcticus
+Notothenia coriiceps	Glyptonotus antarcticus
+Notothenia coriiceps	Gondogeneia antarctica
+Notothenia coriiceps	Gondogeneia antarctica
+Notothenia coriiceps	Gondogeneia antarctica
+Notothenia coriiceps	Gondogeneia antarctica
+Notothenia coriiceps	Gondogeneia antarctica
+Notothenia coriiceps	Gondogeneia antarctica
+Notothenia coriiceps	Hemiarthrum setulosum
+Notothenia coriiceps	Hippomedon kergueleni
+Notothenia coriiceps	Hippomedon kergueleni
+Notothenia coriiceps	Hydrozoa
+Notothenia coriiceps	Hydrozoa
+Notothenia coriiceps	Hyperiidea
+Notothenia coriiceps	Hyperiidea
+Notothenia coriiceps	Hyperiidea
+Notothenia coriiceps	Iridaea cordata
+Notothenia coriiceps	Iridaea cordata
+Notothenia coriiceps	Iridaea cordata
+Notothenia coriiceps	Iridaea cordata
+Notothenia coriiceps	Lambia antarctica 
+Notothenia coriiceps	Lambia antarctica 
+Notothenia coriiceps	Laternula elliptica
+Notothenia coriiceps	Margarella antarctica
+Notothenia coriiceps	Margarella antarctica
+Notothenia coriiceps	Margarella antarctica
+Notothenia coriiceps	Monostroma hariotii
+Notothenia coriiceps	Mysida
+Notothenia coriiceps	Nacella concinna
+Notothenia coriiceps	Nacella concinna
+Notothenia coriiceps	Nacella concinna
+Notothenia coriiceps	Nacella concinna
+Notothenia coriiceps	Nacella concinna
+Notothenia coriiceps	Necromass
+Notothenia coriiceps	Nemertea
+Notothenia coriiceps	Nereididae
+Notothenia coriiceps	Nereididae
+Notothenia coriiceps	Nereididae
+Notothenia coriiceps	Nereididae
+Notothenia coriiceps	Neuroglossum delesseriae
+Notothenia coriiceps	Octopoda
+Notothenia coriiceps	Octopoda
+Notothenia coriiceps	Ophionotus victoriae
+Notothenia coriiceps	Oradarea bidentata
+Notothenia coriiceps	Oradarea bidentata
+Notothenia coriiceps	Oradarea bidentata
+Notothenia coriiceps	Oradarea bidentata
+Notothenia coriiceps	Orchomenella sp.
+Notothenia coriiceps	Ostracoda
+Notothenia coriiceps	Ostracoda
+Notothenia coriiceps	Palmaria decipiens
+Notothenia coriiceps	Palmaria decipiens
+Notothenia coriiceps	Palmaria decipiens
+Notothenia coriiceps	Palmaria decipiens
+Notothenia coriiceps	Pantoneura plocamioides 
+Notothenia coriiceps	Pantoneura plocamioides 
+Notothenia coriiceps	Paradexamine fissicauda
+Notothenia coriiceps	Paradexamine fissicauda
+Notothenia coriiceps	Paradexamine sp.
+Notothenia coriiceps	Paradexamine sp.
+Notothenia coriiceps	Paradexamine sp.
+Notothenia coriiceps	Pariphimedia integricauda
+Notothenia coriiceps	Pariphimedia integricauda
+Notothenia coriiceps	Pariphimedia integricauda
+Notothenia coriiceps	Pariphimedia integricauda
+Notothenia coriiceps	Phaeurus antarcticus 
+Notothenia coriiceps	Phaeurus antarcticus 
+Notothenia coriiceps	Phaeurus antarcticus 
+Notothenia coriiceps	Phaeurus antarcticus 
+Notothenia coriiceps	Picconiella plumosa 
+Notothenia coriiceps	Plocamium cartilagineum
+Notothenia coriiceps	Plocamium cartilagineum
+Notothenia coriiceps	Plocamium cartilagineum
+Notothenia coriiceps	Plocamium cartilagineum
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polychaeta
+Notothenia coriiceps	Polyplacophora
+Notothenia coriiceps	Polyplacophora
+Notothenia coriiceps	Polyplacophora
+Notothenia coriiceps	Porphyra plocamiestris 
+Notothenia coriiceps	Probolisca ovata
+Notothenia coriiceps	Probolisca ovata
+Notothenia coriiceps	Prostebbingia gracilis
+Notothenia coriiceps	Prostebbingia gracilis
+Notothenia coriiceps	Prostebbingia sp.
+Notothenia coriiceps	Prostebbingia sp.
+Notothenia coriiceps	Prostebbingia sp.
+Notothenia coriiceps	Pseudorchomene plebs
+Notothenia coriiceps	Salpidae
+Notothenia coriiceps	Salpidae
+Notothenia coriiceps	Salpidae
+Notothenia coriiceps	Salpidae
+Notothenia coriiceps	Serolis sp.
+Notothenia coriiceps	Serolis sp.
+Notothenia coriiceps	Serolis sp.
+Notothenia coriiceps	Serolis sp.
+Notothenia coriiceps	Serolis sp.
+Notothenia coriiceps	Serolis sp.
+Notothenia coriiceps	Tanaidacea
+Notothenia coriiceps	Tanaidacea
+Notothenia coriiceps	Tanaidacea
+Notothenia coriiceps	Tanaidacea
+Notothenia coriiceps	Tanaidacea
+Notothenia coriiceps	Tanaidacea
+Notothenia coriiceps	Trematocarpus antarcticus
+Notothenia coriiceps	Urospora penicilliformis
+Notothenia coriiceps	Urospora penicilliformis
+Notothenia coriiceps	Nemertea
+Notothenia coriiceps	Nemertea
+Notothenia rossii	Aged detritus
+Notothenia rossii	Aged detritus
+Notothenia rossii	Ascidiacea
+Notothenia rossii	Bovallia gigantea
+Notothenia rossii	Bovallia gigantea
+Notothenia rossii	Charcotia obesa
+Notothenia rossii	Cheirimedon femoratus
+Notothenia rossii	Cheirimedon femoratus
+Notothenia rossii	Copepoda
+Notothenia rossii	Desmarestia anceps
+Notothenia rossii	Desmarestia antarctica
+Notothenia rossii	Desmarestia menziesii
+Notothenia rossii	Djerboa furcipes
+Notothenia rossii	Euphausia superba
+Notothenia rossii	Euphausia superba
+Notothenia rossii	Euphausia superba
+Notothenia rossii	Euphausia superba
+Notothenia rossii	Euphausia superba
+Notothenia rossii	Euphausia superba
+Notothenia rossii	Euphausia superba
+Notothenia rossii	Eurymera monticulosa
+Notothenia rossii	Eurymera monticulosa
+Notothenia rossii	Gammaridea
+Notothenia rossii	Gammaridea
+Notothenia rossii	Gammaridea
+Notothenia rossii	Gastropoda
+Notothenia rossii	Gastropoda
+Notothenia rossii	Gastropoda
+Notothenia rossii	Gastropoda
+Notothenia rossii	Georgiella confluens 
+Notothenia rossii	Gigartina skottsbergii
+Notothenia rossii	Gitanopsis squamosa
+Notothenia rossii	Gondogeneia antarctica
+Notothenia rossii	Hippomedon kergueleni
+Notothenia rossii	Hippomedon kergueleni
+Notothenia rossii	Hydrozoa
+Notothenia rossii	Hydrozoa
+Notothenia rossii	Hyperiidea
+Notothenia rossii	Hyperiidea
+Notothenia rossii	Hyperiidea
+Notothenia rossii	Iridaea cordata
+Notothenia rossii	Lindbergichthys nudifrons
+Notothenia rossii	Myriogramme manginii
+Notothenia rossii	Nacella concinna
+Notothenia rossii	Nereididae
+Notothenia rossii	Nereididae
+Notothenia rossii	Nereididae
+Notothenia rossii	Octopoda
+Notothenia rossii	Octopoda
+Notothenia rossii	Oradarea bidentata
+Notothenia rossii	Orchomenella sp.
+Notothenia rossii	Ostracoda
+Notothenia rossii	Palmaria decipiens
+Notothenia rossii	Paradexamine sp.
+Notothenia rossii	Pariphimedia integricauda
+Notothenia rossii	Plocamium cartilagineum
+Notothenia rossii	Polychaeta
+Notothenia rossii	Polychaeta
+Notothenia rossii	Polychaeta
+Notothenia rossii	Polychaeta
+Notothenia rossii	Polychaeta
+Notothenia rossii	Polychaeta
+Notothenia rossii	Polychaeta
+Notothenia rossii	Probolisca ovata
+Notothenia rossii	Prostebbingia gracilis
+Notothenia rossii	Prostebbingia sp.
+Notothenia rossii	Salpidae
+Notothenia rossii	Salpidae
+Notothenia rossii	Salpidae
+Notothenia rossii	Salpidae
+Notothenia rossii	Cumacea
+Octopoda	Glyptonotus antarcticus
+Octopoda	Hippomedon kergueleni
+Octopoda	Polychaeta
+Octopoda	Polyplacophora
+Octopoda	Sterechinus neumayeri
+Octopoda	Sterechinus neumayeri
+Odontaster meridionalis	Chalinidae
+Odontaster meridionalis	Chalinidae
+Odontaster meridionalis	Chalinidae
+Odontaster meridionalis	Neobuccinum eatoni
+Odontaster meridionalis	Porifera
+Odontaster meridionalis	Porifera
+Odontaster meridionalis	Rosella antartica
+Odontaster meridionalis	Rosella antartica
+Odontaster meridionalis	Rosella antartica
+Odontaster meridionalis	Rosella antartica
+Odontaster meridionalis	Rossella sp.
+Odontaster meridionalis	Stylo_Myca
+Odontaster meridionalis	Stylo_Myca
+Odontaster meridionalis	Stylo_Myca
+Odontaster meridionalis	Stylo_Myca
+Odontaster validus	Aequiyoldia eightsii
+Odontaster validus	Aged detritus
+Odontaster validus	Aged detritus
+Odontaster validus	Bryozoa
+Odontaster validus	Bryozoa
+Odontaster validus	Bryozoa
+Odontaster validus	Chalinidae
+Odontaster validus	Chalinidae
+Odontaster validus	Chalinidae
+Odontaster validus	Doris kerguelenensis
+Odontaster validus	Fresh detritus
+Odontaster validus	Fresh detritus
+Odontaster validus	Fresh detritus
+Odontaster validus	Fresh detritus
+Odontaster validus	Gastropoda
+Odontaster validus	Gigartina skottsbergii
+Odontaster validus	Glyptonotus antarcticus
+Odontaster validus	Glyptonotus antarcticus
+Odontaster validus	Hydrozoa
+Odontaster validus	Hydrozoa
+Odontaster validus	Hydrozoa
+Odontaster validus	Laternula elliptica
+Odontaster validus	Laternula elliptica
+Odontaster validus	Laternula elliptica
+Odontaster validus	Laternula elliptica
+Odontaster validus	Laternula elliptica
+Odontaster validus	Laternula elliptica
+Odontaster validus	Necromass
+Odontaster validus	Necromass
+Odontaster validus	Necromass
+Odontaster validus	Neobuccinum eatoni
+Odontaster validus	Nereididae
+Odontaster validus	Ostracoda
+Odontaster validus	Ostracoda
+Odontaster validus	Palmaria decipiens
+Odontaster validus	Polychaeta
+Odontaster validus	Polychaeta
+Odontaster validus	Porifera
+Odontaster validus	Porifera
+Odontaster validus	Rosella antartica
+Odontaster validus	Rosella antartica
+Odontaster validus	Rosella antartica
+Odontaster validus	Rosella antartica
+Odontaster validus	Rossella sp.
+Odontaster validus	Rossella sp.
+Odontaster validus	Sterechinus neumayeri
+Odontaster validus	Sterechinus neumayeri
+Odontaster validus	Sterechinus neumayeri
+Odontaster validus	Stylo_Myca
+Odontaster validus	Stylo_Myca
+Odontaster validus	Stylo_Myca
+Odontaster validus	Stylo_Myca
+Odontaster validus	Stylo_Myca
+Odontaster validus	Benthic Diatomea
+Odontaster validus	Benthic Diatomea
+Odontaster validus	Benthic Diatomea
+Oligochaeta	Aged detritus
+Oligochaeta	Aged detritus
+Ophionotus victoriae	Nemertea
+Ophionotus victoriae	Cumacea
+Ophionotus victoriae	Aequiyoldia eightsii
+Ophionotus victoriae	Aged detritus
+Ophionotus victoriae	Aged detritus
+Ophionotus victoriae	Aged detritus
+Ophionotus victoriae	Aglaophamus trissophyllus
+Ophionotus victoriae	Ascidiacea
+Ophionotus victoriae	Ascidiacea
+Ophionotus victoriae	Bryozoa
+Ophionotus victoriae	Bryozoa
+Ophionotus victoriae	Bryozoa
+Ophionotus victoriae	Chalinidae
+Ophionotus victoriae	Copepoda
+Ophionotus victoriae	Copepoda
+Ophionotus victoriae	Euphausia superba
+Ophionotus victoriae	Euphausia superba
+Ophionotus victoriae	Euphausia superba
+Ophionotus victoriae	Euphausia superba
+Ophionotus victoriae	Fresh detritus
+Ophionotus victoriae	Fresh detritus
+Ophionotus victoriae	Gammaridea
+Ophionotus victoriae	Gastropoda
+Ophionotus victoriae	Hydrozoa
+Ophionotus victoriae	Hydrozoa
+Ophionotus victoriae	Hydrozoa
+Ophionotus victoriae	Laternula elliptica
+Ophionotus victoriae	Mysida
+Ophionotus victoriae	Mysida
+Ophionotus victoriae	Mysida
+Ophionotus victoriae	Necromass
+Ophionotus victoriae	Necromass
+Ophionotus victoriae	Necromass
+Ophionotus victoriae	Necromass
+Ophionotus victoriae	Neobuccinum eatoni
+Ophionotus victoriae	Nereididae
+Ophionotus victoriae	Ophionotus victoriae
+Ophionotus victoriae	Ophionotus victoriae
+Ophionotus victoriae	Ostracoda
+Ophionotus victoriae	Polychaeta
+Ophionotus victoriae	Polychaeta
+Ophionotus victoriae	Polychaeta
+Ophionotus victoriae	Polynoidae
+Ophionotus victoriae	Porifera
+Ophionotus victoriae	Porifera
+Ophionotus victoriae	Porifera
+Ophionotus victoriae	Prostebbingia sp.
+Ophionotus victoriae	Rosella antartica
+Ophionotus victoriae	Rossella sp.
+Ophionotus victoriae	Sterechinus neumayeri
+Ophionotus victoriae	Stylo_Myca
+Ophionotus victoriae	Stylo_Myca
+Ophionotus victoriae	Tanaidacea
+Ophionotus victoriae	Benthic Diatomea
+Ophionotus victoriae	Benthic Diatomea
+Ophionotus victoriae	Benthic Diatomea
+Oradarea bidentata	Fresh detritus
+Oradarea bidentata	Palmaria decipiens
+Oradarea bidentata	Benthic Diatomea
+Orchomenella sp.	Aged detritus
+Orchomenella sp.	Copepoda
+Orchomenella sp.	Fresh detritus
+Orchomenella sp.	Necromass
+Orchomenella sp.	Necromass
+Orchomenella sp.	Necromass
+Orchomenella sp.	Necromass
+Orchomenella sp.	Necromass
+Orchomenella sp.	Porifera
+Orchomenella sp.	Benthic Diatomea
+Ostracoda	Aged detritus
+Ostracoda	Fresh detritus
+Ostracoda	Phytoplankton
+Ostracoda	Zooplankton
+Ostracoda	Benthic Diatomea
+Ostracoda	Fresh detritus
+Ostracoda	Benthic Diatomea
+Ostracoda	Fresh detritus
+Ostracoda	Phytoplankton
+Ostracoda	Fresh detritus
+Ostracoda	Zooplankton
+Ostracoda	Fresh detritus
+Ostracoda	Phytoplankton
+Ostracoda	Zooplankton
+Ostracoda	Benthic Diatomea
+Parachaenichthys charcoti	Euphausia superba
+Parachaenichthys charcoti	Euphausia superba
+Parachaenichthys charcoti	Euphausia superba
+Parachaenichthys charcoti	Euphausia superba
+Parachaenichthys charcoti	Mysida
+Paradexamine fissicauda	Fresh detritus
+Paradexamine fissicauda	Geminocarpus geminatus
+Paradexamine fissicauda	Palmaria decipiens
+Paradexamine fissicauda	Phytoplankton
+Paradexamine fissicauda	Epiphytic Diatomea
+Paradexamine fissicauda	Necromass
+Paradexamine fissicauda	Aged detritus
+Paradexamine sp.	Fresh detritus
+Parborlasia corrugatus	Chalinidae
+Parborlasia corrugatus	Glyptonotus antarcticus
+Parborlasia corrugatus	Laternula elliptica
+Parborlasia corrugatus	Laternula elliptica
+Parborlasia corrugatus	Nacella concinna
+Parborlasia corrugatus	Necromass
+Parborlasia corrugatus	Necromass
+Parborlasia corrugatus	Necromass
+Parborlasia corrugatus	Necromass
+Parborlasia corrugatus	Polychaeta
+Parborlasia corrugatus	Porifera
+Parborlasia corrugatus	Prostebbingia sp.
+Parborlasia corrugatus	Rosella antartica
+Parborlasia corrugatus	Rossella sp.
+Parborlasia corrugatus	Serolis sp.
+Parborlasia corrugatus	Stylo_Myca
+Parborlasia corrugatus	Stylo_Myca
+Parborlasia corrugatus	Benthic Diatomea
+Pariphimedia integricauda	Fresh detritus
+Pariphimedia integricauda	Palmaria decipiens
+Pariphimedia integricauda	Necromass
+Perknaster aurorae	Stylo_Myca
+Perknaster fuscus antarticus	Necromass
+Perknaster fuscus antarticus	Necromass
+Perknaster fuscus antarticus	Necromass
+Perknaster fuscus antarticus	Porifera
+Perknaster fuscus antarticus	Porifera
+Perknaster fuscus antarticus	Porifera
+Perknaster fuscus antarticus	Rosella antartica
+Perknaster fuscus antarticus	Stylo_Myca
+Perknaster fuscus antarticus	Stylo_Myca
+Perknaster fuscus antarticus	Stylo_Myca
+Perknaster fuscus antarticus	Stylo_Myca
+Perknaster fuscus antarticus	Stylo_Myca
+Perknaster fuscus antarticus	Stylo_Myca
+Polychaeta	Aged detritus
+Polychaeta	Necromass
+Polychaeta	Ostracoda
+Polychaeta	Cumacea
+Polychaeta	Aged detritus
+Polychaeta	Copepoda
+Polychaeta	Fresh detritus
+Polychaeta	Hyperiidea
+Polychaeta	Mysida
+Polychaeta	Ostracoda
+Polychaeta	Aged detritus
+Polychaeta	Aged detritus
+Polynoidae	Aged detritus
+Polynoidae	Aged detritus
+Polynoidae	Aged detritus
+Polynoidae	Bryozoa
+Polynoidae	Bryozoa
+Polynoidae	Copepoda
+Polynoidae	Gammaridea
+Polynoidae	Gammaridea
+Polynoidae	Gammaridea
+Polynoidae	Gastropoda
+Polynoidae	Hydrozoa
+Polynoidae	Hydrozoa
+Polynoidae	Necromass
+Polynoidae	Nereididae
+Polynoidae	Ostracoda
+Polynoidae	Ostracoda
+Polynoidae	Ostracoda
+Polynoidae	Polychaeta
+Polynoidae	Polychaeta
+Polynoidae	Polychaeta
+Polynoidae	Polynoidae
+Polynoidae	Polynoidae
+Polynoidae	Porifera
+Polynoidae	Porifera
+Polynoidae	Porifera
+Polynoidae	Benthic Diatomea
+Polynoidae	Benthic Diatomea
+Polyplacophora	Benthic Diatomea
+Polyplacophora	Bryozoa
+Polyplacophora	Bryozoa
+Polyplacophora	Epiphytic Diatomea
+Polyplacophora	Epiphytic Diatomea
+Polyplacophora	Fresh detritus
+Polyplacophora	Fresh detritus
+Polyplacophora	Fresh detritus
+Polyplacophora	Phytoplankton
+Polyplacophora	Porifera
+Polyplacophora	Porifera
+Porifera	Fresh detritus
+Porifera	Fresh detritus
+Porifera	Fresh detritus
+Porifera	Benthic Diatomea
+Priapulida	Nereididae
+Priapulida	Polychaeta
+Priapulida	Benthic Diatomea
+Probolisca ovata	Fresh detritus
+Prostebbingia gracilis	Desmarestia anceps
+Prostebbingia gracilis	Desmarestia antarctica
+Prostebbingia gracilis	Desmarestia menziesii
+Prostebbingia gracilis	Fresh detritus
+Prostebbingia gracilis	Gigartina skottsbergii
+Prostebbingia gracilis	Iridaea cordata
+Prostebbingia gracilis	Myriogramme manginii
+Prostebbingia gracilis	Palmaria decipiens
+Prostebbingia gracilis	Palmaria decipiens
+Prostebbingia gracilis	Phytoplankton
+Prostebbingia gracilis	Plocamium cartilagineum
+Prostebbingia sp.	Desmarestia anceps
+Prostebbingia sp.	Desmarestia antarctica
+Prostebbingia sp.	Desmarestia menziesii
+Prostebbingia sp.	Fresh detritus
+Prostebbingia sp.	Gigartina skottsbergii
+Prostebbingia sp.	Iridaea cordata
+Prostebbingia sp.	Myriogramme manginii
+Prostebbingia sp.	Palmaria decipiens
+Prostebbingia sp.	Palmaria decipiens
+Prostebbingia sp.	Phytoplankton
+Prostebbingia sp.	Plocamium cartilagineum
+Pseudorchomene plebs	Necromass
+Pseudorchomene plebs	Necromass
+Pseudorchomene plebs	Necromass
+Pseudorchomene plebs	Necromass
+Pseudorchomene plebs	Necromass
+Rosella antartica	Fresh detritus
+Rosella antartica	Benthic Diatomea
+Rossella sp.	Fresh detritus
+Rossella sp.	Benthic Diatomea
+Salpidae	Aged detritus
+Salpidae	Cephalopoda
+Salpidae	Copepoda
+Salpidae	Copepoda
+Salpidae	Fresh detritus
+Salpidae	Hyperiidea
+Salpidae	Ostracoda
+Salpidae	Phytoplankton
+Salpidae	Phytoplankton
+Salpidae	Phytoplankton
+Salpidae	Phytoplankton
+Salpidae	Zooplankton
+Salpidae	Zooplankton
+Salpidae	Zooplankton
+Serolis sp.	Necromass
+Serolis sp.	Polychaeta
+Spionidae	Aged detritus
+Spionidae	Aged detritus
+Spionidae	Benthic Diatomea
+Sterechinus neumayeri	Aged detritus
+Sterechinus neumayeri	Bovallia gigantea
+Sterechinus neumayeri	Bryozoa
+Sterechinus neumayeri	Bryozoa
+Sterechinus neumayeri	Bryozoa
+Sterechinus neumayeri	Chalinidae
+Sterechinus neumayeri	Fresh detritus
+Sterechinus neumayeri	Hydrozoa
+Sterechinus neumayeri	Hydrozoa
+Sterechinus neumayeri	Necromass
+Sterechinus neumayeri	Paradexamine sp.
+Sterechinus neumayeri	Polychaeta
+Sterechinus neumayeri	Polychaeta
+Sterechinus neumayeri	Polychaeta
+Sterechinus neumayeri	Porifera
+Sterechinus neumayeri	Porifera
+Sterechinus neumayeri	Prostebbingia sp.
+Sterechinus neumayeri	Rosella antartica
+Sterechinus neumayeri	Rossella sp.
+Sterechinus neumayeri	Stylo_Myca
+Sterechinus neumayeri	Stylo_Myca
+Sterechinus neumayeri	Zooplankton
+Sterechinus neumayeri	Benthic Diatomea
+Sterechinus neumayeri	Benthic Diatomea
+Sterechinus neumayeri	Benthic Diatomea
+Stylo_Myca	Fresh detritus
+Stylo_Myca	Fresh detritus
+Stylo_Myca	Phytoplankton
+Stylo_Myca	Benthic Diatomea
+Stylo_Myca	Benthic Diatomea
+Tanaidacea	Aged detritus
+Tanaidacea	Aged detritus
+Tanaidacea	Aged detritus
+Tanaidacea	Fresh detritus
+Tanaidacea	Benthic Diatomea
+Tanaidacea	Benthic Diatomea
+Tanaidacea	Benthic Diatomea
+Tanaidacea	Benthic Diatomea
+Tanaidacea	Aged detritus
+Tanaidacea	Phytoplankton
+Terebellidae	Fresh detritus
+Terebellidae	Fresh detritus
+Terebellidae	Zooplankton
+Terebellidae	Aged detritus
+Terebellidae	Aged detritus
+Terebellidae	Benthic Diatomea
+Terebellidae	Benthic Diatomea
+Terebellidae	Benthic Diatomea
+Trematomus bernacchii	Oligochaeta
+Trematomus bernacchii	Nemertea
+Trematomus bernacchii	Aequiyoldia eightsii
+Trematomus bernacchii	Aglaophamus trissophyllus
+Trematomus bernacchii	Aglaophamus trissophyllus
+Trematomus bernacchii	Aglaophamus trissophyllus
+Trematomus bernacchii	Ascidiacea
+Trematomus bernacchii	Barrukia cristata
+Trematomus bernacchii	Barrukia cristata
+Trematomus bernacchii	Barrukia cristata
+Trematomus bernacchii	Bovallia gigantea
+Trematomus bernacchii	Bryozoa
+Trematomus bernacchii	Copepoda
+Trematomus bernacchii	Copepoda
+Trematomus bernacchii	Copepoda
+Trematomus bernacchii	Cumacea
+Trematomus bernacchii	Djerboa furcipes
+Trematomus bernacchii	Euphausia superba
+Trematomus bernacchii	Euphausia superba
+Trematomus bernacchii	Euphausia superba
+Trematomus bernacchii	Euphausia superba
+Trematomus bernacchii	Euphausia superba
+Trematomus bernacchii	Euphausia superba
+Trematomus bernacchii	Euphausia superba
+Trematomus bernacchii	Gammaridea
+Trematomus bernacchii	Gammaridea
+Trematomus bernacchii	Gammaridea
+Trematomus bernacchii	Gastropoda
+Trematomus bernacchii	Gastropoda
+Trematomus bernacchii	Gastropoda
+Trematomus bernacchii	Gastropoda
+Trematomus bernacchii	Gastropoda
+Trematomus bernacchii	Gastropoda
+Trematomus bernacchii	Gastropoda
+Trematomus bernacchii	Glyptonotus antarcticus
+Trematomus bernacchii	Glyptonotus antarcticus
+Trematomus bernacchii	Glyptonotus antarcticus
+Trematomus bernacchii	Glyptonotus antarcticus
+Trematomus bernacchii	Gondogeneia antarctica
+Trematomus bernacchii	Hippomedon kergueleni
+Trematomus bernacchii	Hydrozoa
+Trematomus bernacchii	Hydrozoa
+Trematomus bernacchii	Hyperiidea
+Trematomus bernacchii	Hyperiidea
+Trematomus bernacchii	Hyperiidea
+Trematomus bernacchii	Hyperiidea
+Trematomus bernacchii	Hyperiidea
+Trematomus bernacchii	Hyperiidea
+Trematomus bernacchii	Laternula elliptica
+Trematomus bernacchii	Laternula elliptica
+Trematomus bernacchii	Margarella antarctica
+Trematomus bernacchii	Mysida
+Trematomus bernacchii	Mysida
+Trematomus bernacchii	Mysida
+Trematomus bernacchii	Nacella concinna
+Trematomus bernacchii	Nacella concinna
+Trematomus bernacchii	Neobuccinum eatoni
+Trematomus bernacchii	Neobuccinum eatoni
+Trematomus bernacchii	Nereididae
+Trematomus bernacchii	Orchomenella sp.
+Trematomus bernacchii	Orchomenella sp.
+Trematomus bernacchii	Orchomenella sp.
+Trematomus bernacchii	Ostracoda
+Trematomus bernacchii	Ostracoda
+Trematomus bernacchii	Ostracoda
+Trematomus bernacchii	Ostracoda
+Trematomus bernacchii	Polynoidae
+Trematomus bernacchii	Polynoidae
+Trematomus bernacchii	Polynoidae
+Trematomus bernacchii	Porifera
+Trematomus bernacchii	Priapulida
+Trematomus bernacchii	Pseudorchomene plebs
+Trematomus bernacchii	Pseudorchomene plebs
+Trematomus bernacchii	Spionidae
+Trematomus bernacchii	Spionidae
+Trematomus bernacchii	Sterechinus neumayeri
+Trematomus bernacchii	Tanaidacea
+Trematomus bernacchii	Tanaidacea
+Trematomus bernacchii	Tanaidacea
+Trematomus bernacchii	Tanaidacea
+Trematomus bernacchii	Tanaidacea
+Trematomus bernacchii	Terebellidae
+Trematomus bernacchii	Terebellidae
+Trematomus bernacchii	Terebellidae
+Trematomus bernacchii	Zooplankton
+Trematomus newnesi	Aequiyoldia eightsii
+Trematomus newnesi	Aglaophamus trissophyllus
+Trematomus newnesi	Bovallia gigantea
+Trematomus newnesi	Bovallia gigantea
+Trematomus newnesi	Cheirimedon femoratus
+Trematomus newnesi	Cheirimedon femoratus
+Trematomus newnesi	Cheirimedon femoratus
+Trematomus newnesi	Copepoda
+Trematomus newnesi	Copepoda
+Trematomus newnesi	Copepoda
+Trematomus newnesi	Copepoda
+Trematomus newnesi	Copepoda
+Trematomus newnesi	Copepoda
+Trematomus newnesi	Djerboa furcipes
+Trematomus newnesi	Djerboa furcipes
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Euphausia superba
+Trematomus newnesi	Gammaridea
+Trematomus newnesi	Gammaridea
+Trematomus newnesi	Gammaridea
+Trematomus newnesi	Gammaridea
+Trematomus newnesi	Gammaridea
+Trematomus newnesi	Gammaridea
+Trematomus newnesi	Gammaridea
+Trematomus newnesi	Gammaridea
+Trematomus newnesi	Gastropoda
+Trematomus newnesi	Gastropoda
+Trematomus newnesi	Gastropoda
+Trematomus newnesi	Gastropoda
+Trematomus newnesi	Gastropoda
+Trematomus newnesi	Gastropoda
+Trematomus newnesi	Gitanopsis squamosa
+Trematomus newnesi	Gitanopsis squamosa
+Trematomus newnesi	Gondogeneia antarctica
+Trematomus newnesi	Gondogeneia antarctica
+Trematomus newnesi	Gondogeneia antarctica
+Trematomus newnesi	Hyperiidea
+Trematomus newnesi	Hyperiidea
+Trematomus newnesi	Hyperiidea
+Trematomus newnesi	Hyperiidea
+Trematomus newnesi	Hyperiidea
+Trematomus newnesi	Hyperiidea
+Trematomus newnesi	Hyperiidea
+Trematomus newnesi	Hyperiidea
+Trematomus newnesi	Margarella antarctica
+Trematomus newnesi	Margarella antarctica
+Trematomus newnesi	Margarella antarctica
+Trematomus newnesi	Mysida
+Trematomus newnesi	Mysida
+Trematomus newnesi	Mysida
+Trematomus newnesi	Nacella concinna
+Trematomus newnesi	Neobuccinum eatoni
+Trematomus newnesi	Oradarea bidentata
+Trematomus newnesi	Oradarea bidentata
+Trematomus newnesi	Orchomenella sp.
+Trematomus newnesi	Ostracoda
+Trematomus newnesi	Ostracoda
+Trematomus newnesi	Paradexamine fissicauda
+Trematomus newnesi	Paradexamine fissicauda
+Trematomus newnesi	Pariphimedia integricauda
+Trematomus newnesi	Polychaeta
+Trematomus newnesi	Polychaeta
+Trematomus newnesi	Polychaeta
+Trematomus newnesi	Polychaeta
+Trematomus newnesi	Polychaeta
+Trematomus newnesi	Polychaeta
+Trematomus newnesi	Polychaeta
+Trematomus newnesi	Probolisca ovata
+Trematomus newnesi	Probolisca ovata
+Trematomus newnesi	Prostebbingia gracilis
+Trematomus newnesi	Prostebbingia gracilis
+Trematomus newnesi	Salpidae
+Trematomus newnesi	Trematomus newnesi
+Trematomus newnesi	Trematomus newnesi
+Urticinopsis antarctica	Diplasterias brucei
+Urticinopsis antarctica	Diplasterias brucei
+Urticinopsis antarctica	Eatoniella sp.
+Urticinopsis antarctica	Eatoniella sp.
+Urticinopsis antarctica	Gastropoda
+Urticinopsis antarctica	Laevilacunaria antarctica
+Urticinopsis antarctica	Odontaster meridionalis
+Urticinopsis antarctica	Odontaster meridionalis
+Urticinopsis antarctica	Odontaster validus
+Urticinopsis antarctica	Odontaster validus
+Urticinopsis antarctica	Odontaster validus
+Urticinopsis antarctica	Perknaster fuscus antarticus
+Urticinopsis antarctica	Perknaster fuscus antarticus
+Urticinopsis antarctica	Perknaster fuscus antarticus
+Urticinopsis antarctica	Sterechinus neumayeri
+Urticinopsis antarctica	Sterechinus neumayeri
+Urticinopsis antarctica	Sterechinus neumayeri
+Urticinopsis antarctica	Trematomus bernacchii
+Urticinopsis antarctica	Trematomus bernacchii
+Urticinopsis antarctica	Trematomus newnesi
+Urticinopsis antarctica	Trematomus newnesi
+Zooplankton	Copepoda
+Zooplankton	Phytoplankton
+Zooplankton	Phytoplankton
+Zooplankton	Zooplankton

@@ -1,0 +1,1725 @@
+Predator	Prey
+Acanthocyclus albatrossis	Calliostoma nudum
+Acanthocyclus albatrossis	Crustacea
+Acanthocyclus albatrossis	Fissurella picta
+Acanthocyclus albatrossis	Gastropoda
+Acanthocyclus albatrossis	Isopoda
+Acanthocyclus albatrossis	Isopoda
+Acanthocyclus albatrossis	Macroalgae
+Acanthocyclus albatrossis	Macrocystis pyrifera
+Acanthocyclus albatrossis	Margarella violacea
+Acanthocyclus albatrossis	Zooplankton
+Amphipoda	Aged detritus
+Amphipoda	Aged detritus
+Amphipoda	Ulva sp.
+Amphipoda	Fresh detritus
+Amphipoda	Macrocystis pyrifera
+Amphipoda	Ostracoda
+Anasterias antarctica	Acanthocyclus albatrossis
+Anasterias antarctica	Amphipoda
+Anasterias antarctica	Amphipoda
+Anasterias antarctica	Anasterias antarctica
+Anasterias antarctica	Ascidiacea
+Anasterias antarctica	Aulacomya atra
+Anasterias antarctica	Aulacomya atra
+Anasterias antarctica	Aulacomya atra
+Anasterias antarctica	Aulacomya atra
+Anasterias antarctica	Aulacomya atra
+Anasterias antarctica	Bivalvia
+Anasterias antarctica	Calliostoma nudum
+Anasterias antarctica	Crepipatella dilatata
+Anasterias antarctica	Crepipatella dilatata
+Anasterias antarctica	Eurhomalea exalbida
+Anasterias antarctica	Eurypodius latreillii
+Anasterias antarctica	Exosphaeroma gigas
+Anasterias antarctica	Exosphaeroma gigas
+Anasterias antarctica	Fissurella oriens
+Anasterias antarctica	Fissurella oriens
+Anasterias antarctica	Fissurella picta
+Anasterias antarctica	Gaimardia trapesina
+Anasterias antarctica	Gaimardia trapesina
+Anasterias antarctica	Gaimardia trapesina
+Anasterias antarctica	Gastropoda
+Anasterias antarctica	Halicarcinus planatus 
+Anasterias antarctica	Halicarcinus planatus 
+Anasterias antarctica	Halicarcinus planatus 
+Anasterias antarctica	Isopoda
+Anasterias antarctica	Laevilitorina caliginosa
+Anasterias antarctica	Margarella violacea
+Anasterias antarctica	Mytilus edulis chilensis
+Anasterias antarctica	Mytilus edulis chilensis
+Anasterias antarctica	Nacella deaurata
+Anasterias antarctica	Nacella deaurata
+Anasterias antarctica	Nacella deaurata
+Anasterias antarctica	Nacella magellanica
+Anasterias antarctica	Nacella magellanica
+Anasterias antarctica	Nacella magellanica
+Anasterias antarctica	Nacella mytilina
+Anasterias antarctica	Nacella mytilina
+Anasterias antarctica	Necromass
+Anasterias antarctica	Notochthamalus scabrosus 
+Anasterias antarctica	Pagurus comptus
+Anasterias antarctica	Pagurus comptus
+Anasterias antarctica	Pagurus comptus
+Anasterias antarctica	Pareuthria fuscata
+Anasterias antarctica	Pareuthria fuscata
+Anasterias antarctica	Pareuthria fuscata
+Anasterias antarctica	Pareuthria fuscata
+Anasterias antarctica	Perumytilus purpuratus
+Anasterias antarctica	Perumytilus purpuratus
+Anasterias antarctica	Perumytilus purpuratus
+Anasterias antarctica	Plaxiphora sp.
+Anasterias antarctica	Plaxiphora sp.
+Anasterias antarctica	Polychaeta
+Anasterias antarctica	Polyplacophora
+Anasterias antarctica	Polyplacophora
+Anasterias antarctica	Pseudechinus magellanicus
+Anasterias antarctica	Siphonaria lessonii
+Anasterias antarctica	Siphonaria lessonii
+Anasterias antarctica	Spirorbinae
+Anasterias antarctica	Spirorbinae
+Anasterias antarctica	Tonicia sp.
+Anasterias antarctica	Tonicia sp.
+Anasterias antarctica	Trophon geversianus
+Anasterias antarctica	Trophon geversianus
+Anasterias antarctica	Trophon geversianus
+Anasterias antarctica	Xymenopsis muriciformis 
+Arbacia dufresnii	Amphipoda
+Arbacia dufresnii	Aulacomya atra
+Arbacia dufresnii	Bivalvia
+Arbacia dufresnii	Bryozoa
+Arbacia dufresnii	Bryozoa
+Arbacia dufresnii	Copepoda
+Arbacia dufresnii	Cumacea
+Arbacia dufresnii	Gaimardia trapesina
+Arbacia dufresnii	Gastropoda
+Arbacia dufresnii	Isopoda
+Arbacia dufresnii	Macroalgae
+Arbacia dufresnii	Macroalgae
+Arbacia dufresnii	Macrocystis pyrifera
+Arbacia dufresnii	Macrocystis pyrifera
+Arbacia dufresnii	Margarella violacea
+Arbacia dufresnii	Membranipora isabelleana
+Arbacia dufresnii	Mytilus edulis chilensis
+Arbacia dufresnii	Ostracoda
+Arbacia dufresnii	Phytoplankton
+Arbacia dufresnii	Polychaeta
+Arbacia dufresnii	Serpulidae
+Arbacia dufresnii	Spirorbinae
+Arbacia dufresnii	Zooplankton
+Arbacia dufresnii	Diatomea
+Ascidiacea	Fresh detritus
+Ascidiacea	Phytoplankton
+Ascidiacea	Fresh detritus
+Ascidiacea	Phytoplankton
+Ascidiacea	Phytoplankton
+Ascidiacea	Fresh detritus
+Ascidiacea	Phytoplankton
+Ascidiacea	Phytoplankton
+Ascidiacea	Zooplankton
+Ascidiacea	Fresh detritus
+Ascidiacea	Phytoplankton
+Ascidiacea	Zooplankton
+Ascidiacea	Diatomea
+Asterina fimbriata	Amphipoda
+Asterina fimbriata	Aulacomya atra
+Asterina fimbriata	Crepipatella dilatata
+Asterina fimbriata	Fissurella oriens
+Asterina fimbriata	Gaimardia trapesina
+Asterina fimbriata	Halicarcinus planatus 
+Asterina fimbriata	Margarella violacea
+Asterina fimbriata	Nacella mytilina
+Asterina fimbriata	Pagurus comptus
+Asterina fimbriata	Pareuthria fuscata
+Asterina fimbriata	Plaxiphora sp.
+Asterina fimbriata	Pseudechinus magellanicus
+Asterina fimbriata	Spirorbinae
+Asterina fimbriata	Trophon geversianus
+Aulacomya atra	Fresh detritus
+Aulacomya atra	Fresh detritus
+Aulacomya atra	Fresh detritus
+Aulacomya atra	Phytoplankton
+Aulacomya atra	Zooplankton
+Austrolycus depressiceps	Adenocystis utricularis
+Austrolycus depressiceps	Amphipoda
+Austrolycus depressiceps	Anasterias antarctica
+Austrolycus depressiceps	Aulacomya atra
+Austrolycus depressiceps	Exosphaeroma gigas
+Austrolycus depressiceps	Halicarcinus planatus 
+Austrolycus depressiceps	Harpagifer bispinis
+Austrolycus depressiceps	Isopoda
+Austrolycus depressiceps	Munida gregaria
+Austrolycus depressiceps	Nacella deaurata
+Austrolycus depressiceps	Patagonotothen cornucola
+Austrolycus depressiceps	Polychaeta
+Austrolycus depressiceps	Polyplacophora
+Austrolycus depressiceps	Siphonaria lessonii
+Austrolycus depressiceps	Trophon geversianus
+Austrolycus depressiceps	Xymenopsis muriciformis 
+Austrolycus depressiceps	Nemertea
+Bathyraja albomaculata	Nemertea
+Bathyraja albomaculata	Amphipoda
+Bathyraja albomaculata	Cephalopoda
+Bathyraja albomaculata	Cephalopoda
+Bathyraja albomaculata	Crustacea
+Bathyraja albomaculata	Crustacea
+Bathyraja albomaculata	Cumacea
+Bathyraja albomaculata	Dissostichus eleginoides
+Bathyraja albomaculata	Euphausiacea
+Bathyraja albomaculata	Gammaridea
+Bathyraja albomaculata	Gammaridea
+Bathyraja albomaculata	Glyceridae
+Bathyraja albomaculata	Isopoda
+Bathyraja albomaculata	Isopoda
+Bathyraja albomaculata	Munida gregaria
+Bathyraja albomaculata	Myxine glutinosa
+Bathyraja albomaculata	Ophiuroidea
+Bathyraja albomaculata	Peltarion spinosulum
+Bathyraja albomaculata	Peltarion spinosulum
+Bathyraja albomaculata	Polychaeta
+Bathyraja albomaculata	Polychaeta
+Bathyraja albomaculata	Terebellidae
+Bathyraja brachyurops	Nemertea
+Bathyraja brachyurops	Amphipoda
+Bathyraja brachyurops	Bathyraja brachyurops
+Bathyraja brachyurops	Bathyraja brachyurops
+Bathyraja brachyurops	Cephalopoda
+Bathyraja brachyurops	Cephalopoda
+Bathyraja brachyurops	Cottoperca gobio
+Bathyraja brachyurops	Crustacea
+Bathyraja brachyurops	Dissostichus eleginoides
+Bathyraja brachyurops	Euphausiacea
+Bathyraja brachyurops	Gammaridea
+Bathyraja brachyurops	Gammaridea
+Bathyraja brachyurops	Gastropoda
+Bathyraja brachyurops	Genypterus blacodes
+Bathyraja brachyurops	Isopoda
+Bathyraja brachyurops	Macroalgae
+Bathyraja brachyurops	Macruronus magellanicus
+Bathyraja brachyurops	Macruronus magellanicus
+Bathyraja brachyurops	Merluccius hubbsi
+Bathyraja brachyurops	Munida gregaria
+Bathyraja brachyurops	Munida gregaria
+Bathyraja brachyurops	Myxine glutinosa
+Bathyraja brachyurops	Ophiuroidea
+Bathyraja brachyurops	Pagurus comptus
+Bathyraja brachyurops	Patagonotothen sp.
+Bathyraja brachyurops	Patagonotothen sp.
+Bathyraja brachyurops	Peltarion spinosulum
+Bathyraja brachyurops	Peltarion spinosulum
+Bathyraja brachyurops	Polychaeta
+Bathyraja brachyurops	Polychaeta
+Bathyraja brachyurops	Priapulida
+Bathyraja brachyurops	Sprattus fuegensis
+Bathyraja griseocauda	Amphipoda
+Bathyraja griseocauda	Bathyraja griseocauda
+Bathyraja griseocauda	Bathyraja scaphiops
+Bathyraja griseocauda	Cephalopoda
+Bathyraja griseocauda	Cephalopoda
+Bathyraja griseocauda	Copepoda
+Bathyraja griseocauda	Cottoperca gobio
+Bathyraja griseocauda	Crustacea
+Bathyraja griseocauda	Dissostichus eleginoides
+Bathyraja griseocauda	Euphausiacea
+Bathyraja griseocauda	Gammaridea
+Bathyraja griseocauda	Gastropoda
+Bathyraja griseocauda	Genypterus blacodes
+Bathyraja griseocauda	Isopoda
+Bathyraja griseocauda	Isopoda
+Bathyraja griseocauda	Macroalgae
+Bathyraja griseocauda	Macruronus magellanicus
+Bathyraja griseocauda	Macruronus magellanicus
+Bathyraja griseocauda	Munida gregaria
+Bathyraja griseocauda	Myxine glutinosa
+Bathyraja griseocauda	Pagurus comptus
+Bathyraja griseocauda	Pagurus comptus
+Bathyraja griseocauda	Patagonotothen sp.
+Bathyraja griseocauda	Patagonotothen sp.
+Bathyraja griseocauda	Polychaeta
+Bathyraja griseocauda	Polychaeta
+Bathyraja griseocauda	Sprattus fuegensis
+Bathyraja scaphiops	Amphipoda
+Bathyraja scaphiops	Cephalopoda
+Bathyraja scaphiops	Isopoda
+Bathyraja scaphiops	Patagonotothen sp.
+Bivalvia	Fresh detritus
+Bivalvia	Phytoplankton
+Bivalvia	Phytoplankton
+Bivalvia	Diatomea
+Bryozoa	Phytoplankton
+Bryozoa	Fresh detritus
+Bryozoa	Fresh detritus
+Bryozoa	Phytoplankton
+Bryozoa	Phytoplankton
+Bryozoa	Phytoplankton
+Bryozoa	Fresh detritus
+Bryozoa	Fresh detritus
+Bryozoa	Phytoplankton
+Bryozoa	Phytoplankton
+Bryozoa	Fresh detritus
+Bryozoa	Phytoplankton
+Calliostoma nudum	Macroalgae
+Campylonotus vagans	Fresh detritus
+Careproctus pallidus	Amphipoda
+Careproctus pallidus	Careproctus pallidus
+Cephalopoda	Copepoda
+Cephalopoda	Crustacea
+Cephalopoda	Euphausiacea
+Cephalopoda	Euphausiacea
+Cephalopoda	Phytoplankton
+Cephalopoda	Polychaeta
+Cephalopoda	Polychaeta
+Cephalopoda	Priapulida
+Cephalopoda	Zooplankton
+Champsocephalus esox	Cephalopoda
+Champsocephalus esox	Copepoda
+Champsocephalus esox	Munida gregaria
+Champsocephalus esox	Munida gregaria
+Champsocephalus esox	Munida gregaria
+Champsocephalus esox	Patagonotothen longipes
+Champsocephalus esox	Patagonotothen sima
+Champsocephalus esox	Patagonotothen sima
+Champsocephalus esox	Patagonotothen tessellata
+Champsocephalus esox	Patagonotothen tessellata
+Champsocephalus esox	Patagonotothen tessellata
+Chthamalus sp.	Fresh detritus
+Chthamalus sp.	Fresh detritus
+Chthamalus sp.	Phytoplankton
+Chthamalus sp.	Diatomea
+Cirratulidae	Aged detritus
+Cirratulidae	Aged detritus
+Cirratulidae	Necromass
+Cirratulidae	Phytoplankton
+Cirratulidae	Zooplankton
+Cirratulidae	Diatomea
+Cirratulidae	Aged detritus
+Cirripedia	Fresh detritus
+Cirripedia	Phytoplankton
+Cirripedia	Zooplankton
+Cirripedia	Fresh detritus
+Congiopodus peruvianus	Gammaridea
+Congiopodus peruvianus	Crustacea
+Congiopodus peruvianus	Zooplankton
+Copepoda	Phytoplankton
+Copepoda	Fresh detritus
+Copepoda	Phytoplankton
+Copepoda	Fresh detritus
+Copepoda	Phytoplankton
+Copepoda	Phytoplankton
+Copepoda	Zooplankton
+Copepoda	Fresh detritus
+Copepoda	Phytoplankton
+Cosmasterias lurida	Amphipoda
+Cosmasterias lurida	Arbacia dufresnii
+Cosmasterias lurida	Ascidiacea
+Cosmasterias lurida	Aulacomya atra
+Cosmasterias lurida	Aulacomya atra
+Cosmasterias lurida	Crepipatella dilatata
+Cosmasterias lurida	Crepipatella dilatata
+Cosmasterias lurida	Fissurella oriens
+Cosmasterias lurida	Fissurella oriens
+Cosmasterias lurida	Gaimardia trapesina
+Cosmasterias lurida	Gaimardia trapesina
+Cosmasterias lurida	Halicarcinus planatus 
+Cosmasterias lurida	Halicarcinus planatus 
+Cosmasterias lurida	Loxechinus albus
+Cosmasterias lurida	Loxechinus albus
+Cosmasterias lurida	Margarella violacea
+Cosmasterias lurida	Munida gregaria
+Cosmasterias lurida	Nacella magellanica
+Cosmasterias lurida	Nacella mytilina
+Cosmasterias lurida	Nacella mytilina
+Cosmasterias lurida	Necromass
+Cosmasterias lurida	Notobalanus flosculus
+Cosmasterias lurida	Pagurus comptus
+Cosmasterias lurida	Paralomis granulosa
+Cosmasterias lurida	Paralomis granulosa
+Cosmasterias lurida	Pareuthria fuscata
+Cosmasterias lurida	Pareuthria fuscata
+Cosmasterias lurida	Plaxiphora sp.
+Cosmasterias lurida	Polyplacophora
+Cosmasterias lurida	Priapulida
+Cosmasterias lurida	Pseudechinus magellanicus
+Cosmasterias lurida	Pseudechinus magellanicus
+Cosmasterias lurida	Serpulidae
+Cosmasterias lurida	Spirorbinae
+Cosmasterias lurida	Trophon geversianus
+Cosmasterias lurida	Trophon geversianus
+Cottoperca gobio	Amphipoda
+Cottoperca gobio	Amphipoda
+Cottoperca gobio	Amphipoda
+Cottoperca gobio	Bathyraja albomaculata
+Cottoperca gobio	Bathyraja brachyurops
+Cottoperca gobio	Cephalopoda
+Cottoperca gobio	Cephalopoda
+Cottoperca gobio	Cottoperca gobio
+Cottoperca gobio	Dissostichus eleginoides
+Cottoperca gobio	Euphausiacea
+Cottoperca gobio	Gastropoda
+Cottoperca gobio	Halicarcinus planatus 
+Cottoperca gobio	Halicarcinus planatus 
+Cottoperca gobio	Harpagifer bispinis
+Cottoperca gobio	Isopoda
+Cottoperca gobio	Macroalgae
+Cottoperca gobio	Macruronus magellanicus
+Cottoperca gobio	Merluccius hubbsi
+Cottoperca gobio	Munida gregaria
+Cottoperca gobio	Munida gregaria
+Cottoperca gobio	Munida gregaria
+Cottoperca gobio	Munida gregaria
+Cottoperca gobio	Munida gregaria
+Cottoperca gobio	Necromass
+Cottoperca gobio	Ophiuroidea
+Cottoperca gobio	Paranotothenia magellanica
+Cottoperca gobio	Paranotothenia magellanica
+Cottoperca gobio	Patagonotothen brevicauda brevicauda
+Cottoperca gobio	Patagonotothen brevicauda brevicauda
+Cottoperca gobio	Patagonotothen longipes
+Cottoperca gobio	Patagonotothen longipes
+Cottoperca gobio	Patagonotothen ramsayi
+Cottoperca gobio	Patagonotothen sima
+Cottoperca gobio	Patagonotothen sima
+Cottoperca gobio	Patagonotothen tessellata
+Cottoperca gobio	Patagonotothen tessellata
+Cottoperca gobio	Patagonotothen tessellata
+Cottoperca gobio	Peltarion spinosulum
+Cottoperca gobio	Polychaeta
+Cottoperca gobio	Salilota australis
+Cottoperca gobio	Sprattus fuegensis
+Crepipatella dilatata	Macroalgae
+Crepipatella dilatata	Macrocystis pyrifera
+Crepipatella dilatata	Macrocystis pyrifera
+Crepipatella dilatata	Phytoplankton
+Crepipatella dilatata	Zooplankton
+Crepipatella dilatata	Diatomea
+Crepipatella dilatata	Fresh detritus
+Crustacea	Phytoplankton
+Crustacea	Diatomea
+Crustacea	Fresh detritus
+Ctenophora	Diatomea
+Cumacea	Aged detritus
+Cumacea	Aged detritus
+Cumacea	Aged detritus
+Cumacea	Diatomea
+Dissostichus eleginoides	Amphipoda
+Dissostichus eleginoides	Amphipoda
+Dissostichus eleginoides	Bathyraja albomaculata
+Dissostichus eleginoides	Bryozoa
+Dissostichus eleginoides	Bryozoa
+Dissostichus eleginoides	Cephalopoda
+Dissostichus eleginoides	Cephalopoda
+Dissostichus eleginoides	Cephalopoda
+Dissostichus eleginoides	Cephalopoda
+Dissostichus eleginoides	Cephalopoda
+Dissostichus eleginoides	Cephalopoda
+Dissostichus eleginoides	Copepoda
+Dissostichus eleginoides	Cottoperca gobio
+Dissostichus eleginoides	Cumacea
+Dissostichus eleginoides	Dissostichus eleginoides
+Dissostichus eleginoides	Echiura
+Dissostichus eleginoides	Euphausiacea
+Dissostichus eleginoides	Gastropoda
+Dissostichus eleginoides	Genypterus blacodes
+Dissostichus eleginoides	Holothuroidea
+Dissostichus eleginoides	Isopoda
+Dissostichus eleginoides	Isopoda
+Dissostichus eleginoides	Macruronus magellanicus
+Dissostichus eleginoides	Macruronus magellanicus
+Dissostichus eleginoides	Necromass
+Dissostichus eleginoides	Necromass
+Dissostichus eleginoides	Ophiuroidea
+Dissostichus eleginoides	Paralomis granulosa
+Dissostichus eleginoides	Patagonotothen brevicauda brevicauda
+Dissostichus eleginoides	Patagonotothen ramsayi
+Dissostichus eleginoides	Patagonotothen ramsayi
+Dissostichus eleginoides	Polychaeta
+Dissostichus eleginoides	Salilota australis
+Dissostichus eleginoides	Salilota australis
+Dissostichus eleginoides	Sprattus fuegensis
+Dissostichus eleginoides	Sprattus fuegensis
+Dissostichus eleginoides	Cephalopoda
+Echiura	Fresh detritus
+Echiura	Fresh detritus
+Eleginops maclovinus	Adenocystis utricularis
+Eleginops maclovinus	Amphipoda
+Eleginops maclovinus	Amphipoda
+Eleginops maclovinus	Amphipoda
+Eleginops maclovinus	Amphipoda
+Eleginops maclovinus	Anasterias antarctica
+Eleginops maclovinus	Bivalvia
+Eleginops maclovinus	Callophyllis pinnata
+Eleginops maclovinus	Ceramium diaphanum
+Eleginops maclovinus	Cladophora sp.
+Eleginops maclovinus	Copepoda
+Eleginops maclovinus	Crustacea
+Eleginops maclovinus	Cumacea
+Eleginops maclovinus	Delesseriaceae 
+Eleginops maclovinus	Echiura
+Eleginops maclovinus	Ectocarpus sp.
+Eleginops maclovinus	Ulva sp.
+Eleginops maclovinus	Ulva sp.
+Eleginops maclovinus	Ulva sp.
+Eleginops maclovinus	Gammaridea
+Eleginops maclovinus	Gammaridea
+Eleginops maclovinus	Halicarcinus planatus 
+Eleginops maclovinus	Halicarcinus planatus 
+Eleginops maclovinus	Isopoda
+Eleginops maclovinus	Isopoda
+Eleginops maclovinus	Isopoda
+Eleginops maclovinus	Macroalgae
+Eleginops maclovinus	Macrocystis pyrifera
+Eleginops maclovinus	Munida gregaria
+Eleginops maclovinus	Munida gregaria
+Eleginops maclovinus	Nacella deaurata
+Eleginops maclovinus	Nereididae
+Eleginops maclovinus	Nothogenia fastigiata
+Eleginops maclovinus	Notochthamalus scabrosus 
+Eleginops maclovinus	Ophiuroidea
+Eleginops maclovinus	Ostracoda
+Eleginops maclovinus	Ostracoda
+Eleginops maclovinus	Patagonotothen cornucola
+Eleginops maclovinus	Peltarion spinosulum
+Eleginops maclovinus	Polychaeta
+Eleginops maclovinus	Polychaeta
+Eleginops maclovinus	Polychaeta
+Eleginops maclovinus	Polychaeta
+Eleginops maclovinus	Polynoidae
+Eleginops maclovinus	Polyplacophora
+Eleginops maclovinus	Priapulida
+Eleginops maclovinus	Rhizoclonium sp.
+Eleginops maclovinus	Scytothamus fasciculatus
+Eleginops maclovinus	Siphonaria lessonii
+Eleginops maclovinus	Tanaidacea
+Eleginops maclovinus	Terebellidae
+Eleginops maclovinus	Trophon geversianus
+Eleginops maclovinus	Ulva rigida
+Eleginops maclovinus	Ulva sp.
+Eleginops maclovinus	Ulva sp.
+Eleginops maclovinus	Xymenopsis muriciformis 
+Eleginops maclovinus	Zooplankton
+Eleginops maclovinus	Zooplankton
+Eleginops maclovinus	Nemertea
+Eleginops maclovinus	Nemertea
+Euphausiacea	Copepoda
+Euphausiacea	Copepoda
+Euphausiacea	Copepoda
+Euphausiacea	Copepoda
+Euphausiacea	Euphausiacea
+Euphausiacea	Fresh detritus
+Euphausiacea	Ostracoda
+Euphausiacea	Ostracoda
+Euphausiacea	Phytoplankton
+Euphausiacea	Zooplankton
+Euphausiacea	Zooplankton
+Euphausiacea	Zooplankton
+Euphausiacea	Phytoplankton
+Euphausiacea	Phytoplankton
+Euphausiacea	Phytoplankton
+Euphausiacea	Euphausiacea
+Eurhomalea exalbida	Fresh detritus
+Eurypodius latreillii	Aulacomya atra
+Eurypodius latreillii	Bivalvia
+Eurypodius latreillii	Calliostoma nudum
+Eurypodius latreillii	Crustacea
+Eurypodius latreillii	Fissurella picta
+Eurypodius latreillii	Gastropoda
+Eurypodius latreillii	Halicarcinus planatus 
+Eurypodius latreillii	Hiatella arctica
+Eurypodius latreillii	Hydrozoa
+Eurypodius latreillii	Isopoda
+Eurypodius latreillii	Macroalgae
+Eurypodius latreillii	Margarella violacea
+Eurypodius latreillii	Membranipora isabelleana
+Eurypodius latreillii	Munida gregaria
+Eurypodius latreillii	Munida gregaria
+Eurypodius latreillii	Mytilus edulis chilensis
+Eurypodius latreillii	Pagurus comptus
+Eurypodius latreillii	Polychaeta
+Eurypodius latreillii	Polychaeta
+Eurypodius latreillii	Pseudechinus magellanicus
+Eurypodius latreillii	Zooplankton
+Eurypodius latreillii	Copepoda
+Exosphaeroma gigas	Aged detritus
+Exosphaeroma gigas	Fresh detritus
+Exosphaeroma gigas	Necromass
+Exosphaeroma gigas	Fresh detritus
+Fissurella oriens	Macrocystis pyrifera
+Fissurella oriens	Macrocystis pyrifera
+Fissurella picta	Cladophora sp.
+Fissurella picta	Codium sp.
+Fissurella picta	Ectocarpus sp.
+Fissurella picta	Ulva sp.
+Fissurella picta	Macroalgae
+Fissurella picta	Macrocystis pyrifera
+Fissurella picta	Macrocystis pyrifera
+Fissurella picta	Porifera
+Gaimardia trapesina	Fresh detritus
+Gaimardia trapesina	Phytoplankton
+Gaimardia trapesina	Diatomea
+Gaimardia trapesina	Fresh detritus
+Galaxias maculatus	Amphipoda
+Galaxias maculatus	Galaxias maculatus
+Galaxias maculatus	Gastropoda
+Galaxias maculatus	Ostracoda
+Galaxias maculatus	Zooplankton
+Galaxias maculatus	Copepoda
+Gammaridea	Aged detritus
+Gammaridea	Desmarestia sp.
+Gammaridea	Gammaridea
+Gammaridea	Oligochaeta
+Gammaridea	Ostracoda
+Gammaridea	Phytoplankton
+Gammaridea	Polysiphonia sp.
+Gammaridea	Porphyra sp.
+Gammaridea	Ulva sp.
+Gammaridea	Diatomea
+Gammaridea	Copepoda
+Gammaridea	Aged detritus
+Gammaridea	Ulva sp.
+Gammaridea	Macroalgae
+Gammaridea	Phytoplankton
+Gammaridea	Aged detritus
+Gammaridea	Phytoplankton
+Gammaridea	Diatomea
+Gastropoda	Porifera
+Gastropoda	Polyplacophora
+Gastropoda	Fresh detritus
+Gastropoda	Tanaidacea
+Genypterus blacodes	Amphipoda
+Genypterus blacodes	Ascidiacea
+Genypterus blacodes	Aulacomya atra
+Genypterus blacodes	Bathyraja albomaculata
+Genypterus blacodes	Bathyraja brachyurops
+Genypterus blacodes	Bathyraja scaphiops
+Genypterus blacodes	Bivalvia
+Genypterus blacodes	Bivalvia
+Genypterus blacodes	Bryozoa
+Genypterus blacodes	Campylonotus vagans
+Genypterus blacodes	Cephalopoda
+Genypterus blacodes	Cephalopoda
+Genypterus blacodes	Cephalopoda
+Genypterus blacodes	Cottoperca gobio
+Genypterus blacodes	Cottoperca gobio
+Genypterus blacodes	Crustacea
+Genypterus blacodes	Crustacea
+Genypterus blacodes	Dissostichus eleginoides
+Genypterus blacodes	Euphausiacea
+Genypterus blacodes	Euphausiacea
+Genypterus blacodes	Genypterus blacodes
+Genypterus blacodes	Holothuroidea
+Genypterus blacodes	Hydrozoa
+Genypterus blacodes	Hyperiidea
+Genypterus blacodes	Isopoda
+Genypterus blacodes	Macruronus magellanicus
+Genypterus blacodes	Merluccius hubbsi
+Genypterus blacodes	Merluccius hubbsi
+Genypterus blacodes	Merluccius hubbsi
+Genypterus blacodes	Munida gregaria
+Genypterus blacodes	Munida gregaria
+Genypterus blacodes	Munida gregaria
+Genypterus blacodes	Ophiuroidea
+Genypterus blacodes	Patagonotothen ramsayi
+Genypterus blacodes	Patagonotothen ramsayi
+Genypterus blacodes	Polychaeta
+Genypterus blacodes	Polychaeta
+Genypterus blacodes	Porifera
+Genypterus blacodes	Salilota australis
+Genypterus blacodes	Salilota australis
+Genypterus blacodes	Stromateus brasiliensis
+Genypterus blacodes	Zygochlamys patagonica
+Genypterus blacodes	Copepoda
+Glabraster antarctica	Bryozoa
+Glabraster antarctica	Fresh detritus
+Glabraster antarctica	Necromass
+Glabraster antarctica	Ostracoda
+Glabraster antarctica	Phytoplankton
+Glabraster antarctica	Phytoplankton
+Glabraster antarctica	Porifera
+Glabraster antarctica	Porifera
+Glabraster antarctica	Porifera
+Glabraster antarctica	Diatomea
+Glabraster antarctica	Necromass
+Glabraster antarctica	Diatomea
+Glabraster antarctica	Fresh detritus
+Glyceridae	Aged detritus
+Glyceridae	Aged detritus
+Glyceridae	Gammaridea
+Glyceridae	Necromass
+Glyceridae	Nereididae
+Glyceridae	Polynoidae
+Glyceridae	Polynoidae
+Glyceridae	Aged detritus
+Halicarcinus planatus 	Aged detritus
+Halicarcinus planatus 	Cladophora sp.
+Halicarcinus planatus 	Fresh detritus
+Halicarcinus planatus 	Isopoda
+Halicarcinus planatus 	Membranipora isabelleana
+Halicarcinus planatus 	Necromass
+Halicarcinus planatus 	Necromass
+Halicarcinus planatus 	Phytoplankton
+Halicarcinus planatus 	Polychaeta
+Halicarcinus planatus 	Polysiphonia sp.
+Halicarcinus planatus 	Zooplankton
+Halicarcinus planatus 	Diatomea
+Halicarcinus planatus 	Copepoda
+Halicarcinus planatus 	Fresh detritus
+Harpagifer bispinis	Nemertea
+Harpagifer bispinis	Amphipoda
+Harpagifer bispinis	Amphipoda
+Harpagifer bispinis	Amphipoda
+Harpagifer bispinis	Cirripedia
+Harpagifer bispinis	Exosphaeroma gigas
+Harpagifer bispinis	Exosphaeroma gigas
+Harpagifer bispinis	Exosphaeroma gigas
+Harpagifer bispinis	Gammaridea
+Harpagifer bispinis	Isopoda
+Harpagifer bispinis	Isopoda
+Harpagifer bispinis	Isopoda
+Harpagifer bispinis	Laevilitorina caliginosa
+Harpagifer bispinis	Nereididae
+Harpagifer bispinis	Nereididae
+Harpagifer bispinis	Ostracoda
+Harpagifer bispinis	Ostracoda
+Harpagifer bispinis	Perumytilus purpuratus
+Harpagifer bispinis	Polychaeta
+Harpagifer bispinis	Polychaeta
+Harpagifer bispinis	Polynoidae
+Harpagifer bispinis	Polynoidae
+Harpagifer bispinis	Amphipoda
+Harpagifer bispinis	Isopoda
+Harpagifer bispinis	Polychaeta
+Harpagifer bispinis	Copepoda
+Harpagifer bispinis	Copepoda
+Harpagifer bispinis	Nemertea
+Hiatella arctica	Fresh detritus
+Hiatella arctica	Phytoplankton
+Hiatella arctica	Fresh detritus
+Holothuroidea	Fresh detritus
+Hydrozoa	Nemertea
+Hydrozoa	Euphausiacea
+Hydrozoa	Gammaridea
+Hydrozoa	Ostracoda
+Hydrozoa	Polynoidae
+Hydrozoa	Zooplankton
+Hydrozoa	Diatomea
+Hydrozoa	Copepoda
+Hydrozoa	Fresh detritus
+Hydrozoa	Fresh detritus
+Hydrozoa	Zooplankton
+Hydrozoa	Phytoplankton
+Hydrozoa	Fresh detritus
+Hydrozoa	Zooplankton
+Hydrozoa	Diatomea
+Hydrozoa	Phytoplankton
+Hydrozoa	Fresh detritus
+Hydrozoa	Fresh detritus
+Hyperiidea	Euphausiacea
+Hyperiidea	Ostracoda
+Hyperiidea	Zooplankton
+Hyperiidea	Copepoda
+Hyperiidea	Copepoda
+Hyperiidea	Copepoda
+Hyperiidea	Euphausiacea
+Hyperiidea	Zooplankton
+Hyperiidea	Zooplankton
+Isopoda	Adenocystis utricularis
+Isopoda	Callophyllis pinnata
+Isopoda	Ceramium diaphanum
+Isopoda	Ulva sp.
+Isopoda	Fresh detritus
+Isopoda	Macrocystis pyrifera
+Isopoda	Nothogenia fastigiata
+Isopoda	Scytothamus fasciculatus
+Isopoda	Ulva rigida
+Laevilitorina caliginosa	Cladophora sp.
+Laevilitorina caliginosa	Desmarestia sp.
+Laevilitorina caliginosa	Macroalgae
+Laevilitorina caliginosa	Phytoplankton
+Laevilitorina caliginosa	Phytoplankton
+Laevilitorina caliginosa	Polysiphonia sp.
+Laevilitorina caliginosa	Porphyra sp.
+Laevilitorina caliginosa	Ulva sp.
+Laevilitorina caliginosa	Zooplankton
+Laevilitorina caliginosa	Diatomea
+Laevilitorina caliginosa	Fresh detritus
+Lithodes santolla	Amphipoda
+Lithodes santolla	Amphipoda
+Lithodes santolla	Ascidiacea
+Lithodes santolla	Aulacomya atra
+Lithodes santolla	Bivalvia
+Lithodes santolla	Bivalvia
+Lithodes santolla	Bryozoa
+Lithodes santolla	Calliostoma nudum
+Lithodes santolla	Fissurella picta
+Lithodes santolla	Gastropoda
+Lithodes santolla	Gastropoda
+Lithodes santolla	Halicarcinus planatus 
+Lithodes santolla	Halicarcinus planatus 
+Lithodes santolla	Hiatella arctica
+Lithodes santolla	Hydrozoa
+Lithodes santolla	Hydrozoa
+Lithodes santolla	Isopoda
+Lithodes santolla	Isopoda
+Lithodes santolla	Macroalgae
+Lithodes santolla	Macroalgae
+Lithodes santolla	Macrocystis pyrifera
+Lithodes santolla	Margarella violacea
+Lithodes santolla	Membranipora isabelleana
+Lithodes santolla	Munida gregaria
+Lithodes santolla	Munida gregaria
+Lithodes santolla	Munida gregaria
+Lithodes santolla	Munida gregaria
+Lithodes santolla	Mytilus edulis chilensis
+Lithodes santolla	Necromass
+Lithodes santolla	Ophiuroidea
+Lithodes santolla	Pagurus comptus
+Lithodes santolla	Pagurus comptus
+Lithodes santolla	Peltarion spinosulum
+Lithodes santolla	Polychaeta
+Lithodes santolla	Polyplacophora
+Lithodes santolla	Porifera
+Lithodes santolla	Pseudechinus magellanicus
+Lithodes santolla	Pseudechinus magellanicus
+Lithodes santolla	Pseudechinus magellanicus
+Lithodes santolla	Pseudechinus magellanicus
+Lithodes santolla	Serpulidae
+Lithodes santolla	Tonicia sp.
+Lithodes santolla	Zooplankton
+Lithodes santolla	Zooplankton
+Lithodes santolla	Copepoda
+Lithodes santolla	Copepoda
+Loxechinus albus	Ulva sp.
+Loxechinus albus	Halopteris sp.
+Loxechinus albus	Hydrozoa
+Loxechinus albus	Macrocystis pyrifera
+Loxechinus albus	Macrocystis pyrifera
+Loxechinus albus	Macrocystis pyrifera
+Loxechinus albus	Ulva sp.
+Loxechinus albus	Ulva sp.
+Loxechinus albus	Ulva sp.
+Macruronus magellanicus	Cephalopoda
+Macruronus magellanicus	Cephalopoda
+Macruronus magellanicus	Ctenophora
+Macruronus magellanicus	Ctenophora
+Macruronus magellanicus	Euphausiacea
+Macruronus magellanicus	Euphausiacea
+Macruronus magellanicus	Euphausiacea
+Macruronus magellanicus	Euphausiacea
+Macruronus magellanicus	Gammaridea
+Macruronus magellanicus	Gastropoda
+Macruronus magellanicus	Hyperiidea
+Macruronus magellanicus	Hyperiidea
+Macruronus magellanicus	Macruronus magellanicus
+Macruronus magellanicus	Merluccius hubbsi
+Macruronus magellanicus	Munida gregaria
+Macruronus magellanicus	Munida gregaria
+Macruronus magellanicus	Munida gregaria
+Macruronus magellanicus	Myxine glutinosa
+Macruronus magellanicus	Patagonotothen ramsayi
+Macruronus magellanicus	Salilota australis
+Macruronus magellanicus	Sprattus fuegensis
+Macruronus magellanicus	Sprattus fuegensis
+Macruronus magellanicus	Copepoda
+Macruronus magellanicus	Hyperiidea
+Macruronus magellanicus	Euphausiacea
+Macruronus magellanicus	Cephalopoda
+Macruronus magellanicus	Patagonotothen ramsayi
+Macruronus magellanicus	Zooplankton
+Macruronus magellanicus	Sprattus fuegensis
+Macruronus magellanicus	Munida gregaria
+Margarella violacea	Macroalgae
+Margarella violacea	Macrocystis pyrifera
+Margarella violacea	Macrocystis pyrifera
+Margarella violacea	Macrocystis pyrifera
+Membranipora isabelleana	Phytoplankton
+Membranipora isabelleana	Fresh detritus
+Membranipora isabelleana	Fresh detritus
+Membranipora isabelleana	Phytoplankton
+Membranipora isabelleana	Phytoplankton
+Membranipora isabelleana	Phytoplankton
+Membranipora isabelleana	Fresh detritus
+Membranipora isabelleana	Fresh detritus
+Membranipora isabelleana	Phytoplankton
+Membranipora isabelleana	Phytoplankton
+Membranipora isabelleana	Fresh detritus
+Membranipora isabelleana	Phytoplankton
+Merluccius hubbsi	Amphipoda
+Merluccius hubbsi	Amphipoda
+Merluccius hubbsi	Cephalopoda
+Merluccius hubbsi	Cephalopoda
+Merluccius hubbsi	Cephalopoda
+Merluccius hubbsi	Cephalopoda
+Merluccius hubbsi	Cephalopoda
+Merluccius hubbsi	Euphausiacea
+Merluccius hubbsi	Euphausiacea
+Merluccius hubbsi	Euphausiacea
+Merluccius hubbsi	Euphausiacea
+Merluccius hubbsi	Holothuroidea
+Merluccius hubbsi	Macruronus magellanicus
+Merluccius hubbsi	Merluccius hubbsi
+Merluccius hubbsi	Merluccius hubbsi
+Merluccius hubbsi	Merluccius hubbsi
+Merluccius hubbsi	Merluccius hubbsi
+Merluccius hubbsi	Merluccius hubbsi
+Merluccius hubbsi	Munida gregaria
+Merluccius hubbsi	Munida gregaria
+Merluccius hubbsi	Munida gregaria
+Merluccius hubbsi	Munida gregaria
+Merluccius hubbsi	Munida gregaria
+Merluccius hubbsi	Munida gregaria
+Merluccius hubbsi	Ophiuroidea
+Merluccius hubbsi	Polychaeta
+Merluccius hubbsi	Porifera
+Merluccius hubbsi	Salilota australis
+Merluccius hubbsi	Sprattus fuegensis
+Merluccius hubbsi	Stromateus brasiliensis
+Merluccius hubbsi	Zooplankton
+Merluccius hubbsi	Hyperiidea
+Merluccius hubbsi	Euphausiacea
+Merluccius hubbsi	Patagonotothen ramsayi
+Merluccius hubbsi	Cephalopoda
+Merluccius hubbsi	Zooplankton
+Merluccius hubbsi	Sprattus fuegensis
+Merluccius hubbsi	Munida gregaria
+Munida gregaria	Adenocystis utricularis
+Munida gregaria	Aged detritus
+Munida gregaria	Aged detritus
+Munida gregaria	Amphipoda
+Munida gregaria	Ballia sp.
+Munida gregaria	Ballia sp.
+Munida gregaria	Bivalvia
+Munida gregaria	Bivalvia
+Munida gregaria	Bostrychia sp.
+Munida gregaria	Bryozoa
+Munida gregaria	Callophyllis pinnata
+Munida gregaria	Ceramium diaphanum
+Munida gregaria	Ceramium sp.
+Munida gregaria	Cladophora sp.
+Munida gregaria	Cladophora sp.
+Munida gregaria	Crustacea
+Munida gregaria	Crustacea
+Munida gregaria	Delesseriaceae 
+Munida gregaria	Desmarestia sp.
+Munida gregaria	Ectocarpus sp.
+Munida gregaria	Ulva sp.
+Munida gregaria	Fresh detritus
+Munida gregaria	Fresh detritus
+Munida gregaria	Fresh detritus
+Munida gregaria	Fresh detritus
+Munida gregaria	Gastropoda
+Munida gregaria	Gastropoda
+Munida gregaria	Griffithsia sp.
+Munida gregaria	Griffithsia sp.
+Munida gregaria	Halopteris sp.
+Munida gregaria	Hincksia sp.
+Munida gregaria	Hydrozoa
+Munida gregaria	Hydrozoa
+Munida gregaria	Hymenena sp.
+Munida gregaria	Isopoda
+Munida gregaria	Macroalgae
+Munida gregaria	Macrocystis pyrifera
+Munida gregaria	Monostroma sp.
+Munida gregaria	Munida gregaria
+Munida gregaria	Munida gregaria
+Munida gregaria	Munida gregaria
+Munida gregaria	Myriogramme sp.
+Munida gregaria	Necromass
+Munida gregaria	Necromass
+Munida gregaria	Necromass
+Munida gregaria	Nothogenia fastigiata
+Munida gregaria	Ostracoda
+Munida gregaria	Ostracoda
+Munida gregaria	Phytoplankton
+Munida gregaria	Phytoplankton
+Munida gregaria	Phytoplankton
+Munida gregaria	Polychaeta
+Munida gregaria	Polychaeta
+Munida gregaria	Polychaeta
+Munida gregaria	Porifera
+Munida gregaria	Porifera
+Munida gregaria	Porifera
+Munida gregaria	Rhizoclonium sp.
+Munida gregaria	Scytothamus fasciculatus
+Munida gregaria	Sphacelaria sp.
+Munida gregaria	Sphacelaria sp.
+Munida gregaria	Trailliella sp.
+Munida gregaria	Trailliella sp.
+Munida gregaria	Ulva rigida
+Munida gregaria	Ulva sp.
+Munida gregaria	Zooplankton
+Munida gregaria	Zooplankton
+Munida gregaria	Zooplankton
+Munida gregaria	Diatomea
+Munida gregaria	Diatomea
+Munida gregaria	Diatomea
+Munida gregaria	Copepoda
+Munida gregaria	Fresh detritus
+Munida gregaria	Oligochaeta
+Munida gregaria	Oligochaeta
+Mytilus edulis chilensis	Fresh detritus
+Mytilus edulis chilensis	Fresh detritus
+Mytilus edulis chilensis	Fresh detritus
+Mytilus edulis chilensis	Fresh detritus
+Mytilus edulis chilensis	Fresh detritus
+Mytilus edulis chilensis	Phytoplankton
+Mytilus edulis chilensis	Phytoplankton
+Mytilus edulis chilensis	Phytoplankton
+Mytilus edulis chilensis	Serpulidae
+Mytilus edulis chilensis	Ulva sp.
+Mytilus edulis chilensis	Zooplankton
+Mytilus edulis chilensis	Diatomea
+Mytilus edulis chilensis	Fresh detritus
+Myxine glutinosa	Nemertea
+Myxine glutinosa	Amphipoda
+Myxine glutinosa	Bivalvia
+Myxine glutinosa	Crustacea
+Myxine glutinosa	Gastropoda
+Myxine glutinosa	Necromass
+Myxine glutinosa	Polychaeta
+Myxine glutinosa	Polychaeta
+Myxine glutinosa	Priapulida
+Myxine glutinosa	Nemertea
+Nacella deaurata	Adenocystis utricularis
+Nacella deaurata	Adenocystis utricularis
+Nacella deaurata	Ballia sp.
+Nacella deaurata	Bostrychia sp.
+Nacella deaurata	Callophyllis pinnata
+Nacella deaurata	Ceramium diaphanum
+Nacella deaurata	Ceramium sp.
+Nacella deaurata	Ectocarpus sp.
+Nacella deaurata	Ulva sp.
+Nacella deaurata	Halopteris sp.
+Nacella deaurata	Laevilitorina caliginosa
+Nacella deaurata	Macrocystis pyrifera
+Nacella deaurata	Margarella violacea
+Nacella deaurata	Mytilus edulis chilensis
+Nacella deaurata	Nothogenia fastigiata
+Nacella deaurata	Nothogenia fastigiata
+Nacella deaurata	Ostracoda
+Nacella deaurata	Ostracoda
+Nacella deaurata	Phytoplankton
+Nacella deaurata	Phytoplankton
+Nacella deaurata	Polysiphonia sp.
+Nacella deaurata	Rhizoclonium sp.
+Nacella deaurata	Scytothamus fasciculatus
+Nacella deaurata	Ulva rigida
+Nacella deaurata	Ulva sp.
+Nacella deaurata	Zooplankton
+Nacella deaurata	Zooplankton
+Nacella deaurata	Diatomea
+Nacella deaurata	Fresh detritus
+Nacella magellanica	Adenocystis utricularis
+Nacella magellanica	Amphipoda
+Nacella magellanica	Ballia sp.
+Nacella magellanica	Bostrychia sp.
+Nacella magellanica	Ceramium sp.
+Nacella magellanica	Ectocarpus sp.
+Nacella magellanica	Halopteris sp.
+Nacella magellanica	Laevilitorina caliginosa
+Nacella magellanica	Laevilitorina caliginosa
+Nacella magellanica	Macrocystis pyrifera
+Nacella magellanica	Macrocystis pyrifera
+Nacella magellanica	Margarella violacea
+Nacella magellanica	Mytilus edulis chilensis
+Nacella magellanica	Mytilus edulis chilensis
+Nacella magellanica	Nothogenia fastigiata
+Nacella magellanica	Notochthamalus scabrosus 
+Nacella magellanica	Ostracoda
+Nacella magellanica	Phytoplankton
+Nacella magellanica	Phytoplankton
+Nacella magellanica	Phytoplankton
+Nacella magellanica	Polysiphonia sp.
+Nacella magellanica	Rhizoclonium sp.
+Nacella magellanica	Ulva sp.
+Nacella magellanica	Zooplankton
+Nacella magellanica	Zooplankton
+Nacella magellanica	Diatomea
+Nacella mytilina	Macrocystis pyrifera
+Nacella mytilina	Macrocystis pyrifera
+Nacella mytilina	Macrocystis pyrifera
+Nacella mytilina	Phytoplankton
+Nemertea	Oligochaeta
+Nemertea	Nemertea
+Nemertea	Aged detritus
+Nemertea	Necromass
+Nemertea	Gammaridea
+Nemertea	Nereididae
+Nemertea	Polynoidae
+Nemertea	Terebellidae
+Nemertea	Copepoda
+Nemertea	Isopoda
+Nemertea	Nacella deaurata
+Nemertea	Perumytilus purpuratus
+Nemertea	Polyplacophora
+Nemertea	Siphonaria lessonii
+Nereididae	Oligochaeta
+Nereididae	Aged detritus
+Nereididae	Necromass
+Nereididae	Aged detritus
+Nereididae	Aged detritus
+Nereididae	Cumacea
+Nereididae	Gammaridea
+Nereididae	Hydrozoa
+Nereididae	Nereididae
+Nereididae	Ulva sp.
+Nereididae	Zooplankton
+Nereididae	Diatomea
+Nereididae	Aged detritus
+Nereididae	Fresh detritus
+Nereididae	Aged detritus
+Nereididae	Diatomea
+Nereididae	Fresh detritus
+Nereididae	Oligochaeta
+Notobalanus flosculus	Phytoplankton
+Notobalanus flosculus	Diatomea
+Notobalanus flosculus	Fresh detritus
+Notochthamalus scabrosus 	Phytoplankton
+Notochthamalus scabrosus 	Zooplankton
+Notochthamalus scabrosus 	Fresh detritus
+Odontesthes nigricans	Amphipoda
+Odontesthes nigricans	Amphipoda
+Odontesthes nigricans	Bivalvia
+Odontesthes nigricans	Euphausiacea
+Odontesthes nigricans	Galaxias maculatus
+Odontesthes nigricans	Gastropoda
+Odontesthes nigricans	Hydrozoa
+Odontesthes nigricans	Isopoda
+Odontesthes nigricans	Isopoda
+Odontesthes nigricans	Macroalgae
+Odontesthes nigricans	Munida gregaria
+Odontesthes nigricans	Polychaeta
+Odontesthes nigricans	Polychaeta
+Odontesthes nigricans	Copepoda
+Oligochaeta	Aged detritus
+Oligochaeta	Aged detritus
+Ophiuroidea	Cumacea
+Ophiuroidea	Echiura
+Ophiuroidea	Euphausiacea
+Ophiuroidea	Fresh detritus
+Ophiuroidea	Gammaridea
+Ophiuroidea	Gammaridea
+Ophiuroidea	Hydrozoa
+Ophiuroidea	Ostracoda
+Ophiuroidea	Phytoplankton
+Ophiuroidea	Phytoplankton
+Ophiuroidea	Polychaeta
+Ophiuroidea	Polynoidae
+Ophiuroidea	Polynoidae
+Ophiuroidea	Zooplankton
+Ophiuroidea	Zooplankton
+Ophiuroidea	Diatomea
+Ophiuroidea	Fresh detritus
+Ostracoda	Aged detritus
+Ostracoda	Phytoplankton
+Ostracoda	Zooplankton
+Ostracoda	Fresh detritus
+Ostracoda	Diatomea
+Ostracoda	Fresh detritus
+Ostracoda	Diatomea
+Ostracoda	Phytoplankton
+Ostracoda	Fresh detritus
+Ostracoda	Zooplankton
+Ostracoda	Fresh detritus
+Ostracoda	Phytoplankton
+Ostracoda	Zooplankton
+Ostracoda	Diatomea
+Ostracoda	Fresh detritus
+Pagurus comptus	Aged detritus
+Pagurus comptus	Aged detritus
+Pagurus comptus	Aged detritus
+Pagurus comptus	Aged detritus
+Pagurus comptus	Aged detritus
+Pagurus comptus	Amphipoda
+Pagurus comptus	Bivalvia
+Pagurus comptus	Crustacea
+Pagurus comptus	Glyceridae
+Pagurus comptus	Hydrozoa
+Pagurus comptus	Hydrozoa
+Pagurus comptus	Isopoda
+Pagurus comptus	Macroalgae
+Pagurus comptus	Membranipora isabelleana
+Pagurus comptus	Mytilus edulis chilensis
+Pagurus comptus	Mytilus edulis chilensis
+Pagurus comptus	Mytilus edulis chilensis
+Pagurus comptus	Necromass
+Pagurus comptus	Necromass
+Pagurus comptus	Necromass
+Pagurus comptus	Ostracoda
+Pagurus comptus	Ostracoda
+Pagurus comptus	Phytoplankton
+Pagurus comptus	Phytoplankton
+Pagurus comptus	Phytoplankton
+Pagurus comptus	Polychaeta
+Pagurus comptus	Polychaeta
+Pagurus comptus	Polychaeta
+Pagurus comptus	Polychaeta
+Pagurus comptus	Pseudechinus magellanicus
+Pagurus comptus	Pseudechinus magellanicus
+Pagurus comptus	Zooplankton
+Pagurus comptus	Zooplankton
+Pagurus comptus	Zooplankton
+Pagurus comptus	Diatomea
+Pagurus comptus	Copepoda
+Paralomis granulosa	Aulacomya atra
+Paralomis granulosa	Aulacomya atra
+Paralomis granulosa	Bivalvia
+Paralomis granulosa	Bivalvia
+Paralomis granulosa	Bryozoa
+Paralomis granulosa	Calliostoma nudum
+Paralomis granulosa	Calliostoma nudum
+Paralomis granulosa	Cirripedia
+Paralomis granulosa	Crustacea
+Paralomis granulosa	Fissurella picta
+Paralomis granulosa	Fissurella picta
+Paralomis granulosa	Gastropoda
+Paralomis granulosa	Gastropoda
+Paralomis granulosa	Hiatella arctica
+Paralomis granulosa	Hiatella arctica
+Paralomis granulosa	Hydrozoa
+Paralomis granulosa	Hydrozoa
+Paralomis granulosa	Isopoda
+Paralomis granulosa	Macroalgae
+Paralomis granulosa	Macroalgae
+Paralomis granulosa	Macrocystis pyrifera
+Paralomis granulosa	Margarella violacea
+Paralomis granulosa	Margarella violacea
+Paralomis granulosa	Membranipora isabelleana
+Paralomis granulosa	Membranipora isabelleana
+Paralomis granulosa	Munida gregaria
+Paralomis granulosa	Mytilus edulis chilensis
+Paralomis granulosa	Mytilus edulis chilensis
+Paralomis granulosa	Ostracoda
+Paralomis granulosa	Pagurus comptus
+Paralomis granulosa	Polychaeta
+Paralomis granulosa	Polychaeta
+Paralomis granulosa	Pseudechinus magellanicus
+Paralomis granulosa	Pseudechinus magellanicus
+Paralomis granulosa	Tonicia sp.
+Paralomis granulosa	Zooplankton
+Paralomis granulosa	Zooplankton
+Paralomis granulosa	Copepoda
+Paranotothenia magellanica	Amphipoda
+Paranotothenia magellanica	Amphipoda
+Paranotothenia magellanica	Bryozoa
+Paranotothenia magellanica	Cephalopoda
+Paranotothenia magellanica	Eurypodius latreillii
+Paranotothenia magellanica	Exosphaeroma gigas
+Paranotothenia magellanica	Gaimardia trapesina
+Paranotothenia magellanica	Hydrozoa
+Paranotothenia magellanica	Isopoda
+Paranotothenia magellanica	Isopoda
+Paranotothenia magellanica	Laevilitorina caliginosa
+Paranotothenia magellanica	Laevilitorina caliginosa
+Paranotothenia magellanica	Macroalgae
+Paranotothenia magellanica	Munida gregaria
+Paranotothenia magellanica	Polychaeta
+Paranotothenia magellanica	Polychaeta
+Paranotothenia magellanica	Copepoda
+Pareuthria fuscata	Aged detritus
+Pareuthria fuscata	Fresh detritus
+Pareuthria fuscata	Necromass
+Pareuthria fuscata	Necromass
+Pareuthria fuscata	Fresh detritus
+Patagonotothen brevicauda brevicauda	Amphipoda
+Patagonotothen brevicauda brevicauda	Halicarcinus planatus 
+Patagonotothen brevicauda brevicauda	Munida gregaria
+Patagonotothen brevicauda brevicauda	Patagonotothen cornucola
+Patagonotothen brevicauda brevicauda	Polychaeta
+Patagonotothen brevicauda brevicauda	Copepoda
+Patagonotothen cornucola	Acanthocyclus albatrossis
+Patagonotothen cornucola	Amphipoda
+Patagonotothen cornucola	Amphipoda
+Patagonotothen cornucola	Ceramium sp.
+Patagonotothen cornucola	Exosphaeroma gigas
+Patagonotothen cornucola	Exosphaeroma gigas
+Patagonotothen cornucola	Gammaridea
+Patagonotothen cornucola	Gastropoda
+Patagonotothen cornucola	Halicarcinus planatus 
+Patagonotothen cornucola	Hydrozoa
+Patagonotothen cornucola	Isopoda
+Patagonotothen cornucola	Isopoda
+Patagonotothen cornucola	Munida gregaria
+Patagonotothen cornucola	Mytilus edulis chilensis
+Patagonotothen cornucola	Nereididae
+Patagonotothen cornucola	Nereididae
+Patagonotothen cornucola	Nereididae
+Patagonotothen cornucola	Ostracoda
+Patagonotothen cornucola	Ostracoda
+Patagonotothen cornucola	Polychaeta
+Patagonotothen cornucola	Polychaeta
+Patagonotothen cornucola	Polychaeta
+Patagonotothen cornucola	Polynoidae
+Patagonotothen cornucola	Polynoidae
+Patagonotothen cornucola	Polynoidae
+Patagonotothen cornucola	Polysiphonia sp.
+Patagonotothen cornucola	Porphyra sp.
+Patagonotothen cornucola	Rhizoclonium sp.
+Patagonotothen cornucola	Tanaidacea
+Patagonotothen cornucola	Copepoda
+Patagonotothen cornucola	Copepoda
+Patagonotothen longipes	Amphipoda
+Patagonotothen longipes	Amphipoda
+Patagonotothen longipes	Euphausiacea
+Patagonotothen longipes	Exosphaeroma gigas
+Patagonotothen longipes	Halicarcinus planatus 
+Patagonotothen longipes	Isopoda
+Patagonotothen longipes	Munida gregaria
+Patagonotothen longipes	Mytilus edulis chilensis
+Patagonotothen longipes	Nereididae
+Patagonotothen longipes	Ostracoda
+Patagonotothen longipes	Polychaeta
+Patagonotothen longipes	Porphyra sp.
+Patagonotothen longipes	Copepoda
+Patagonotothen ramsayi	Amphipoda
+Patagonotothen ramsayi	Amphipoda
+Patagonotothen ramsayi	Amphipoda
+Patagonotothen ramsayi	Bivalvia
+Patagonotothen ramsayi	Campylonotus vagans
+Patagonotothen ramsayi	Cephalopoda
+Patagonotothen ramsayi	Cephalopoda
+Patagonotothen ramsayi	Cephalopoda
+Patagonotothen ramsayi	Cephalopoda
+Patagonotothen ramsayi	Crustacea
+Patagonotothen ramsayi	Crustacea
+Patagonotothen ramsayi	Ctenophora
+Patagonotothen ramsayi	Euphausiacea
+Patagonotothen ramsayi	Euphausiacea
+Patagonotothen ramsayi	Eurypodius latreillii
+Patagonotothen ramsayi	Gastropoda
+Patagonotothen ramsayi	Gastropoda
+Patagonotothen ramsayi	Holothuroidea
+Patagonotothen ramsayi	Isopoda
+Patagonotothen ramsayi	Isopoda
+Patagonotothen ramsayi	Munida gregaria
+Patagonotothen ramsayi	Munida gregaria
+Patagonotothen ramsayi	Munida gregaria
+Patagonotothen ramsayi	Munida gregaria
+Patagonotothen ramsayi	Necromass
+Patagonotothen ramsayi	Ophiuroidea
+Patagonotothen ramsayi	Ophiuroidea
+Patagonotothen ramsayi	Pagurus comptus
+Patagonotothen ramsayi	Patagonotothen ramsayi
+Patagonotothen ramsayi	Patagonotothen tessellata
+Patagonotothen ramsayi	Peltarion spinosulum
+Patagonotothen ramsayi	Polychaeta
+Patagonotothen ramsayi	Polychaeta
+Patagonotothen ramsayi	Polychaeta
+Patagonotothen ramsayi	Zygochlamys patagonica
+Patagonotothen ramsayi	Copepoda
+Patagonotothen ramsayi	Copepoda
+Patagonotothen ramsayi	Hyperiidea
+Patagonotothen ramsayi	Euphausiacea
+Patagonotothen ramsayi	Polychaeta
+Patagonotothen ramsayi	Gammaridea
+Patagonotothen ramsayi	Isopoda
+Patagonotothen ramsayi	Patagonotothen ramsayi
+Patagonotothen ramsayi	Cephalopoda
+Patagonotothen ramsayi	Zooplankton
+Patagonotothen ramsayi	Sprattus fuegensis
+Patagonotothen ramsayi	Munida gregaria
+Patagonotothen sima	Amphipoda
+Patagonotothen sima	Isopoda
+Patagonotothen sima	Munida gregaria
+Patagonotothen sima	Polychaeta
+Patagonotothen sima	Copepoda
+Patagonotothen sp.	Amphipoda
+Patagonotothen sp.	Isopoda
+Patagonotothen sp.	Munida gregaria
+Patagonotothen sp.	Polychaeta
+Patagonotothen sp.	Zooplankton
+Patagonotothen sp.	Copepoda
+Patagonotothen tessellata	Adenocystis utricularis
+Patagonotothen tessellata	Amphipoda
+Patagonotothen tessellata	Amphipoda
+Patagonotothen tessellata	Amphipoda
+Patagonotothen tessellata	Anasterias antarctica
+Patagonotothen tessellata	Callophyllis pinnata
+Patagonotothen tessellata	Cephalopoda
+Patagonotothen tessellata	Cephalopoda
+Patagonotothen tessellata	Ceramium diaphanum
+Patagonotothen tessellata	Cirratulidae
+Patagonotothen tessellata	Ulva sp.
+Patagonotothen tessellata	Euphausiacea
+Patagonotothen tessellata	Exosphaeroma gigas
+Patagonotothen tessellata	Gastropoda
+Patagonotothen tessellata	Gastropoda
+Patagonotothen tessellata	Halicarcinus planatus 
+Patagonotothen tessellata	Hydrozoa
+Patagonotothen tessellata	Isopoda
+Patagonotothen tessellata	Isopoda
+Patagonotothen tessellata	Isopoda
+Patagonotothen tessellata	Isopoda
+Patagonotothen tessellata	Macrocystis pyrifera
+Patagonotothen tessellata	Munida gregaria
+Patagonotothen tessellata	Munida gregaria
+Patagonotothen tessellata	Munida gregaria
+Patagonotothen tessellata	Mytilus edulis chilensis
+Patagonotothen tessellata	Nacella deaurata
+Patagonotothen tessellata	Nemertea
+Patagonotothen tessellata	Nereididae
+Patagonotothen tessellata	Nothogenia fastigiata
+Patagonotothen tessellata	Ophiuroidea
+Patagonotothen tessellata	Polychaeta
+Patagonotothen tessellata	Polychaeta
+Patagonotothen tessellata	Polychaeta
+Patagonotothen tessellata	Polynoidae
+Patagonotothen tessellata	Polyplacophora
+Patagonotothen tessellata	Scytothamus fasciculatus
+Patagonotothen tessellata	Siphonaria lessonii
+Patagonotothen tessellata	Trophon geversianus
+Patagonotothen tessellata	Ulva rigida
+Patagonotothen tessellata	Xymenopsis muriciformis 
+Patagonotothen tessellata	Zygochlamys patagonica
+Patagonotothen tessellata	Copepoda
+Patagonotothen tessellata	Copepoda
+Peltarion spinosulum	Aulacomya atra
+Peltarion spinosulum	Bivalvia
+Peltarion spinosulum	Calliostoma nudum
+Peltarion spinosulum	Crustacea
+Peltarion spinosulum	Fissurella picta
+Peltarion spinosulum	Gastropoda
+Peltarion spinosulum	Hiatella arctica
+Peltarion spinosulum	Hydrozoa
+Peltarion spinosulum	Macroalgae
+Peltarion spinosulum	Margarella violacea
+Peltarion spinosulum	Membranipora isabelleana
+Peltarion spinosulum	Munida gregaria
+Peltarion spinosulum	Mytilus edulis chilensis
+Peltarion spinosulum	Polychaeta
+Peltarion spinosulum	Pseudechinus magellanicus
+Peltarion spinosulum	Zooplankton
+Peltarion spinosulum	Copepoda
+Perumytilus purpuratus	Fresh detritus
+Perumytilus purpuratus	Phytoplankton
+Perumytilus purpuratus	Zooplankton
+Perumytilus purpuratus	Fresh detritus
+Plaxiphora sp.	Macrocystis pyrifera
+Plaxiphora sp.	Macrocystis pyrifera
+Plaxiphora sp.	Phytoplankton
+Polychaeta	Aged detritus
+Polychaeta	Necromass
+Polychaeta	Ostracoda
+Polychaeta	Cumacea
+Polychaeta	Euphausiacea
+Polychaeta	Hyperiidea
+Polychaeta	Ostracoda
+Polychaeta	Copepoda
+Polychaeta	Fresh detritus
+Polychaeta	Aged detritus
+Polychaeta	Aged detritus
+Polynoidae	Aged detritus
+Polynoidae	Aged detritus
+Polynoidae	Aged detritus
+Polynoidae	Bryozoa
+Polynoidae	Bryozoa
+Polynoidae	Copepoda
+Polynoidae	Crustacea
+Polynoidae	Diatomea
+Polynoidae	Diatomea
+Polynoidae	Gammaridea
+Polynoidae	Gammaridea
+Polynoidae	Gammaridea
+Polynoidae	Gastropoda
+Polynoidae	Hydrozoa
+Polynoidae	Hydrozoa
+Polynoidae	Necromass
+Polynoidae	Nereididae
+Polynoidae	Ostracoda
+Polynoidae	Ostracoda
+Polynoidae	Ostracoda
+Polynoidae	Polychaeta
+Polynoidae	Polychaeta
+Polynoidae	Polychaeta
+Polynoidae	Polynoidae
+Polynoidae	Polynoidae
+Polynoidae	Porifera
+Polynoidae	Porifera
+Polynoidae	Porifera
+Polyplacophora	Adenocystis utricularis
+Polyplacophora	Bryozoa
+Polyplacophora	Bryozoa
+Polyplacophora	Callophyllis pinnata
+Polyplacophora	Ceramium diaphanum
+Polyplacophora	Diatomea
+Polyplacophora	Diatomea
+Polyplacophora	Diatomea
+Polyplacophora	Ulva sp.
+Polyplacophora	Fresh detritus
+Polyplacophora	Fresh detritus
+Polyplacophora	Fresh detritus
+Polyplacophora	Macrocystis pyrifera
+Polyplacophora	Macrocystis pyrifera
+Polyplacophora	Nothogenia fastigiata
+Polyplacophora	Phytoplankton
+Polyplacophora	Porifera
+Polyplacophora	Porifera
+Polyplacophora	Scytothamus fasciculatus
+Polyplacophora	Ulva rigida
+Polyplacophora	Ulva rigida
+Porifera	Fresh detritus
+Porifera	Fresh detritus
+Porifera	Fresh detritus
+Porifera	Diatomea
+Priapulida	Nereididae
+Priapulida	Polychaeta
+Pseudechinus magellanicus	Aged detritus
+Pseudechinus magellanicus	Amphipoda
+Pseudechinus magellanicus	Amphipoda
+Pseudechinus magellanicus	Aulacomya atra
+Pseudechinus magellanicus	Aulacomya atra
+Pseudechinus magellanicus	Bivalvia
+Pseudechinus magellanicus	Blidingia minima
+Pseudechinus magellanicus	Bostrychia sp.
+Pseudechinus magellanicus	Bryozoa
+Pseudechinus magellanicus	Bryozoa
+Pseudechinus magellanicus	Ceramium diaphanum
+Pseudechinus magellanicus	Ceramium sp.
+Pseudechinus magellanicus	Cladophora sp.
+Pseudechinus magellanicus	Cumacea
+Pseudechinus magellanicus	Delesseriaceae 
+Pseudechinus magellanicus	Derbesia sp.
+Pseudechinus magellanicus	Ectocarpus sp.
+Pseudechinus magellanicus	Ectocarpus sp.
+Pseudechinus magellanicus	Exosphaeroma gigas
+Pseudechinus magellanicus	Halicarcinus planatus 
+Pseudechinus magellanicus	Hincksia sp.
+Pseudechinus magellanicus	Hydrozoa
+Pseudechinus magellanicus	Macrocystis pyrifera
+Pseudechinus magellanicus	Macrocystis pyrifera
+Pseudechinus magellanicus	Macrocystis pyrifera
+Pseudechinus magellanicus	Macrocystis pyrifera
+Pseudechinus magellanicus	Macrocystis pyrifera
+Pseudechinus magellanicus	Membranipora isabelleana
+Pseudechinus magellanicus	Mytilus edulis chilensis
+Pseudechinus magellanicus	Mytilus edulis chilensis
+Pseudechinus magellanicus	Ostracoda
+Pseudechinus magellanicus	Pareuthria fuscata
+Pseudechinus magellanicus	Perumytilus purpuratus
+Pseudechinus magellanicus	Phytoplankton
+Pseudechinus magellanicus	Polychaeta
+Pseudechinus magellanicus	Polychaeta
+Pseudechinus magellanicus	Polysiphonia sp.
+Pseudechinus magellanicus	Porifera
+Pseudechinus magellanicus	Pseudechinus magellanicus
+Pseudechinus magellanicus	Rhizoclonium sp.
+Pseudechinus magellanicus	Sphacelaria sp.
+Pseudechinus magellanicus	Spirorbinae
+Pseudechinus magellanicus	Spirorbinae
+Pseudechinus magellanicus	Ulothrix sp.
+Pseudechinus magellanicus	Ulva sp.
+Pseudechinus magellanicus	Zooplankton
+Pseudechinus magellanicus	Zooplankton
+Pseudechinus magellanicus	Diatomea
+Pseudechinus magellanicus	Copepoda
+Raja (Dipturus) chilensis	Amphipoda
+Raja (Dipturus) chilensis	Amphipoda
+Raja (Dipturus) chilensis	Arbacia dufresnii
+Raja (Dipturus) chilensis	Arbacia dufresnii
+Raja (Dipturus) chilensis	Cephalopoda
+Raja (Dipturus) chilensis	Cephalopoda
+Raja (Dipturus) chilensis	Cephalopoda
+Raja (Dipturus) chilensis	Congiopodus peruvianus
+Raja (Dipturus) chilensis	Congiopodus peruvianus
+Raja (Dipturus) chilensis	Crustacea
+Raja (Dipturus) chilensis	Eurypodius latreillii
+Raja (Dipturus) chilensis	Gammaridea
+Raja (Dipturus) chilensis	Gastropoda
+Raja (Dipturus) chilensis	Genypterus blacodes
+Raja (Dipturus) chilensis	Genypterus blacodes
+Raja (Dipturus) chilensis	Genypterus blacodes
+Raja (Dipturus) chilensis	Hyperiidea
+Raja (Dipturus) chilensis	Isopoda
+Raja (Dipturus) chilensis	Isopoda
+Raja (Dipturus) chilensis	Isopoda
+Raja (Dipturus) chilensis	Macruronus magellanicus
+Raja (Dipturus) chilensis	Macruronus magellanicus
+Raja (Dipturus) chilensis	Merluccius hubbsi
+Raja (Dipturus) chilensis	Merluccius hubbsi
+Raja (Dipturus) chilensis	Merluccius hubbsi
+Raja (Dipturus) chilensis	Munida gregaria
+Raja (Dipturus) chilensis	Munida gregaria
+Raja (Dipturus) chilensis	Munida gregaria
+Raja (Dipturus) chilensis	Myxine glutinosa
+Raja (Dipturus) chilensis	Myxine glutinosa
+Raja (Dipturus) chilensis	Patagonotothen ramsayi
+Raja (Dipturus) chilensis	Patagonotothen ramsayi
+Raja (Dipturus) chilensis	Patagonotothen ramsayi
+Raja (Dipturus) chilensis	Peltarion spinosulum
+Raja (Dipturus) chilensis	Peltarion spinosulum
+Raja (Dipturus) chilensis	Polychaeta
+Raja (Dipturus) chilensis	Polychaeta
+Raja (Dipturus) chilensis	Porifera
+Raja (Dipturus) chilensis	Pseudechinus magellanicus
+Raja (Dipturus) chilensis	Raja (Dipturus) chilensis
+Raja (Dipturus) chilensis	Raja (Dipturus) chilensis
+Raja (Dipturus) chilensis	Stromateus brasiliensis
+Raja (Dipturus) chilensis	Stromateus brasiliensis
+Salilota australis	Bivalvia
+Salilota australis	Bivalvia
+Salilota australis	Cephalopoda
+Salilota australis	Cephalopoda
+Salilota australis	Cottoperca gobio
+Salilota australis	Cottoperca gobio
+Salilota australis	Ctenophora
+Salilota australis	Dissostichus eleginoides
+Salilota australis	Euphausiacea
+Salilota australis	Euphausiacea
+Salilota australis	Gammaridea
+Salilota australis	Gammaridea
+Salilota australis	Gastropoda
+Salilota australis	Holothuroidea
+Salilota australis	Hyperiidea
+Salilota australis	Isopoda
+Salilota australis	Macruronus magellanicus
+Salilota australis	Merluccius hubbsi
+Salilota australis	Munida gregaria
+Salilota australis	Munida gregaria
+Salilota australis	Munida gregaria
+Salilota australis	Ophiuroidea
+Salilota australis	Patagonotothen ramsayi
+Salilota australis	Polychaeta
+Salilota australis	Polychaeta
+Salilota australis	Porifera
+Salilota australis	Sprattus fuegensis
+Salilota australis	Copepoda
+Salilota australis	Hyperiidea
+Schroederichthys bivius	Nemertea
+Schroederichthys bivius	Amphipoda
+Schroederichthys bivius	Amphipoda
+Schroederichthys bivius	Bivalvia
+Schroederichthys bivius	Campylonotus vagans
+Schroederichthys bivius	Cephalopoda
+Schroederichthys bivius	Cephalopoda
+Schroederichthys bivius	Cephalopoda
+Schroederichthys bivius	Cephalopoda
+Schroederichthys bivius	Cephalopoda
+Schroederichthys bivius	Champsocephalus esox
+Schroederichthys bivius	Cirripedia
+Schroederichthys bivius	Crustacea
+Schroederichthys bivius	Crustacea
+Schroederichthys bivius	Echiura
+Schroederichthys bivius	Echiura
+Schroederichthys bivius	Euphausiacea
+Schroederichthys bivius	Eurypodius latreillii
+Schroederichthys bivius	Isopoda
+Schroederichthys bivius	Isopoda
+Schroederichthys bivius	Macroalgae
+Schroederichthys bivius	Macroalgae
+Schroederichthys bivius	Merluccius hubbsi
+Schroederichthys bivius	Merluccius hubbsi
+Schroederichthys bivius	Munida gregaria
+Schroederichthys bivius	Munida gregaria
+Schroederichthys bivius	Munida gregaria
+Schroederichthys bivius	Munida gregaria
+Schroederichthys bivius	Munida gregaria
+Schroederichthys bivius	Necromass
+Schroederichthys bivius	Ophiuroidea
+Schroederichthys bivius	Patagonotothen ramsayi
+Schroederichthys bivius	Peltarion spinosulum
+Schroederichthys bivius	Peltarion spinosulum
+Schroederichthys bivius	Polychaeta
+Schroederichthys bivius	Polychaeta
+Schroederichthys bivius	Polychaeta
+Schroederichthys bivius	Polychaeta
+Schroederichthys bivius	Porifera
+Schroederichthys bivius	Priapulida
+Schroederichthys bivius	Priapulida
+Schroederichthys bivius	Priapulida
+Schroederichthys bivius	Sprattus fuegensis
+Serpulidae	Phytoplankton
+Serpulidae	Diatomea
+Serpulidae	Fresh detritus
+Serpulidae	Fresh detritus
+Siphonaria lessonii	Adenocystis utricularis
+Siphonaria lessonii	Callophyllis pinnata
+Siphonaria lessonii	Ceramium diaphanum
+Siphonaria lessonii	Codium sp.
+Siphonaria lessonii	Ulva sp.
+Siphonaria lessonii	Ulva sp.
+Siphonaria lessonii	Macrocystis pyrifera
+Siphonaria lessonii	Nothogenia fastigiata
+Siphonaria lessonii	Phytoplankton
+Siphonaria lessonii	Scytothamus fasciculatus
+Siphonaria lessonii	Ulva rigida
+Siphonaria lessonii	Ulva sp.
+Siphonaria lessonii	Ulva sp.
+Siphonaria lessonii	Fresh detritus
+Siphonaria lessonii	Fresh detritus
+Spirorbinae	Necromass
+Spirorbinae	Phytoplankton
+Spirorbinae	Fresh detritus
+Spirorbinae	Fresh detritus
+Spirorbinae	Fresh detritus
+Sprattus fuegensis	Amphipoda
+Sprattus fuegensis	Amphipoda
+Sprattus fuegensis	Euphausiacea
+Sprattus fuegensis	Euphausiacea
+Sprattus fuegensis	Isopoda
+Sprattus fuegensis	Isopoda
+Sprattus fuegensis	Ostracoda
+Sprattus fuegensis	Phytoplankton
+Sprattus fuegensis	Phytoplankton
+Sprattus fuegensis	Zooplankton
+Sprattus fuegensis	Zooplankton
+Sprattus fuegensis	Zooplankton
+Sprattus fuegensis	Diatomea
+Sprattus fuegensis	Diatomea
+Sprattus fuegensis	Copepoda
+Sprattus fuegensis	Copepoda
+Sprattus fuegensis	Copepoda
+Stromateus brasiliensis	Ctenophora
+Stromateus brasiliensis	Ctenophora
+Stromateus brasiliensis	Polychaeta
+Stromateus brasiliensis	Copepoda
+Tanaidacea	Aged detritus
+Tanaidacea	Aged detritus
+Tanaidacea	Aged detritus
+Tanaidacea	Diatomea
+Tanaidacea	Diatomea
+Tanaidacea	Diatomea
+Tanaidacea	Diatomea
+Tanaidacea	Fresh detritus
+Tanaidacea	Phytoplankton
+Terebellidae	Ulva sp.
+Terebellidae	Zooplankton
+Terebellidae	Aged detritus
+Terebellidae	Aged detritus
+Terebellidae	Diatomea
+Terebellidae	Diatomea
+Terebellidae	Diatomea
+Terebellidae	Fresh detritus
+Terebellidae	Fresh detritus
+Tonicia sp.	Bryozoa
+Tonicia sp.	Codium sp.
+Tonicia sp.	Porifera
+Trophon geversianus	Aulacomya atra
+Trophon geversianus	Aulacomya atra
+Trophon geversianus	Aulacomya atra
+Trophon geversianus	Chthamalus sp.
+Trophon geversianus	Hiatella arctica
+Trophon geversianus	Munida gregaria
+Trophon geversianus	Mytilus edulis chilensis
+Trophon geversianus	Nacella deaurata
+Trophon geversianus	Notochthamalus scabrosus 
+Trophon geversianus	Perumytilus purpuratus
+Trophon geversianus	Perumytilus purpuratus
+Trophon geversianus	Polyplacophora
+Trophon geversianus	Siphonaria lessonii
+Xymenopsis muriciformis 	Halicarcinus planatus 
+Xymenopsis muriciformis 	Mytilus edulis chilensis
+Xymenopsis muriciformis 	Nacella deaurata
+Xymenopsis muriciformis 	Polyplacophora
+Xymenopsis muriciformis 	Siphonaria lessonii
+Zooplankton	Phytoplankton
+Zooplankton	Phytoplankton
+Zooplankton	Phytoplankton
+Zooplankton	Zooplankton
+Zooplankton	Copepoda
+Zooplankton	Fresh detritus
+Zygochlamys patagonica	Phytoplankton
+Zygochlamys patagonica	Polychaeta
+Zygochlamys patagonica	Porifera
+Zygochlamys patagonica	Zooplankton
+Zygochlamys patagonica	Diatomea
+Zygochlamys patagonica	Copepoda
+Zygochlamys patagonica	Fresh detritus
