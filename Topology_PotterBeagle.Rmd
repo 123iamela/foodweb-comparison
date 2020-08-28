@@ -41,7 +41,7 @@ require(RColorBrewer)
 p <- readNetwork("Data/Potter_FW.txt", edgeListFormat=1)
 b <- readNetwork("Data/Beagle_FW.txt", edgeListFormat=1)
 
-# Remoove loops and repeated interactions
+# Remove loops and repeated interactions
 
 p <- simplify(p)
 b <- simplify(b)

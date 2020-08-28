@@ -22,41 +22,43 @@ require(multiweb)
 require(cowplot)
 require(NetIndices)
 
-### Tipografia ###
+# Typography
 
 require(extrafont)
 #font_import()
 #loadfonts()
 loadfonts(device="win")
 
-### Paleta de colores ###
+# Color palette
 
 #colnet1 <- c("#833f8f", "#ccb7d5","#a8d9c3", "#088a4f")
 colnet <- c("#024828","#066e3f","#088a4f","#51b487","#85caab","#a8d9c3", #VERDE +oscuro-
             "#ffffff", 
             "#40004b","#683272","#833f8f","#9970ab","#b79ac4","#ccb7d5") #VIOLETA +oscuro-
 
-### Plot theme ###
+# Plots theme
+
 theme_new <- theme_minimal() +
-      theme(axis.title.x=element_text(size=18, face="bold", family="Lato", margin=margin(t=8, r=0, b=0, l=0)),
-            axis.text.x=element_text(size=10, color="black", family="Lato"), 
-            axis.title.y = element_text(face="bold", size=15, vjust=rel(3), family="Lato"),
-            axis.text.y=element_text(size=10, color="black", family="Lato"),
-            plot.title=element_text(family="Lato", face="bold", size=20, hjust=0.5),
-            panel.grid.major=element_line(color="gray50", linetype="dotted", size=rel(0.6)),
-            panel.grid.minor=element_line(color="gray85", linetype="dotted", size=rel(0.5)),
-            panel.background=element_rect(fill="gray98", color="white"),
-            legend.text=element_text(size=16, family="Lato"),
-            legend.title=element_text(face="bold", size=16, family="Lato"),
-            legend.position="bottom")
+             theme(axis.title.x=element_text(size=18, face="bold", family="Lato", margin=margin(t=8, r=0, b=0, l=0)),
+                   axis.text.x=element_text(size=10, color="black", family="Lato"), 
+                   axis.title.y = element_text(face="bold", size=15, vjust=rel(3), family="Lato"),
+                   axis.text.y=element_text(size=10, color="black", family="Lato"),
+                   plot.title=element_text(family="Lato", face="bold", size=20, hjust=0.5),
+                   panel.grid.major=element_line(color="gray50", linetype="dotted", size=rel(0.6)),
+                   panel.grid.minor=element_line(color="gray85", linetype="dotted", size=rel(0.5)),
+                   panel.background=element_rect(fill="gray98", color="white"),
+                   legend.text=element_text(size=16, family="Lato"),
+                   legend.title=element_text(face="bold", size=16, family="Lato"),
+                   legend.position="bottom")
 
 ```
 
-## Lee y grafica la red trofica de Potter y Beagle.
 
-```{r plotNet, echo=FALSE, message=FALSE}
+### Plot food webs ###
 
-# Grafico redes por nivel trofico y coloreado por rol topologico
+```{r plotFW, echo=FALSE, message=FALSE}
+
+# Plot networks by trophic level and species colored by topological role
 
 ptl <- function (g, topoFrame, vertexLabel = FALSE, vertexSizeFactor = 5, modules = FALSE, lMat = NULL, bpal = NULL, maxTL = NULL, edge.width = NULL, ...) 
   {
@@ -126,14 +128,17 @@ ptl <- function (g, topoFrame, vertexLabel = FALSE, vertexSizeFactor = 5, module
     axis(side = 2, at = t2(tlseq), labels = tlseq, las = 1, col = NA, col.ticks = NULL, cex.axis = 1, lwd.ticks = 1)
     }
 
+# Plot networks
 tiff("Figures/fw.tif", width=12, height=8, units="in", res=300)
 par(mfrow=c(1,2), mar=c(0,2,0,0), oma=c(0,1.5,2.3,0.5), family = "Lato")
 ptl(p, hub_connp, vertexLabel = FALSE, maxTL = 5)
 ptl(b, hub_connb, vertexLabel = FALSE, maxTL = 5)
 
+# Add axis-y legend
 mtext("Trophic Level", side=2, outer=TRUE, line=0, cex=1.25, font=2)
 par(fig=c(0,1,0,1), family="Lato", new=TRUE)
 
+# Plots titles
 plot(0, 0, type="n", bty="n", xaxt="n", yaxt="n")
 mtext("Beagle Channel", side=3, outer=TRUE, line=0.5, cex=1.75, font=2, adj=1)
 par(fig=c(0,1,0,1), family="Lato", new=TRUE)
@@ -142,6 +147,7 @@ plot(0, 0, type="n", bty="n", xaxt="n", yaxt="n")
 mtext("Potter Cove", side=3, outer=TRUE, line=0.5, cex=1.75, font=2, adj=0)
 par(fig=c(0,1,0,1), oma=c(0,0,0,0), mar=c(0,0,1,0), new=TRUE)
 
+# Add legend
 plot(0, 0, type="n", bty="n", xaxt="n", yaxt="n")
 colnet1 <- c("#833f8f", "#ccb7d5","#a8d9c3", "#088a4f")
 legend("top", legend = c("Network connector", "Module connector", "Module specialist", "Module hub"), col=colnet1, pch=19, cex=0.8, xpd=TRUE, inset=c(0,0), title="Topological roles:")
@@ -151,15 +157,15 @@ dev.off()
 ```
 
 
-## Grafica Modulos vs Habitat y Grupo funcional.
+### Plot tratis (habitat & functional group) vs modules ###
 
-```{r HabitatFG, echo=FALSE, message=FALSE, results='asis'}
+```{r plotTrait, echo=FALSE, message=FALSE, results='asis'}
 
 colnet <- c("#024828","#066e3f","#088a4f","#51b487","#85caab","#a8d9c3", #VERDE +oscuro-
             "#ffffff", 
             "#40004b","#683272","#833f8f","#9970ab","#b79ac4","#ccb7d5") #VIOLETA +oscuro-
 
-### Módulos vs Habitat ###
+# Modules vs habitat #
 
 #POTTER
 #legendh <- get_legend(ph)
@@ -189,7 +195,7 @@ bh <- ggplot(cbH, aes(Mod, Freq, fill=factor(Habitat, levels=c("pelagic", "benth
       coord_cartesian(ylim=c(0, 50)) + 
       theme_new
   
-### Módulos vs Grupos funcionales ###
+# Modules vs functional group #
 
 #POTTER
 #legendfg <- get_legend(pfg)
@@ -218,6 +224,8 @@ bfg <- ggplot(cbFG, aes(Mod, Freq, fill=factor(FG, levels=c("basal taxa", "zoopl
        coord_cartesian(ylim=c(0, 50)) +
        theme_new
 
+# Add all plots into a single plot
+
 hfg <-  list(ph, pfg, legendh, legendfg, bh, bfg)
 col1 <- plot_grid(hfg[[1]], hfg[[2]], ncol=1, nrow=2, labels = c("(a)", "(c)"), label_size=15, label_fontfamily="Lato", hjust=0.25, vjust=2)
 col2 <- plot_grid(hfg[[3]], hfg[[4]], ncol=1, nrow=2)
@@ -229,10 +237,12 @@ ggsave("Figures/H_FG_PCBC1.tiff", width=14, height=12, units="in", dpi=1000)
 ```
 
 
-## Grafica metricas de estabilidad.
+### Plot stability (Q, QSS) metrics ###
 
-```{r}
-#Q
+```{r plotStability, echo=FALSE, message=FALSE, results='asis'}
+
+# Trophic coherence
+
 q13 <- quantile(simp$Q, c(0.005,0.995))
 q14 <- quantile(simb$Q,c(0.005,0.995))
 
@@ -254,7 +264,8 @@ g7 <- ggplot(tiMIC, aes(Q)) +
       guides(fill=guide_legend(reverse=TRUE)) +
       theme(legend.position="top")
 
-#QSS
+# Quasi-sign stabilty
+
 require(binom)
 df <- ti %>% dplyr::select(Network, QSS) %>% group_by(Network) %>% do(binom.confint(.$QSS*10000, 10000, methods="wilson"))
 
@@ -277,6 +288,8 @@ gqss <- ggplot(df, aes(Network, mean, color=Network)) +
 
 gqss <- gqss + coord_flip() + theme(axis.text.y=element_text(size=16, angle=90, hjust=0.5),
                                     axis.text.x=element_text(size=10))
+
+# Add all plots into a single plot
   
 plot_grid(g7, gqss,
           nrow=1, ncol=2, 
@@ -289,9 +302,10 @@ ggsave("Figures/Q_QSS.tiff", width=11, height=5.5, units="in", dpi=1000)
 
 ```
 
-## Histogramas
+### Plot topology metrics ###
 
-```{r}
+```{r plotTopology, echo=FALSE, message=FALSE, results='asis'}
+
 datp <- ti %>% filter(Network=="Potter")
 simp <- tiMIC %>% filter(Network=="Potter")
 
@@ -299,7 +313,8 @@ datb <- ti %>% filter(Network=="Beagle")
 simb <- tiMIC %>% filter(Network=="Beagle")
 
 
-#TLmean
+# Mean trophic level
+
 q1 <- quantile(simp$TLmean, c(0.005,0.995))
 q7 <- quantile(simb$TLmean, c(0.005,0.995))
 
@@ -320,7 +335,8 @@ g1 <- ggplot(tiMIC, aes(TLmean)) +
       theme_new + 
       coord_cartesian(ylim=c(-8, 580)) #+ guides(fill=guide_legend(reverse=TRUE))
 
-#TLmax
+# Maximum trophic level
+
 q2 <- quantile(simp$TLmax, c(0.005,0.995))
 q8 <- quantile(simb$TLmax, c(0.005,0.995))
 
@@ -341,7 +357,8 @@ g2 <- ggplot(tiMIC, aes(TLmax)) +
       theme_new + 
       coord_cartesian(ylim=c(-7, 390))
 
-#Om
+# Omivory
+
 q3 <- quantile(simp$Omnivory, c(0.005,0.995))
 q9 <- quantile(simb$Omnivory, c(0.005,0.995))
 
@@ -362,7 +379,8 @@ g3 <- ggplot(tiMIC, aes(Omnivory)) +
       theme_new + 
       coord_cartesian(ylim=c(-10, 630))
 
-#CC
+# Clustering coefficient
+
 q4 <- quantile(simp$Clustering, c(0.005,0.995))
 q10 <- quantile(simb$Clustering, c(0.005,0.995))
 
@@ -382,7 +400,8 @@ g4 <- ggplot(tiMIC, aes(Clustering)) +
       theme_new + 
       coord_cartesian(ylim=c(-5, 250))
 
-#CPL
+# Characteristic path length
+
 q5 <- quantile(simp$PathLength, c(0.005,0.995))
 q11 <- quantile(simb$PathLength, c(0.005,0.995))
 
@@ -402,7 +421,8 @@ g5 <- ggplot(tiMIC, aes(PathLength)) +
         theme_new + 
         coord_cartesian(ylim=c(-7, 390))
 
-#MO
+# Modularity
+
 q6 <- quantile(simp$Modularity, c(0.005,0.995))
 q12 <- quantile(simb$Modularity, c(0.005,0.995))
 
@@ -422,6 +442,8 @@ g6 <- ggplot(tiMIC, aes(Modularity)) +
       theme_new + 
       coord_cartesian(ylim=c(-2.75, 120))
 
+# Add all plots into a single plot
+
 ggg <- list(g1, g2, g3, g4, g5, g6, legend1)
 row1 <- plot_grid(ggg[[1]], ggg[[2]], ncol=2, labels = c("(a)", "(b)"), label_size=15, label_fontfamily="Lato", hjust=-0.1, vjust=2, scale=0.98)
 row2 <- plot_grid(ggg[[3]], ggg[[4]], ncol=2, labels = c("(c)", "(d)"), label_size=15, label_fontfamily="Lato", hjust=-0.1, vjust=2, scale=0.98)
@@ -436,12 +458,16 @@ ggsave("Figures/ti2_PCBC.tiff", width=11, height=15, units="in", dpi=1000)
 
 
 
-## Smallworld
-```{r}
+### Plot smallworld ###
+
+```{r plotSmallworld, echo=FALSE, message=FALSE, results='asis'}
+
 #ti$Network <- factor(ti$Network, levels=c("Potter", "Beagle"))
 #levels(ti$Network) <- c("Potter Cove", "Beagle Channel")
 #smallWorldness$Network <- factor(smallWorldness$Network, levels=c("Potter", "Beagle"))
 #levels(smallWorldness$Network) <- c("Potter Cove", "Beagle Channel")
+
+# Clustering coefficient
 
 gsmw_cc <- ggplot(ti, aes(Clustering, x=Network, color=Network)) + 
            geom_point(aes(size=2)) +
@@ -457,7 +483,8 @@ gsmw_cc <- ggplot(ti, aes(Clustering, x=Network, color=Network)) +
 gsmw_cc <- gsmw_cc + coord_flip() + theme(axis.text.y=element_text(size=16, angle=90, hjust=0.5),
                                           axis.text.x=element_text(size=10))
         
-        
+# Characteristic path length
+
 gsmw_cpl <- ggplot(ti, aes(PathLength, x=Network, color=Network)) + 
             geom_point(aes(size=2)) +
             geom_line(data=smallWorldness, aes(Network, cha.path), size=1.5) + 
@@ -472,6 +499,8 @@ gsmw_cpl <- ggplot(ti, aes(PathLength, x=Network, color=Network)) +
 
 gsmw_cpl <- gsmw_cpl + coord_flip() + theme(axis.text.y=element_blank(),
                                             axis.text.x=element_text(size=10))
+
+# Add all plots into a single plot
 
 plot_grid(gsmw_cc, gsmw_cpl,
           nrow=1, ncol=2, 
