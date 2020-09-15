@@ -171,10 +171,6 @@ df <- ti %>% dplyr::select(Network, QSS) %>% group_by(Network) %>% do(binom.conf
 
 prop.test(x=ti$QSS*10000, n=c(10000, 10000))
 
-ggplot(df, aes(Network, mean, color=Network)) + geom_point() + geom_errorbar(aes(ymin=lower, ymax=upper), width=0.2) + theme_bw() + ylab("Estabilidad quasi-signo (QSS)")  + theme(axis.title.x=element_text(size=29, face="bold"), axis.title.y=element_text(size=20, face="bold"), legend.position="none", axis.text.x=element_text(size=15, color="black"), axis.text.y=element_text(size=15, color="black")) + xlab("Red") + scale_colour_manual(values=c("cyan4", "orange"))
-
-ggsave("Figures/QSS.png",width=6,height=5,units="in",dpi=1000)
-
 ```
 
 
@@ -233,16 +229,16 @@ if(!file.exists("Data/rolesTopologicos.rds")){
 hub_conn <- data.frame()
 
 hc <- plot_topological_roles(filter(topoRoles, Name=="Potter"), p, mod_by_red[[1]])
-hc <-  hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
+hc <- hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
 hub_connp <- bind_rows(hub_conn, hc)
 
-hc <-   plot_topological_roles(filter(topoRoles, Name=="Beagle"), b, mod_by_red[[2]]) 
-hc <-  hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
+hc <- plot_topological_roles(filter(topoRoles, Name=="Beagle"), b, mod_by_red[[2]]) 
+hc <- hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
 hub_connb <- bind_rows(hub_conn, hc)
 
 hub_conn <- rename(hub_conn, Network=Name)
 
-write.csv(hub_conn, file="Figures/rolestop.csv") 
+write.csv(hub_conn, file="2020/Figures/rolestop.csv") 
 
 ```
 
@@ -301,8 +297,12 @@ source("R/powerlaw/pareto.R")
 
 dgp <- data.frame(degree(p)) %>% mutate(Name="Potter")
 colnames(dgp) <- c("Degree", "Network")
+dgp <- sort(dgp$Degree, decreasing = TRUE)
+
 dgb <- data.frame(degree(b)) %>% mutate(Name="Beagle")
 colnames(dgb) <- c("Degree", "Network")
+dgb <- sort(dgb$Degree, decreasing = TRUE)
+
 dg <- bind_rows(dgp, dgb)
 
 rm(dgp,dgb)

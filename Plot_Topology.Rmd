@@ -129,13 +129,13 @@ ptl <- function (g, topoFrame, vertexLabel = FALSE, vertexSizeFactor = 5, module
     }
 
 # Plot networks
-tiff("Figures/fw.tif", width=12, height=8, units="in", res=300)
+tiff("2020/Figures/fw.tif", width=12, height=8, units="in", res=1000)
 par(mfrow=c(1,2), mar=c(0,2,0,0), oma=c(0,1.5,2.3,0.5), family = "Lato")
-ptl(p, hub_connp, vertexLabel = FALSE, maxTL = 5)
-ptl(b, hub_connb, vertexLabel = FALSE, maxTL = 5)
+ptl(p, hub_connp, vertexLabel=FALSE)
+ptl(b, hub_connb, vertexLabel=FALSE)
 
 # Add axis-y legend
-mtext("Trophic Level", side=2, outer=TRUE, line=0, cex=1.25, font=2)
+mtext("Trophic level", side=2, outer=TRUE, line=0, cex=1.25, font=2)
 par(fig=c(0,1,0,1), family="Lato", new=TRUE)
 
 # Plots titles
@@ -232,7 +232,10 @@ col2 <- plot_grid(hfg[[3]], hfg[[4]], ncol=1, nrow=2)
 col3 <- plot_grid(hfg[[5]], hfg[[6]], ncol=1, nrow=2, labels = c("(b)", "(d)"), label_size=15, label_fontfamily="Lato", hjust=0.25, vjust=2)
 plot_grid(col1, col2, col3, ncol=3, rel_widths=c(1,0.35,1), scale=0.98)
 
-ggsave("Figures/H_FG_PCBC1.tiff", width=14, height=12, units="in", dpi=1000)
+ggsave("C:/Users/iamia/Google Drive (iaradiamelar@gmail.com)/Escrito/Paper/HFG_PCBC.tiff", width=14, height=12, units="in", dpi=1000)
+
+
+rm(ph,bh,pfg,bfg,hfg,col1,col2,col3)
 
 ```
 
@@ -240,6 +243,12 @@ ggsave("Figures/H_FG_PCBC1.tiff", width=14, height=12, units="in", dpi=1000)
 ### Plot stability (Q, QSS) metrics ###
 
 ```{r plotStability, echo=FALSE, message=FALSE, results='asis'}
+
+datp <- ti %>% filter(Network=="Potter")
+simp <- tiMIC %>% filter(Network=="Potter")
+
+datb <- ti %>% filter(Network=="Beagle")
+simb <- tiMIC %>% filter(Network=="Beagle")
 
 # Trophic coherence
 
@@ -249,7 +258,7 @@ q14 <- quantile(simb$Q,c(0.005,0.995))
 g7 <- ggplot(tiMIC, aes(Q)) + 
       geom_histogram(data=tiMIC, aes(fill=Network), bins=50, show.legend=TRUE) +
       scale_fill_manual(values=c(colnet[12], colnet[5]), labels=c("Beagle Channel", "Potter Cove")) +
-      xlab("Trophic Coherence (Q)") + 
+      xlab("Trophic coherence") + 
       ylab("Frecuency") + 
       geom_segment(data=datp, aes(x=Q, xend=Q, y=45, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datp, aes(x=Q, y=-19, label=round(Q, 2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2], nudge_y=0, nudge_x=0.011) +
@@ -272,13 +281,11 @@ df <- ti %>% dplyr::select(Network, QSS) %>% group_by(Network) %>% do(binom.conf
 df$Network <- factor(df$Network, levels=c("Potter", "Beagle"))
 levels(df$Network) <- c("Potter Cove", "Beagle Channel")
 
-prop.test(x=ti$QSS*10000, n=c(10000, 10000))
-
 gqss <- ggplot(df, aes(Network, mean, color=Network)) + 
         geom_point() + 
         geom_errorbar(aes(ymin=lower, ymax=upper), width=0.15) +
         xlab("") +      
-        ylab("Quasi-sign stability (QSS)") + 
+        ylab("Quasi-sign stability") + 
         scale_colour_manual(values=c(colnet[3], colnet[10])) + 
         theme_new + 
         theme(legend.position="none", 
@@ -298,7 +305,10 @@ plot_grid(g7, gqss,
           align=c("hv", "hv"),
           axis=c("tb"))
 
-ggsave("Figures/Q_QSS.tiff", width=11, height=5.5, units="in", dpi=1000)
+ggsave("C:/Users/iamia/Google Drive (iaradiamelar@gmail.com)/Escrito/Paper/Q_QSS.tiff", width=11, height=5.5, units="in", dpi=1000)
+
+
+#rm(datp,datb,simp,simb,q13,q14,g7,df,gqss)
 
 ```
 
@@ -312,7 +322,6 @@ simp <- tiMIC %>% filter(Network=="Potter")
 datb <- ti %>% filter(Network=="Beagle")
 simb <- tiMIC %>% filter(Network=="Beagle")
 
-
 # Mean trophic level
 
 q1 <- quantile(simp$TLmean, c(0.005,0.995))
@@ -322,7 +331,7 @@ q7 <- quantile(simb$TLmean, c(0.005,0.995))
 g1 <- ggplot(tiMIC, aes(TLmean)) + 
       geom_histogram(data=tiMIC, aes(fill=Network), bins=50, show.legend=FALSE) +
       scale_fill_manual(values=c(colnet[12], colnet[5]), labels=c("Beagle Channel", "Potter Cove")) +
-      xlab("Mean trophic level (TLmean)") + 
+      xlab("Mean trophic level") + 
       ylab("Frequency") + 
       geom_segment(data=datp, aes(x=TLmean, xend=TLmean, y=45, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datp, aes(x=TLmean, y=-19, label=round(TLmean,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
@@ -340,11 +349,10 @@ g1 <- ggplot(tiMIC, aes(TLmean)) +
 q2 <- quantile(simp$TLmax, c(0.005,0.995))
 q8 <- quantile(simb$TLmax, c(0.005,0.995))
 
-
 g2 <- ggplot(tiMIC, aes(TLmax)) + 
-      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=30) + 
-      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=30) +
-      xlab("Maximum trophic level (TLmax)") + 
+      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
+      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
+      xlab("Maximum trophic level") + 
       ylab("") + 
       geom_segment(data=datp, aes(x=TLmax, xend=TLmax, y=30, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datp, aes(x=TLmax, y=-13, label=round(TLmax,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
@@ -364,9 +372,9 @@ q9 <- quantile(simb$Omnivory, c(0.005,0.995))
 
 require(scales)
 g3 <- ggplot(tiMIC, aes(Omnivory)) + 
-      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=30) + 
-      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=30) +
-      xlab("Omnivory (O)") + 
+      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
+      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
+      xlab("Omnivory") + 
       ylab("Frequency") + 
       geom_segment(data=datp, aes(x=Omnivory, xend=Omnivory, y=49, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datp, aes(x=Omnivory, y=-22, label=round(Omnivory,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
@@ -387,7 +395,7 @@ q10 <- quantile(simb$Clustering, c(0.005,0.995))
 g4 <- ggplot(tiMIC, aes(Clustering)) + 
       geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
       geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
-      xlab("Clustering coefficient (CC)") + 
+      xlab("Clustering coefficient") + 
       ylab("") + 
       geom_segment(data=datp, aes(x=Clustering, xend=Clustering, y=19, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datp, aes(x=Clustering, y=-9, label=round(Clustering,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
@@ -408,7 +416,7 @@ q11 <- quantile(simb$PathLength, c(0.005,0.995))
 g5 <- ggplot(tiMIC, aes(PathLength)) + 
         geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
         geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
-        xlab("Characteristic path length (CPL)") + 
+        xlab("Characteristic path length") + 
         ylab("Frequency") + 
         geom_segment(data=datp, aes(x=PathLength, xend=PathLength, y=30, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
         geom_text(data=datp, aes(x=PathLength, y=-13, label=round(PathLength,1)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
@@ -429,7 +437,7 @@ q12 <- quantile(simb$Modularity, c(0.005,0.995))
 g6 <- ggplot(tiMIC, aes(Modularity)) + 
       geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
       geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
-      xlab("Modularity (M)") + 
+      xlab("Modularity") + 
       ylab("") + 
       geom_segment(data=datp, aes(x=Modularity, xend=Modularity, y=9, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datp, aes(x=Modularity, y=-4.5, label=round(Modularity,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
@@ -452,7 +460,11 @@ row4 <- plot_grid(NULL, ggg[[7]], NULL, ncol=3, rel_widths=c(0.25,0.5,0.25))
 
 plot_grid(row4, row1, row2, row3, ncol=1, rel_heights=c(0.15,1,1,1))
 
-ggsave("Figures/ti2_PCBC.tiff", width=11, height=15, units="in", dpi=1000)
+ggsave("C:/Users/iamia/Google Drive (iaradiamelar@gmail.com)/Escrito/Paper/ti2_PCBC.tiff", width=11, height=15, units="in", dpi=1000)
+
+#rm(datp,datb,simp,simb)
+#rm(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12)
+#rm(legend1,g1,g2,g3,g4,g5,g6,ggg,row1,row2,row3,row4)
 
 ```
 
@@ -474,7 +486,7 @@ gsmw_cc <- ggplot(ti, aes(Clustering, x=Network, color=Network)) +
            geom_line(data=smallWorldness, aes(Network, clus.coef), size=1.5) + 
            scale_colour_manual(values=c(colnet[3], colnet[10])) +
            xlab("") +      
-           ylab("Clustering coefficient (CC)") +
+           ylab("Clustering coefficient") +
            theme_new + 
            theme(legend.position="none", 
                   axis.text.x=element_text(size=16, face="plain", family="Lato", margin=margin(t=8, r=0, b=0, l=0)),
@@ -490,7 +502,7 @@ gsmw_cpl <- ggplot(ti, aes(PathLength, x=Network, color=Network)) +
             geom_line(data=smallWorldness, aes(Network, cha.path), size=1.5) + 
             scale_colour_manual(values=c(colnet [3], colnet[10])) +
             xlab("") +      
-            ylab("Characteristic path length (CPL)") +
+            ylab("Characteristic path length") +
             theme_new + 
             theme(legend.position="none", 
                   axis.text.x=element_text(size=16, face="plain", family="Lato", margin=margin(t=8, r=0, b=0, l=0)),
@@ -509,6 +521,6 @@ plot_grid(gsmw_cc, gsmw_cpl,
           align=c("hv", "hv"),
           axis=c("tb"))
 
-ggsave("Figures/smallworld.tiff", width=11, height=5.5, units="in", dpi=1000)
+ggsave("C:/Users/iamia/Google Drive (iaradiamelar@gmail.com)/Escrito/Paper/smallworld.tiff", width=11, height=5.5, units="in", dpi=1000)
 
 ```
