@@ -58,7 +58,7 @@ theme_new <- theme_minimal() +
 
 ```{r plotFW, echo=FALSE, message=FALSE}
 
-# Plot networks by trophic level and species colored by topological role
+#---- Plot fw by TL and species colored by topological role
 
 ptl <- function (g, topoFrame, vertexLabel = FALSE, vertexSizeFactor = 5, modules = FALSE, lMat = NULL, bpal = NULL, maxTL = NULL, edge.width = NULL, ...) 
   {
@@ -114,22 +114,30 @@ ptl <- function (g, topoFrame, vertexLabel = FALSE, vertexSizeFactor = 5, module
   #(network connector -high connectivity between and within modules-, module connector -few links between modules-,   module specialist -few links in its module-, module hub -high # links in its module-)
   hc <- topoFrame %>% mutate(type = factor(type)) %>% arrange(node) %>% mutate(col=as.numeric(type), TL=tl[,1]) 
   V(g)$color <- colnet[hc$col]
-  plot(g, edge.arrow.size = 0.4, vertex.label.color = "black", 
-       edge.curved = 0.2, layout = lMat, vertex.label.cex = 1, vertex.label.family = "Lato", vertex.label.font = 3)
-    maxnew <- max(tl$TL)
-    minnew <- min(tl$TL)
-    maxold <- 1
-    minold <- -1
-    t2 <- function(x) (maxold - minold)/(maxnew - minnew) * 
+  
+  plot(g,
+       edge.arrow.size = 0.4, 
+       vertex.label.color = "black", 
+       edge.curved = 0.2, 
+       layout = lMat, 
+       vertex.label.cex = 1, 
+       vertex.label.family = "Lato", 
+       vertex.label.font = 3)
+    
+  maxnew <- max(tl$TL)
+  minnew <- min(tl$TL)
+  maxold <- 1
+  minold <- -1
+  t2 <- function(x) (maxold - minold)/(maxnew - minnew) * 
       (x - maxnew) + maxold
-    tlseq <- seq(1, ifelse(is.null(maxTL), maxnew + 1, maxTL), 
+  tlseq <- seq(1, ifelse(is.null(maxTL), maxnew + 1, maxTL), 
       by = 1)
-    par(family = "Lato")
-    axis(side = 2, at = t2(tlseq), labels = tlseq, las = 1, col = NA, col.ticks = NULL, cex.axis = 1, lwd.ticks = 1)
-    }
+  par(family = "Lato")
+  axis(side = 2, at = t2(tlseq), labels=tlseq, las=1, col=NA, col.ticks=NULL, cex.axis=1, lwd.ticks=1)
+  }
 
 # Plot networks
-tiff("2020/Figures/fw.tif", width=12, height=8, units="in", res=1000)
+tiff("2020/Figures/fw.tif", width=12, height=8, units="in", res=300)
 par(mfrow=c(1,2), mar=c(0,2,0,0), oma=c(0,1.5,2.3,0.5), family = "Lato")
 ptl(p, hub_connp, vertexLabel=FALSE)
 ptl(b, hub_connb, vertexLabel=FALSE)
@@ -153,11 +161,124 @@ colnet1 <- c("#833f8f", "#ccb7d5","#a8d9c3", "#088a4f")
 legend("top", legend = c("Network connector", "Module connector", "Module specialist", "Module hub"), col=colnet1, pch=19, cex=0.8, xpd=TRUE, inset=c(0,0), title="Topological roles:")
 
 dev.off()
+```
+
+```{r}
+#---- Plot fw by TL
+svg("2020/Figures/fw.svg", width=12, height=8)
+par(mfrow=c(1,2), mar=c(0,2,0,0), oma=c(0,1.5,2.3,0.5), family = "Lato")
+plot_troph_level(p, vertexSizeFactor = 6, maxTL = 4)
+plot_troph_level(b, vertexSizeFactor = 6, maxTL = 4)
+
+dev.off()
+```
+
+```{r}
+#---- Plot fw by TL and mod
+
+troph.net1 <- TrophInd(get.adjacency(p, sparse=F), Dead=c("Necromass", "Fresh detritus", "Aged detritus"))
+layout.matrix.1 <- matrix(nrow=length(V(p)), ncol=2)
+
+troph.net2 <- TrophInd(get.adjacency(b, sparse=F), Dead=c("Necromass", "Fresh detritus", "Aged detritus"))
+layout.matrix.2 <- matrix(nrow=length(V(b)), ncol=2)
+  
+# Add colors with topological roles to nodes 
+require(RColorBrewer)
+colnet <- brewer.pal(4,"PRGn")
+  
+hcp <- hub_connp %>% mutate(type = factor(type)) %>% arrange(node) %>% mutate(col=as.numeric(type), TL=troph.net1[,1]) 
+V(p)$color <- colnet[hcp$col]
+
+hcb <- hub_connb %>% mutate(type = factor(type)) %>% arrange(node) %>% mutate(col=as.numeric(type), TL=troph.net2[,1]) 
+V(b)$color <- colnet[hcb$col]
+  
+# Transform y-axis coordinates
+maxnewp <- max(hcp$TL)
+minnewp <- min(hcp$TL)
+
+maxnewb <- max(hcb$TL)
+minnewb <- min(hcb$TL)
+
+maxold <- 1
+minold <- -1
+
+t1 <- function(x) (maxold-minold)/(maxnewp-minnewp)*(x-maxnewp)+maxold 
+t2 <- function(x) (maxold-minold)/(maxnewb-minnewb)*(x-maxnewb)+maxold
+
+# POTTER plot 
+# Plot modules
+layout.matrix.1[,2] <- jitter(troph.net1$TL, 0.4) # y-axis value based on trophic level
+layout.matrix.1[,1] <- jitter(mod_by_red[[1]]$membership, 1.2) # randomly assign along x-axis
+
+#svg("2020/Figures/fwp_mod_topo.svg", width=10, height=10)
+tiff("2020/Figures/fwp.tif", width=10, height=10, units="in", res=300)
+par(mfrow=c(1,1), mar=c(0,2,0,0), oma=c(0,1.5,2.3,0.5), family = "Lato")
+require(prettyGraphs)
+
+plot(p, 
+     vertex.color=vertex_attr(p)$cor,
+     vertex.label=NA,
+     vertex.size=log(30*igraph::degree(p)),
+     edge.width=.3, 
+     edge.arrow.size=.5, 
+     edge.color=add.alpha("grey55", 0.5),
+     edge.curved=0.2,
+     layout=layout.matrix.1)
+
+# Add axis-y text & title
+axis(side=2, at=t1(1:5), labels=1:5, las=1, col=NA, col.ticks=1)
+mtext("Trophic level", side=2, outer=TRUE, line=0, cex=1.25, font=2)
+par(fig=c(0,1,0,1), family="Lato", new=TRUE)
+
+# Plots title
+plot(0, 0, type="n", bty="n", xaxt="n", yaxt="n")
+mtext("Potter Cove", side=3, outer=TRUE, line=0.5, cex=1.75, font=2, adj=0)
+par(fig=c(0,1,0,1), oma=c(0,0,0,0), mar=c(0,0,1,0), new=TRUE)
+
+dev.off()
+
+
+# BEAGLE plot
+# Plot modules
+layout.matrix.2[,2] <- jitter(troph.net2$TL, 0.4) # y-axis value based on trophic level
+layout.matrix.2[,1] <- jitter(mod_by_red[[2]]$membership, 1.1) # randomly assign along x-axis
+
+#svg("2020/Figures/fwb_mod_topo.svg", width=10, height=10)
+tiff("2020/Figures/fwb.tif", width=10, height=10, units="in", res=300)
+par(mfrow=c(1,1), mar=c(0,2,0,0), oma=c(0,1.5,2.3,0.5), family = "Lato")
+
+plot(b, 
+     vertex.color=vertex_attr(b)$cor,
+     vertex.label=NA,
+     vertex.size=log10(degree(b))*5,
+     edge.width=.3, 
+     edge.arrow.size=.5, 
+     edge.color=add.alpha("grey55", 0.5),
+     edge.curved=0.2,
+     layout=layout.matrix.2)
+
+# Add axis-y text & title
+axis(side=2, at=t2(1:5), labels=1:5, las=1, col=NA, col.ticks=1)
+mtext("Trophic level", side=2, outer=TRUE, line=0, cex=1.25, font=2)
+par(fig=c(0,1,0,1), family="Lato", new=TRUE)
+
+# Plots title
+plot(0, 0, type="n", bty="n", xaxt="n", yaxt="n")
+mtext("Beagle Channel", side=3, outer=TRUE, line=0.5, cex=1.75, font=2, adj=1)
+par(fig=c(0,1,0,1), family="Lato", new=TRUE)
+
+dev.off()
+
+#svg("2020/Figures/fw_legend.svg", width=5, height=5)
+#par(mfrow=c(1,1), mar=c(0,2,0,0), oma=c(0,1.5,2.3,0.5), family = "Lato")
+# Add legend
+#plot(0, 0, type="n", bty="n", xaxt="n", yaxt="n")
+#legend("top", legend = c("Network connector", "Module connector", "Module hub", "Module specialist"), col=colnet, pch=19, cex=1, xpd=TRUE, inset=c(0,0), title="Topological roles:")
+#dev.off()
 
 ```
 
-
-### Plot tratis (habitat & functional group) vs modules ###
+### Plot traits (habitat & functional group) vs modules ###
 
 ```{r plotTrait, echo=FALSE, message=FALSE, results='asis'}
 
@@ -325,11 +446,11 @@ simb <- tiMIC %>% filter(Network=="Beagle")
 # Mean trophic level
 
 q1 <- quantile(simp$TLmean, c(0.005,0.995))
-q7 <- quantile(simb$TLmean, c(0.005,0.995))
+q2 <- quantile(simb$TLmean, c(0.005,0.995))
 
 #legend1 <- get_legend(g1)
 g1 <- ggplot(tiMIC, aes(TLmean)) + 
-      geom_histogram(data=tiMIC, aes(fill=Network), bins=50, show.legend=FALSE) +
+      geom_histogram(data=tiMIC, aes(fill=Network), bins=70, show.legend=FALSE) +
       scale_fill_manual(values=c(colnet[12], colnet[5]), labels=c("Beagle Channel", "Potter Cove")) +
       xlab("Mean trophic level") + 
       ylab("Frequency") + 
@@ -339,136 +460,112 @@ g1 <- ggplot(tiMIC, aes(TLmean)) +
       geom_segment(data=datp, aes(x=q1[2], xend=q1[2], y=35, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
       geom_segment(data=datb, aes(x=TLmean, xend=TLmean, y=45, yend=0), colour=colnet[9], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datb, aes(x=TLmean, y=-19, label=round(TLmean,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[9]) +
-      geom_segment(data=datb, aes(x=q7[1], xend=q7[1], y=35, yend=0), colour=colnet[9], size=1.25, linetype=1) +
-      geom_segment(data=datb, aes(x=q7[2], xend=q7[2], y=35, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
-      theme_new + 
-      coord_cartesian(ylim=c(-8, 580)) #+ guides(fill=guide_legend(reverse=TRUE))
-
-# Maximum trophic level
-
-q2 <- quantile(simp$TLmax, c(0.005,0.995))
-q8 <- quantile(simb$TLmax, c(0.005,0.995))
-
-g2 <- ggplot(tiMIC, aes(TLmax)) + 
-      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
-      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
-      xlab("Maximum trophic level") + 
-      ylab("") + 
-      geom_segment(data=datp, aes(x=TLmax, xend=TLmax, y=30, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
-      geom_text(data=datp, aes(x=TLmax, y=-13, label=round(TLmax,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
-      geom_segment(data=datp, aes(x=q2[1], xend=q2[1], y=24, yend=0), colour=colnet[2], size=1.25, linetype=1) +
-      geom_segment(data=datp, aes(x=q2[2], xend=q2[2], y=24, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
-      geom_segment(data=datb, aes(x=TLmax, xend=TLmax, y=30, yend=0), colour=colnet[9], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
-      geom_text(data=datb, aes(x=TLmax, y=-13, label=round(TLmax,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[9]) +
-      geom_segment(data=datb, aes(x=q8[1], xend=q8[1], y=24, yend=0), colour=colnet[9], size=1.25, linetype=1) +
-      geom_segment(data=datb, aes(x=q8[2], xend=q8[2], y=24, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
-      theme_new + 
-      coord_cartesian(ylim=c(-7, 390))
+      geom_segment(data=datb, aes(x=q2[1], xend=q2[1], y=35, yend=0), colour=colnet[9], size=1.25, linetype=1) +
+      geom_segment(data=datb, aes(x=q2[2], xend=q2[2], y=35, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
+      theme_new +
+      coord_cartesian(ylim=c(-8, 500)) #+ guides(fill=guide_legend(reverse=TRUE))
 
 # Omivory
 
 q3 <- quantile(simp$Omnivory, c(0.005,0.995))
-q9 <- quantile(simb$Omnivory, c(0.005,0.995))
+q4 <- quantile(simb$Omnivory, c(0.005,0.995))
 
 require(scales)
-g3 <- ggplot(tiMIC, aes(Omnivory)) + 
-      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
-      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
+g2 <- ggplot(tiMIC, aes(Omnivory)) + 
+      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=70) + 
+      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=70) +
       xlab("Omnivory") + 
-      ylab("Frequency") + 
+      ylab("") + 
       geom_segment(data=datp, aes(x=Omnivory, xend=Omnivory, y=49, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datp, aes(x=Omnivory, y=-22, label=round(Omnivory,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
       geom_segment(data=datp, aes(x=q3[1], xend=q3[1], y=38, yend=0), colour=colnet[2], size=1.25, linetype=1) +
       geom_segment(data=datp, aes(x=q3[2], xend=q3[2], y=38, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
       geom_segment(data=datb, aes(x=Omnivory, xend=Omnivory, y=49, yend=0), colour=colnet[9], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datb, aes(x=Omnivory, y=-22, label=round(Omnivory,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[9]) +
-      geom_segment(data=datb, aes(x=q9[1], xend=q9[1], y=38, yend=0), colour=colnet[9], size=1.25, linetype=1) +
-      geom_segment(data=datb, aes(x=q9[2], xend=q9[2], y=38, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
+      geom_segment(data=datb, aes(x=q4[1], xend=q4[1], y=38, yend=0), colour=colnet[9], size=1.25, linetype=1) +
+      geom_segment(data=datb, aes(x=q4[2], xend=q4[2], y=38, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
       theme_new + 
-      coord_cartesian(ylim=c(-10, 630))
-
-# Clustering coefficient
-
-q4 <- quantile(simp$Clustering, c(0.005,0.995))
-q10 <- quantile(simb$Clustering, c(0.005,0.995))
-
-g4 <- ggplot(tiMIC, aes(Clustering)) + 
-      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
-      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
-      xlab("Clustering coefficient") + 
-      ylab("") + 
-      geom_segment(data=datp, aes(x=Clustering, xend=Clustering, y=19, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
-      geom_text(data=datp, aes(x=Clustering, y=-9, label=round(Clustering,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
-      geom_segment(data=datp, aes(x=q4[1], xend=q4[1], y=15, yend=0), colour=colnet[2], size=1.25, linetype=1) +
-      geom_segment(data=datp, aes(x=q4[2], xend=q4[2], y=15, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
-      geom_segment(data=datb, aes(x=Clustering, xend=Clustering, y=19, yend=0), colour=colnet[9], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
-      geom_text(data=datb, aes(x=Clustering, y=-9, label=round(Clustering,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[9]) +
-      geom_segment(data=datb, aes(x=q10[1], xend=q10[1], y=15, yend=0), colour=colnet[9], size=1.25, linetype=1) +
-      geom_segment(data=datb, aes(x=q10[2], xend=q10[2], y=15, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
-      theme_new + 
-      coord_cartesian(ylim=c(-5, 250))
-
-# Characteristic path length
-
-q5 <- quantile(simp$PathLength, c(0.005,0.995))
-q11 <- quantile(simb$PathLength, c(0.005,0.995))
-
-g5 <- ggplot(tiMIC, aes(PathLength)) + 
-        geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
-        geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
-        xlab("Characteristic path length") + 
-        ylab("Frequency") + 
-        geom_segment(data=datp, aes(x=PathLength, xend=PathLength, y=30, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
-        geom_text(data=datp, aes(x=PathLength, y=-13, label=round(PathLength,1)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
-        geom_segment(data=datp, aes(x=q5[1], xend=q5[1], y=24, yend=0), colour=colnet[2], size=1.25, linetype=1) +
-        geom_segment(data=datp, aes(x=q5[2], xend=q5[2], y=24, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
-        geom_segment(data=datb, aes(x=PathLength, xend=PathLength, y=30, yend=0), colour=colnet[9], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
-        geom_text(data=datb, aes(x=PathLength, y=-13, label=round(PathLength,1)), size=4.25, family="Lato", fontface="bold", colour=colnet[9]) +
-        geom_segment(data=datb, aes(x=q11[1], xend=q11[1], y=24, yend=0), colour=colnet[9], size=1.25, linetype=1) +
-        geom_segment(data=datb, aes(x=q11[2], xend=q11[2], y=24, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
-        theme_new + 
-        coord_cartesian(ylim=c(-7, 390))
+      coord_cartesian(ylim=c(-10, 800))
 
 # Modularity
 
-q6 <- quantile(simp$Modularity, c(0.005,0.995))
-q12 <- quantile(simb$Modularity, c(0.005,0.995))
+q5 <- quantile(simp$Modularity, c(0.005,0.995))
+q6 <- quantile(simb$Modularity, c(0.005,0.995))
 
-g6 <- ggplot(tiMIC, aes(Modularity)) + 
-      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=50) + 
-      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=50) +
+g3 <- ggplot(tiMIC, aes(Modularity)) + 
+      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=70) + 
+      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=70) +
       xlab("Modularity") + 
-      ylab("") + 
+      ylab("Frequency") + 
       geom_segment(data=datp, aes(x=Modularity, xend=Modularity, y=9, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datp, aes(x=Modularity, y=-4.5, label=round(Modularity,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
-      geom_segment(data=datp, aes(x=q6[1], xend=q6[1], y=7, yend=0), colour=colnet[2], size=1.25, linetype=1) +
-      geom_segment(data=datp, aes(x=q6[2], xend=q6[2], y=7, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
+      geom_segment(data=datp, aes(x=q5[1], xend=q5[1], y=7, yend=0), colour=colnet[2], size=1.25, linetype=1) +
+      geom_segment(data=datp, aes(x=q5[2], xend=q5[2], y=7, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
       geom_segment(data=datb, aes(x=Modularity, xend=Modularity, y=9, yend=0), colour=colnet[9], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
       geom_text(data=datb, aes(x=Modularity, y=-4.5, label=round(Modularity,2)), size=4.25, family="Lato", fontface="bold", colour=colnet[9]) +
-      geom_segment(data=datb, aes(x=q12[1], xend=q12[1], y=7, yend=0), colour=colnet[9], size=1.25, linetype=1) +
-      geom_segment(data=datb, aes(x=q12[2], xend=q12[2], y=7, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
+      geom_segment(data=datb, aes(x=q6[1], xend=q6[1], y=7, yend=0), colour=colnet[9], size=1.25, linetype=1) +
+      geom_segment(data=datb, aes(x=q6[2], xend=q6[2], y=7, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
       theme_new + 
       coord_cartesian(ylim=c(-2.75, 120))
 
+# QSS
+
+q7 <- quantile(simp$QSS, c(0.005,0.995))
+q8 <- quantile(simb$QSS, c(0.005,0.995))
+
+g4 <- ggplot(tiMIC, aes(QSS)) + 
+      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=70) + 
+      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=70) +
+      xlab("QSS") + 
+      ylab("") + 
+      geom_segment(data=datp, aes(x=QSS, xend=QSS, y=9, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
+      geom_text(data=datp, aes(x=QSS, y=-4.5, label=round(QSS,4)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
+      geom_segment(data=datp, aes(x=q7[1], xend=q7[1], y=7, yend=0), colour=colnet[2], size=1.25, linetype=1) +
+      geom_segment(data=datp, aes(x=q7[2], xend=q7[2], y=7, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
+      geom_segment(data=datb, aes(x=QSS, xend=QSS, y=9, yend=0), colour=colnet[9], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
+      geom_text(data=datb, aes(x=QSS, y=-4.5, label=round(QSS,4)), size=4.25, family="Lato", fontface="bold", colour=colnet[9]) +
+      geom_segment(data=datb, aes(x=q8[1], xend=q8[1], y=7, yend=0), colour=colnet[9], size=1.25, linetype=1) +
+      geom_segment(data=datb, aes(x=q8[2], xend=q8[2], y=7, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
+      theme_new + 
+      coord_cartesian(ylim=c(-2.75, 800))
+
+#MEing
+
+q9 <- quantile(simp$MEing, c(0.005,0.995))
+q10 <- quantile(simb$MEing, c(0.005,0.995))
+
+g5 <- ggplot(tiMIC, aes(MEing)) + 
+      geom_histogram(data=simp, fill=colnet[5], color=colnet[5], bins=70) + 
+      geom_histogram(data=simb, fill=colnet[12], color=colnet[12], bins=70) +
+      xlab("MEing") + 
+      ylab("") + 
+      geom_segment(data=qssp_sim, aes(x=MEing, xend=MEing, y=9, yend=0), colour=colnet[2], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
+      geom_text(data=qssp_sim, aes(x=MEing, y=-4.5, label=round(MEing,4)), size=4.25, family="Lato", fontface="bold", colour=colnet[2]) +
+      geom_segment(data=qssp_sim, aes(x=q9[1], xend=q9[1], y=7, yend=0), colour=colnet[2], size=1.25, linetype=1) +
+      geom_segment(data=qssp_sim, aes(x=q9[2], xend=q9[2], y=7, yend=0), colour=colnet[2], size=1.25, linetype=1) + 
+      geom_segment(data=qssb_sim, aes(x=MEing, xend=MEing, y=9, yend=0), colour=colnet[9], size=1.3, arrow=arrow(length=unit(0.25, "cm"), type="open", angle=30)) +
+      geom_text(data=qssb_sim, aes(x=MEing, y=-4.5, label=round(MEing,4)), size=4.25, family="Lato", fontface="bold", colour=colnet[9]) +
+      geom_segment(data=qssb_sim, aes(x=q10[1], xend=q10[1], y=7, yend=0), colour=colnet[9], size=1.25, linetype=1) +
+      geom_segment(data=qssb_sim, aes(x=q10[2], xend=q10[2], y=7, yend=0), colour=colnet[9], size=1.25, linetype=1) + 
+      theme_new
+
 # Add all plots into a single plot
 
-ggg <- list(g1, g2, g3, g4, g5, g6, legend1)
+ggg <- list(g1, g2, g3, g4, legend1)
 row1 <- plot_grid(ggg[[1]], ggg[[2]], ncol=2, labels = c("(a)", "(b)"), label_size=15, label_fontfamily="Lato", hjust=-0.1, vjust=2, scale=0.98)
 row2 <- plot_grid(ggg[[3]], ggg[[4]], ncol=2, labels = c("(c)", "(d)"), label_size=15, label_fontfamily="Lato", hjust=-0.1, vjust=2, scale=0.98)
-row3 <- plot_grid(ggg[[5]], ggg[[6]], ncol=2, labels = c("(e)", "(f)"), label_size=15, label_fontfamily="Lato", hjust=-0.1, vjust=2, scale=0.98)
-row4 <- plot_grid(NULL, ggg[[7]], NULL, ncol=3, rel_widths=c(0.25,0.5,0.25))
+row3 <- plot_grid(NULL, ggg[[5]], NULL, ncol=3, rel_widths=c(0.25,0.5,0.25))
 
-plot_grid(row4, row1, row2, row3, ncol=1, rel_heights=c(0.15,1,1,1))
+#plot_grid(row1, row2, ncol=1, rel_heights=c(1,1))
+plot_grid(row3, row1, row2, ncol=1, rel_heights=c(0.15,1,1))
 
-ggsave("C:/Users/iamia/Google Drive (iaradiamelar@gmail.com)/Escrito/Paper/ti2_PCBC.tiff", width=11, height=15, units="in", dpi=1000)
+ggsave("2020/Figures/ti_PCBC.png", width=11, height=12, units="in", dpi=100)
 
 #rm(datp,datb,simp,simb)
-#rm(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12)
-#rm(legend1,g1,g2,g3,g4,g5,g6,ggg,row1,row2,row3,row4)
+#rm(q1,q2,q3,q4,q5,q6,q7,q8,q9,q10)
+#rm(g1,g2,g3,g4,g5,ggg,row1,row2,row3,row4)
 
 ```
-
-
 
 ### Plot smallworld ###
 
@@ -524,3 +621,31 @@ plot_grid(gsmw_cc, gsmw_cpl,
 ggsave("C:/Users/iamia/Google Drive (iaradiamelar@gmail.com)/Escrito/Paper/smallworld.tiff", width=11, height=5.5, units="in", dpi=1000)
 
 ```
+
+```{r}
+
+dgp <- data.frame(degree(p)) %>% mutate(Name="Potter")
+colnames(dgp) <- c("Degree", "Network")
+dgp.histogram <- as.data.frame(table(dgp))
+dgp.histogram[,1] <- as.numeric(dgp.histogram[,1])
+
+dgb <- data.frame(degree(b)) %>% mutate(Name="Beagle")
+colnames(dgb) <- c("Degree", "Network")
+dgb.histogram <- as.data.frame(table(dgb))
+dgb.histogram[,1] <- as.numeric(dgb.histogram[,1])
+
+dg <- bind_rows(dgp.histogram, dgb.histogram)
+
+
+ggplot(dg, aes(x=Degree, y=Freq, color=Network)) + geom_point() + theme_new +
+  scale_x_continuous("Degree\n(nodes with this amount of connections)",
+                     breaks = c(1, 3, 10, 30, 100, 300),
+                     trans = "log10") +
+  scale_y_continuous("Frequency\n(how many of them)",
+                     breaks = c(1, 3, 10, 30, 100, 300, 1000),
+                     trans = "log10")
+ 
+rm(dgp,dgb.histogram,dgb.histogram,dg)
+
+```
+

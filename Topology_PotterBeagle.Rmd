@@ -72,6 +72,14 @@ if(!file.exists("Data/ti.rds")){
 
 }
 
+# QSS simétrico
+qssp_sim <- calc_QSS(p, nsim = 1000, ncores = 6, negative = -1, positive = 1)
+qssb_sim <- calc_QSS(b, nsim = 1000, ncores = 6, negative = -1, positive = 1)
+
+# QSS asimétrico (más realista, menos estable)
+qssp_asim <- calc_QSS(p, nsim = 1000, ncores = 6)
+qssb_asim <- calc_QSS(b, nsim = 1000, ncores = 6)
+
 # Smallworld analysis
 
 prandom <- generateERbasal(p, nsim=1000)
@@ -113,16 +121,20 @@ if(!file.exists("Data/tiIC95.rds")){
     
     ptiIC <- bind_cols(calc_topological_indices(pRedCB), calc_incoherence(pRedCB)) %>% mutate(Name="Potter") 
     btiIC <- bind_cols(calc_topological_indices(bRedCB), calc_incoherence(bRedCB)) %>% mutate(Name="Beagle") 
-
+    tiIC <- bind_rows(ptiIC, btiIC) %>% rename(Network=Name)
+   
+    ptiQSS <- calc_QSS(pRedCB, 1000, 4) %>% mutate(Name="Potter")
+    btiQSS <- calc_QSS(bRedCB, 1000, 4) %>% mutate(Name="Beagle")
+    QSSIC <- bind_rows(ptiQSS, btiQSS) %>% rename(Red=Name)
+    
     pM <- calc_modularity(pRedCB) %>% mutate(Name="Potter")
     bM <- calc_modularity(bRedCB) %>% mutate(Name="Beagle") 
-
-    tiIC <- bind_rows(ptiIC, btiIC) %>% rename(Network=Name)
     ModularityIC <- bind_rows(pM, bM) %>% rename(Red=Name)
-    tiMIC <- cbind(tiIC, ModularityIC)
     
-    tiMIC_pc <- cbind(ptiIC, pM) %>% rename(Network=Name)
-    tiMIC_bc <- cbind(btiIC, bM) %>% rename(Network=Name)
+    tiMIC <- cbind(tiIC, QSSIC, ModularityIC)
+    
+    #tiMIC_pc <- cbind(ptiIC, pM) %>% rename(Network=Name)
+    #tiMIC_bc <- cbind(btiIC, bM) %>% rename(Network=Name)
     
     stop2Cluster(cl) 
     saveRDS(tiMIC,"Data/tiIC95.rds")
@@ -230,11 +242,11 @@ hub_conn <- data.frame()
 
 hc <- plot_topological_roles(filter(topoRoles, Name=="Potter"), p, mod_by_red[[1]])
 hc <- hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
-hub_connp <- bind_rows(hub_conn, hc)
+hub_conn <- bind_rows(hub_conn, hc)
 
 hc <- plot_topological_roles(filter(topoRoles, Name=="Beagle"), b, mod_by_red[[2]]) 
 hc <- hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
-hub_connb <- bind_rows(hub_conn, hc)
+hub_conn <- bind_rows(hub_conn, hc)
 
 hub_conn <- rename(hub_conn, Network=Name)
 
@@ -243,7 +255,7 @@ write.csv(hub_conn, file="2020/Figures/rolestop.csv")
 ```
 
 
-### Plot habitat and functional group vs modules ###
+### Habitat and functional group vs modules ###
 
 ```{r traits, echo=FALSE, message=FALSE, results='asis'}
 
@@ -251,17 +263,50 @@ cp <- read.delim(file = "Data/Potter_ModHabFG.txt", stringsAsFactors = FALSE)
 cb <- read.delim(file = "Data/Beagle_ModHabFG.txt", stringsAsFactors = FALSE)
 
 cp <- lapply(cp, factor)
+
 cpH <- as.data.frame(table(cp$Mod, cp$Hab))
 colnames(cpH) <- c("Mod", "Habitat", "Freq")
+
 cpFG <- as.data.frame(table(cp$Mod, cp$FG))
 colnames(cpFG) <- c("Mod", "FG", "Freq")
 
 cb <- lapply(cb, factor)
+
 cbH <- as.data.frame(table(cb$Mod, cb$Hab))
 colnames(cbH) <- c("Mod", "Habitat", "Freq")
+
 cbFG <- as.data.frame(table(cb$Mod, cb$FG))
 colnames(cbFG) <- c("Mod", "FG", "Freq")
-  
+
+# Chi-square test
+require(tidyr)
+
+# Potter-Habitat
+cpH <- spread(cpH, Habitat, Freq)
+cpH$Mod <- as.integer(cpH$Mod)
+cpH <- data.matrix(cpH)
+chisq.test(cpH)
+
+# Potter-Functional group
+cpFG <- spread(cpFG, FG, Freq)
+cpFG$Mod <- as.integer(cpFG$Mod)
+cpFG <- data.matrix(cpFG)
+chisq.test(cpFG)
+
+# Beagle-Habitat
+cbH <- spread(cbH, Habitat, Freq)
+cbH$Mod <- as.integer(cbH$Mod)
+cbH <- data.matrix(cbH)
+chisq.test(cbH)
+
+# Beagle-Functional group
+cbFG <- spread(cbFG, FG, Freq)
+cbFG$Mod <- as.integer(cbFG$Mod)
+cbFG <- data.matrix(cbFG)
+chisq.test(cbFG)
+
+#rm(cp, cb)
+
 ```
 
 
@@ -305,7 +350,7 @@ dgb <- sort(dgb$Degree, decreasing = TRUE)
 
 dg <- bind_rows(dgp, dgb)
 
-rm(dgp,dgb)
+#rm(dgp,dgb)
 
 opt.output <- vector("list", length=0)
 opt.output$GOF <- 0
@@ -322,6 +367,9 @@ fitML1 <- filter(fitML, Delta_AICc==0) %>% mutate_if(is.numeric, round, digits=4
 
 write.csv(fitML, file="NetworksFit.csv")
 write.csv(fitML1, file="NetworksLowerAICc.csv")
+
+plot(dgp)
+plot(dgb)
 
 ```
 
