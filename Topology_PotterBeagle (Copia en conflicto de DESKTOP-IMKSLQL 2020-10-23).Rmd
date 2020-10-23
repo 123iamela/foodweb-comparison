@@ -1,0 +1,377 @@
+---
+title: "EstructuraPotterBeagle"
+author: "Iara"
+date: "31 de marzo de 2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Setup ##
+
+```{r setup, eval=T,echo=FALSE }
+
+knitr::opts_chunk$set(echo = TRUE)
+
+load(".RData")
+
+require(igraph)
+require(NetIndices)
+require(stringr)
+require(dplyr)
+require(ggplot2)
+require(future.apply)
+require(knitr)
+require(purrr)
+require(devtools)
+require(multiweb)
+require(cowplot)
+require(RColorBrewer)
+
+```
+
+
+### Read Potter Cove and Beagle Channel food webs ###
+
+```{r fw, echo=FALSE, message=FALSE, results='asis'}
+
+# Read food webs
+# .txt format: predator -> prey
+
+p <- readNetwork("Data/Potter_FW.txt", edgeListFormat=1)
+b <- readNetwork("Data/Beagle_FW.txt", edgeListFormat=1)
+
+# Remove loops and repeated interactions
+
+p <- simplify(p)
+b <- simplify(b)
+
+```
+
+
+### Calculate empirical topological metrics and perfome Strona curve-ball randomizations ###
+
+```{r ti, eval=T, echo=F, message=T, warning=T}
+
+# Empirical topological metrics
+
+if(!file.exists("Data/ti.rds")){
+
+  tip <- bind_cols(calc_topological_indices(p), calc_incoherence(p), calc_modularity(p), calc_QSS(p, 10000, 4)) %>% mutate(Name="Potter")
+  tib <- bind_cols(calc_topological_indices(b), calc_incoherence(b), calc_modularity(b), calc_QSS(b, 10000, 4)) %>% mutate(Name="Beagle")
+
+  ti <- bind_rows(tip, tib) %>% rename(Network=Name)
+
+  saveRDS(ti,"Data/ti.rds")
+  write.csv(ti, file="Figures/ti.csv")
+  rm(tip, tib)
+  
+} else {
+  
+  ti <- readRDS("Data/ti.rds")
+
+}
+
+# QSS simétrico
+qssp_sim <- calc_QSS(p, nsim = 1000, ncores = 6, negative = -1, positive = 1)
+qssb_sim <- calc_QSS(b, nsim = 1000, ncores = 6, negative = -1, positive = 1)
+
+# QSS asimétrico (más realista, menos estable)
+qssp_asim <- calc_QSS(p, nsim = 1000, ncores = 6)
+qssb_asim <- calc_QSS(b, nsim = 1000, ncores = 6)
+
+# Smallworld analysis
+
+prandom <- generateERbasal(p, nsim=1000)
+brandom <- generateERbasal(b, nsim=1000)
+
+if(!file.exists("Data/smallWorldness.rds")) {
+  
+  pp <- calc_modularity_swness_zscore(p, nullDist=prandom, ncore=6)
+  bb <- calc_modularity_swness_zscore(b, nullDist=brandom, ncore=6)
+  
+  pswm <- pp[["da"]] %>% mutate(Name="Potter")
+  bswm <- bb[["da"]] %>% mutate(Name="Beagle")
+  
+  #pswm <- pp[["sims"]] %>% mutate(Name="Potter")
+  #bswm <- bb[["sims"]] %>% mutate(Name="Beagle")
+  
+  smallWorldness <- rbind(pswm, bswm) %>% rename(Network=Name)
+  
+  saveRDS(smallWorldness,"Data/smallWorldness.rds")
+  write.csv(smallWorldness, file="Figures/smallWorldness.csv") 
+  rm(pswm, bswm)
+  
+} else {
+  
+  smallWorldness <- readRDS("Data/smallWorldness.rds")
+
+}
+
+# Randomizations and topological metrics
+
+pRedCB <- curveBall(p, 1000)
+bRedCB <- curveBall(b, 1000)
+
+if(!file.exists("Data/tiIC95.rds")){
+  
+    require(parallel)
+    nc <-  detectCores()
+    cl <- makeCluster(rep("localhost", nc))
+    
+    ptiIC <- bind_cols(calc_topological_indices(pRedCB), calc_incoherence(pRedCB)) %>% mutate(Name="Potter") 
+    btiIC <- bind_cols(calc_topological_indices(bRedCB), calc_incoherence(bRedCB)) %>% mutate(Name="Beagle") 
+    tiIC <- bind_rows(ptiIC, btiIC) %>% rename(Network=Name)
+   
+    ptiQSS <- calc_QSS(pRedCB, 10000, 6) %>% mutate(Name="Potter")
+    btiQSS <- calc_QSS(bRedCB, 10000, 6) %>% mutate(Name="Beagle")
+    QSSIC <- bind_rows(ptiQSS, btiQSS) %>% rename(Red=Name)
+    
+    pM <- calc_modularity(pRedCB) %>% mutate(Name="Potter")
+    bM <- calc_modularity(bRedCB) %>% mutate(Name="Beagle") 
+    ModularityIC <- bind_rows(pM, bM) %>% rename(Red=Name)
+    
+    tiMIC <- cbind(tiIC, QSSIC, ModularityIC)
+    
+    #tiMIC_pc <- cbind(ptiIC, pM) %>% rename(Network=Name)
+    #tiMIC_bc <- cbind(btiIC, bM) %>% rename(Network=Name)
+    
+    stop2Cluster(cl) 
+    saveRDS(tiMIC,"Data/tiIC95.rds")
+    rm(ptiIC,btiIC,tiIC,ModularityIC,pM,bM, nc, cl)
+  
+} else {
+  
+    tiMIC <- readRDS("Data/tiIC95.rds")
+
+  }
+
+```
+
+
+### Statistical analysis ###
+
+```{r stat, eval=T, echo=F, message=T, warning=T}
+
+# Test de Anderson-Darling y KS
+
+require(kSamples)
+tiMIC %>% dplyr::select(Modularity) %>% map(~ad.test(. ~ Network, data=tiMIC, method="simulated", Nsim =1000)) %>% map_df(~.$ad[1,])
+
+tiMIC_pc <- filter((tiMIC %>% select(Modularity, Network)), Network == "Potter")
+tiMIC_bc <- filter((tiMIC %>% select(Modularity, Network)), Network == "Beagle")
+ks.test(tiMIC_pc$Modularity, tiMIC_bc$Modularity)
+
+#rm(tiMIC_pc, tiMIC_bc)
+
+# Effect size
+
+df <- tiMIC %>% group_by(Network) %>% dplyr::select(Q,TLmean,TLmax,Omnivory,PathLength,Clustering,Modularity) %>% summarize_if(is.numeric, median)  %>% gather("metric","medianDif" ,-Network) %>% group_by(metric) %>% summarize_if(is.numeric,~diff(.))
+
+df1 <- tiMIC %>% dplyr::select(Network,Q,TLmean,TLmax,Omnivory,PathLength,Clustering,Modularity) %>% gather("metric","value", -Network) %>% group_by(metric) %>% summarize(sdM = sd(value))
+   
+df <- inner_join(df,df1)  %>%  mutate(effectSize=medianDif/sdM)
+
+knitr::kable(df)
+
+#rm(df, df1)
+
+# Statistical test and CI for QSS
+
+require(binom)
+df <- ti %>% dplyr::select(Network, QSS) %>% group_by(Network) %>% do(binom.confint(.$QSS*10000,  10000, methods="wilson"))
+
+prop.test(x=ti$QSS*10000, n=c(10000, 10000))
+
+```
+
+
+### Calculate and classify species by topological roles ###
+
+```{r topoRol, echo=FALSE, message=FALSE, results='asis'}
+
+source("R/network_fun.r")
+
+mod_by_red <- vector(mode="list", length=2)
+set.seed(123)
+
+modulos <- cluster_spinglass(p)
+mti <- data_frame(Name="Potter", Groups=length(modulos$csize), Modularity=modulos$modularity)
+mod_by_red[[1]] <- modulos
+
+modulos <- cluster_spinglass(b)
+mti <- mti %>% add_row(Name="Beagle", Groups=length(modulos$csize), Modularity=modulos$modularity)
+mod_by_red[[2]] <- modulos
+
+# Topological roles
+
+if(!file.exists("Data/rolesTopologicos.rds")){
+
+  tR1 <- calc_topological_roles(p, 100)
+  tR  <- tR1 %>% group_by(node) %>% summarize(wtmLowCI=quantile(within_module_degree, 0.005, na.rm=TRUE),
+                                          wtmHiCI=quantile(within_module_degree, 0.995, na.rm=TRUE),
+                                          amcLowCI=quantile(among_module_conn, 0.005, na.rm=TRUE),
+                                          amcHiCI=quantile(among_module_conn, 0.995, na.rm=TRUE),
+                                          within_module_degree=mean(within_module_degree, na.rm=TRUE),
+                                          among_module_conn=mean(among_module_conn, na.rm=TRUE))
+  
+  topoRoles <- tR %>% mutate(Name="Potter")
+  
+  # BEAGLE
+  tR1 <- calc_topological_roles(b, 100)
+  tR  <- tR1 %>% group_by(node) %>% summarize(wtmLowCI=quantile(within_module_degree, 0.005, na.rm=TRUE),
+                                          wtmHiCI=quantile(within_module_degree, 0.995, na.rm=TRUE),
+                                          amcLowCI=quantile(among_module_conn, 0.005, na.rm=TRUE),
+                                          amcHiCI=quantile(among_module_conn, 0.995, na.rm=TRUE),
+                                          within_module_degree=mean(within_module_degree, na.rm=TRUE),
+                                          among_module_conn=mean(among_module_conn, na.rm=TRUE))
+  
+  topoRoles <- bind_rows(topoRoles, tR %>% mutate(Name="Beagle"))
+  
+  saveRDS(topoRoles,"Data/rolesTopologicos.rds")
+  
+} else {
+  
+  topoRoles <- readRDS("Data/rolesTopologicos.rds")
+
+}
+
+# Classify species by topological roles
+
+#hub_conn <- data.frame()
+
+hc <- plot_topological_roles(filter(topoRoles, Name=="Potter"), p, mod_by_red[[1]])
+hub_connp <- hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
+#hc <- hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
+#hub_conn <- bind_rows(hub_conn, hc)
+
+hc <- plot_topological_roles(filter(topoRoles, Name=="Beagle"), b, mod_by_red[[2]]) 
+hub_connb <- hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
+#hc <- hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
+#hub_conn <- bind_rows(hub_conn, hc)
+
+#hub_conn <- rename(hub_conn, Network=Name)
+
+#write.csv(hub_conn, file="2020/Figures/rolestop.csv") 
+
+```
+
+
+### Habitat and functional group vs modules ###
+
+```{r traits, echo=FALSE, message=FALSE, results='asis'}
+
+cp <- read.delim(file = "Data/Potter_ModHabFG.txt", stringsAsFactors = FALSE)
+cb <- read.delim(file = "Data/Beagle_ModHabFG.txt", stringsAsFactors = FALSE)
+
+cp <- lapply(cp, factor)
+
+cpH <- as.data.frame(table(cp$Mod, cp$Hab))
+colnames(cpH) <- c("Mod", "Habitat", "Freq")
+
+cpFG <- as.data.frame(table(cp$Mod, cp$FG))
+colnames(cpFG) <- c("Mod", "FG", "Freq")
+
+cb <- lapply(cb, factor)
+
+cbH <- as.data.frame(table(cb$Mod, cb$Hab))
+colnames(cbH) <- c("Mod", "Habitat", "Freq")
+
+cbFG <- as.data.frame(table(cb$Mod, cb$FG))
+colnames(cbFG) <- c("Mod", "FG", "Freq")
+
+# Chi-square test
+require(tidyr)
+
+# Potter-Habitat
+cpH <- spread(cpH, Habitat, Freq)
+cpH$Mod <- as.integer(cpH$Mod)
+cpH <- data.matrix(cpH)
+chisq.test(cpH)
+
+# Potter-Functional group
+cpFG <- spread(cpFG, FG, Freq)
+cpFG$Mod <- as.integer(cpFG$Mod)
+cpFG <- data.matrix(cpFG)
+chisq.test(cpFG)
+
+# Beagle-Habitat
+cbH <- spread(cbH, Habitat, Freq)
+cbH$Mod <- as.integer(cbH$Mod)
+cbH <- data.matrix(cbH)
+chisq.test(cbH)
+
+# Beagle-Functional group
+cbFG <- spread(cbFG, FG, Freq)
+cbFG$Mod <- as.integer(cbFG$Mod)
+cbFG <- data.matrix(cbFG)
+chisq.test(cbFG)
+
+#rm(cp, cb)
+
+```
+
+
+### Setup degree distribution analysis ### 
+
+```{r setupDegree, eval=T, echo=F, message=T, warning=T}
+
+require(pander)
+require(plyr)
+require(dplyr)
+panderOptions('table.split.table', Inf)
+panderOptions('table.style', 'multiline')
+options("scipen"=6, "digits"=4)
+
+library(poweRlaw)
+source("R/dist_fun.r")
+
+# Upload continuous distributions functions
+
+source("R/powerlaw/discpowerexp.R")
+source("R/powerlaw/discexp.R")
+source("R/powerlaw/zeta.R")
+source("R/powerlaw/powerexp.R")
+source("R/powerlaw/exp.R")
+source("R/powerlaw/pareto.R")
+
+```
+
+
+### Fit degree distributions ###
+
+```{r fitDegree, eval=T, echo=F, message=T, warning=T}
+
+dgp <- data.frame(degree(p)) %>% mutate(Name="Potter")
+colnames(dgp) <- c("Degree", "Network")
+dgp <- sort(dgp$Degree, decreasing = TRUE)
+
+dgb <- data.frame(degree(b)) %>% mutate(Name="Beagle")
+colnames(dgb) <- c("Degree", "Network")
+dgb <- sort(dgb$Degree, decreasing = TRUE)
+
+dg <- bind_rows(dgp, dgb)
+
+#rm(dgp,dgb)
+
+opt.output <- vector("list", length=0)
+opt.output$GOF <- 0
+opt.output$ploting <- 1
+
+fit <- dg %>% group_by(Network) %>% do(fit_ht_dplyr_helper(.))
+fitML <- fit
+
+# Correct negative uniform parameter
+
+fitML <- fitML %>% mutate(par1=ifelse(ModelNames=="Uniform",abs(par1),par1))
+
+fitML1 <- filter(fitML, Delta_AICc==0) %>% mutate_if(is.numeric, round, digits=4) 
+
+write.csv(fitML, file="NetworksFit.csv")
+write.csv(fitML1, file="NetworksLowerAICc.csv")
+
+plot(dgp)
+plot(dgb)
+
+```
+
