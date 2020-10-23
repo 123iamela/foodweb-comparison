@@ -123,8 +123,8 @@ if(!file.exists("Data/tiIC95.rds")){
     btiIC <- bind_cols(calc_topological_indices(bRedCB), calc_incoherence(bRedCB)) %>% mutate(Name="Beagle") 
     tiIC <- bind_rows(ptiIC, btiIC) %>% rename(Network=Name)
    
-    ptiQSS <- calc_QSS(pRedCB, 1000, 4) %>% mutate(Name="Potter")
-    btiQSS <- calc_QSS(bRedCB, 1000, 4) %>% mutate(Name="Beagle")
+    ptiQSS <- calc_QSS(pRedCB, 10000, 6) %>% mutate(Name="Potter")
+    btiQSS <- calc_QSS(bRedCB, 10000, 6) %>% mutate(Name="Beagle")
     QSSIC <- bind_rows(ptiQSS, btiQSS) %>% rename(Red=Name)
     
     pM <- calc_modularity(pRedCB) %>% mutate(Name="Potter")
@@ -238,19 +238,21 @@ if(!file.exists("Data/rolesTopologicos.rds")){
 
 # Classify species by topological roles
 
-hub_conn <- data.frame()
+#hub_conn <- data.frame()
 
 hc <- plot_topological_roles(filter(topoRoles, Name=="Potter"), p, mod_by_red[[1]])
-hc <- hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
-hub_conn <- bind_rows(hub_conn, hc)
+hub_connp <- hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
+#hc <- hc %>% mutate(Name="Potter", modulo=mod_by_red[[1]]$membership[node])
+#hub_conn <- bind_rows(hub_conn, hc)
 
 hc <- plot_topological_roles(filter(topoRoles, Name=="Beagle"), b, mod_by_red[[2]]) 
-hc <- hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
-hub_conn <- bind_rows(hub_conn, hc)
+hub_connb <- hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
+#hc <- hc %>% mutate(Name="Beagle", modulo=mod_by_red[[2]]$membership[node])
+#hub_conn <- bind_rows(hub_conn, hc)
 
-hub_conn <- rename(hub_conn, Network=Name)
+#hub_conn <- rename(hub_conn, Network=Name)
 
-write.csv(hub_conn, file="2020/Figures/rolestop.csv") 
+#write.csv(hub_conn, file="2020/Figures/rolestop.csv") 
 
 ```
 
