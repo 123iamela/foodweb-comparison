@@ -57,9 +57,14 @@ b <- simplify(b)
 
 if(!file.exists("Data/ti.rds")){
 
-  tip <- bind_cols(calc_topological_indices(p), calc_incoherence(p), calc_modularity(p), calc_QSS(p, 10000, 4)) %>% mutate(Name="Potter")
-  tib <- bind_cols(calc_topological_indices(b), calc_incoherence(b), calc_modularity(b), calc_QSS(b, 10000, 4)) %>% mutate(Name="Beagle")
+  tip <- bind_cols(calc_topological_indices(p), calc_incoherence(p), calc_modularity(p), calc_QSS(p, 1000, 6)) %>% mutate(Name="Potter")
+  tib <- bind_cols(calc_topological_indices(b), calc_incoherence(b), calc_modularity(b), calc_QSS(b, 1000, 6)) %>% mutate(Name="Beagle")
 
+  #qssp_asim <- calc_QSS(p, 1000, 6) %>% mutate(Name="Potter")
+  #qssb_asim <- calc_QSS(b, 1000, 6) %>% mutate(Name="Beagle")
+  #qss_asim <- bind_rows(qssp_asim, qssb_asim) 
+  #ti <- cbind(ti, qss_asim)
+  
   ti <- bind_rows(tip, tib) %>% rename(Network=Name)
 
   saveRDS(ti,"Data/ti.rds")
@@ -158,9 +163,10 @@ if(!file.exists("Data/tiIC95.rds")){
 require(kSamples)
 tiMIC %>% dplyr::select(Modularity) %>% map(~ad.test(. ~ Network, data=tiMIC, method="simulated", Nsim =1000)) %>% map_df(~.$ad[1,])
 
-tiMIC_pc <- filter((tiMIC %>% select(Modularity, Network)), Network == "Potter")
-tiMIC_bc <- filter((tiMIC %>% select(Modularity, Network)), Network == "Beagle")
-ks.test(tiMIC_pc$Modularity, tiMIC_bc$Modularity)
+#(cambiar el nombre de la metrica que quiera testear)
+tiMIC_pc <- filter((tiMIC %>% select(MEing, Network)), Network == "Potter")
+tiMIC_bc <- filter((tiMIC %>% select(MEing, Network)), Network == "Beagle")
+ks.test(tiMIC_pc$MEing, tiMIC_bc$MEing)
 
 #rm(tiMIC_pc, tiMIC_bc)
 
@@ -282,7 +288,7 @@ colnames(cbFG) <- c("Mod", "FG", "Freq")
 
 # Chi-square test
 require(tidyr)
-
+#--Modules vs traits
 # Potter-Habitat
 cpH <- spread(cpH, Habitat, Freq)
 cpH$Mod <- as.integer(cpH$Mod)
@@ -308,6 +314,25 @@ cbFG <- data.matrix(cbFG)
 chisq.test(cbFG)
 
 #rm(cp, cb)
+
+#--Trait's levels vs FW
+cpH_t <- cpH %>% group_by(Habitat) %>% summarise(Total=(sum(Freq)/110)*100) %>% mutate(Name="Potter")
+cbH_t <- cbH %>% group_by(Habitat) %>% summarise(Total=(sum(Freq)/145)*100) %>% mutate(Name="Beagle")
+H_t <- bind_rows(cpH_t, cbH_t) %>% rename(Network=Name)
+
+# Potter-Beagle Habitat
+H_t <- spread(H_t, Habitat, Total)
+H_t <- data.matrix(H_t)
+chisq.test(H_t$pelagic) #(cambiar nombre del nivel de interes para hacer el test)
+
+#--Trait's levels vs FW
+cpFG_t <- cpFG %>% group_by(FG) %>% summarise(Total=(sum(Freq)/110)*100) %>% mutate(Name="Potter")
+cbFG_t <- cbFG %>% group_by(FG) %>% summarise(Total=(sum(Freq)/145)*100) %>% mutate(Name="Beagle")
+FG_t <- bind_rows(cpFG_t, cbFG_t) %>% rename(Network=Name)
+
+# Potter-Beagle Habitat
+FG_t <- spread(FG_t, FG, Total)
+chisq.test(FG_t$zooplankton) #(cambiar nombre del nivel de interes para hacer el test)
 
 ```
 
@@ -342,18 +367,25 @@ source("R/powerlaw/pareto.R")
 
 ```{r fitDegree, eval=T, echo=F, message=T, warning=T}
 
+# Total-degree
 dgp <- data.frame(degree(p)) %>% mutate(Name="Potter")
 colnames(dgp) <- c("Degree", "Network")
-dgp <- sort(dgp$Degree, decreasing = TRUE)
 
 dgb <- data.frame(degree(b)) %>% mutate(Name="Beagle")
 colnames(dgb) <- c("Degree", "Network")
-dgb <- sort(dgb$Degree, decreasing = TRUE)
 
 dg <- bind_rows(dgp, dgb)
-
 #rm(dgp,dgb)
 
+# In-degree
+in_dgp <- data.frame(degree(p, mode="in")) %>% mutate(Name="Potter")
+colnames(in_dgp) <- c("inDegree", "Network")
+
+in_dgb <- data.frame(degree(b, mode="in")) %>% mutate(Name="Beagle")
+colnames(in_dgb) <- c("inDegree", "Network")
+
+
+# Fit distributions
 opt.output <- vector("list", length=0)
 opt.output$GOF <- 0
 opt.output$ploting <- 1
@@ -362,7 +394,6 @@ fit <- dg %>% group_by(Network) %>% do(fit_ht_dplyr_helper(.))
 fitML <- fit
 
 # Correct negative uniform parameter
-
 fitML <- fitML %>% mutate(par1=ifelse(ModelNames=="Uniform",abs(par1),par1))
 
 fitML1 <- filter(fitML, Delta_AICc==0) %>% mutate_if(is.numeric, round, digits=4) 
@@ -370,8 +401,10 @@ fitML1 <- filter(fitML, Delta_AICc==0) %>% mutate_if(is.numeric, round, digits=4
 write.csv(fitML, file="NetworksFit.csv")
 write.csv(fitML1, file="NetworksLowerAICc.csv")
 
-plot(dgp)
-plot(dgb)
+fit_p <- filter(fitML, Network=="Potter")
+cdfplot_displ_exp(dgp$Degree, fit_p) + theme_new + 
 
+fit_b <- filter(fitML, Network=="Beagle")
+cdfplot_displ_exp(dgb, fit_b) + theme_new
 ```
 
