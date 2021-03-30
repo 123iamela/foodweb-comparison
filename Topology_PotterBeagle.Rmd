@@ -374,6 +374,13 @@ colnames(dgp) <- c("Degree", "Network")
 dgb <- data.frame(degree(b)) %>% mutate(Name="Beagle")
 colnames(dgb) <- c("Degree", "Network")
 
+# Test for differences in degree distribution 
+#
+ks.test(dgp$Degree,dgb$Degree)
+kSamples::ad.test(dgp$Degree,dgb$Degree,method="simulated",Nsim = 10000)
+
+# ======= ARE EQUAL!!!
+
 dg <- bind_rows(dgp, dgb)
 #rm(dgp,dgb)
 
