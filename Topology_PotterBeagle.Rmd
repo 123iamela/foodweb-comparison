@@ -45,6 +45,8 @@ b <- readNetwork("Data/Beagle_FW.txt", edgeListFormat=1)
 
 p <- simplify(p)
 b <- simplify(b)
+calc_topological_indices(p)
+calc_topological_indices(b)
 
 ```
 
