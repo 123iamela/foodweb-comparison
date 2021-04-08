@@ -149,7 +149,13 @@ if(!file.exists("Data/tiIC95.rds")){
   
     tiMIC <- readRDS("Data/tiIC95.rds")
 
-  }
+}
+
+# Calculate trophic level and omnivory index
+adj_matrix <- get.adjacency(p, sparse = FALSE)
+a <- TrophInd(adj_matrix)
+adj_matrix1 <- get.adjacency(b, sparse = FALSE)
+c <- TrophInd(adj_matrix1)
 
 ```
 
@@ -377,13 +383,19 @@ colnames(dgb) <- c("Degree", "Network")
 dg <- bind_rows(dgp, dgb)
 #rm(dgp,dgb)
 
-# In-degree
+# In-degree - predators
 in_dgp <- data.frame(degree(p, mode="in")) %>% mutate(Name="Potter")
 colnames(in_dgp) <- c("inDegree", "Network")
 
 in_dgb <- data.frame(degree(b, mode="in")) %>% mutate(Name="Beagle")
 colnames(in_dgb) <- c("inDegree", "Network")
 
+# Out-degree - preys
+in_dgp <- data.frame(degree(p, mode="out")) %>% mutate(Name="Potter")
+colnames(in_dgp) <- c("outDegree", "Network")
+
+in_dgb <- data.frame(degree(b, mode="out")) %>% mutate(Name="Beagle")
+colnames(in_dgb) <- c("outDegree", "Network")
 
 # Fit distributions
 opt.output <- vector("list", length=0)
@@ -408,3 +420,13 @@ fit_b <- filter(fitML, Network=="Beagle")
 cdfplot_displ_exp(dgb, fit_b) + theme_new
 ```
 
+
+```{r traits, echo=FALSE, message=FALSE, results='asis'}
+
+ccbb <- read.delim(file = "Data/beagle_mod_otras.txt", stringsAsFactors = FALSE)
+xxx <- ggplot(ccbb, aes(Mod, TL, group=Mod)) + 
+       geom_boxplot() +
+       labs(y="Trophic level", x="Modules") + 
+       theme_new
+
+```
