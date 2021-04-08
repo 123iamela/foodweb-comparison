@@ -149,8 +149,14 @@ if(!file.exists("Data/tiIC95.rds")){
   
     tiMIC <- readRDS("Data/tiIC95.rds")
 
-  }
+}
 
+# Calc TL and Omn
+adj_matrix <- get.adjacency(p, sparse=FALSE)
+a <- TrophInd(adj_matrix)
+
+adj_matrix1 <- get.adjacency(b, sparse=FALSE)
+c <- TrophInd(adj_matrix1)
 ```
 
 
