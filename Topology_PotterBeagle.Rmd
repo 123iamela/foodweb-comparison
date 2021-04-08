@@ -43,8 +43,10 @@ b <- readNetwork("Data/Beagle_FW.txt", edgeListFormat=1)
 
 # Remove loops and repeated interactions
 
-p <- simplify(p)
-b <- simplify(b)
+p <- igraph::simplify(p,remove.multiple=TRUE, remove.loops=TRUE)
+b <- igraph::simplify(b)
+calc_topological_indices(p)
+calc_topological_indices(b)
 
 ```
 
@@ -380,6 +382,13 @@ colnames(dgp) <- c("Degree", "Network")
 dgb <- data.frame(degree(b)) %>% mutate(Name="Beagle")
 colnames(dgb) <- c("Degree", "Network")
 
+# Test for differences in degree distribution 
+#
+ks.test(dgp$Degree,dgb$Degree)
+kSamples::ad.test(dgp$Degree,dgb$Degree,method="simulated",Nsim = 10000)
+
+# ======= Different!!
+
 dg <- bind_rows(dgp, dgb)
 #rm(dgp,dgb)
 
@@ -414,7 +423,7 @@ write.csv(fitML, file="NetworksFit.csv")
 write.csv(fitML1, file="NetworksLowerAICc.csv")
 
 fit_p <- filter(fitML, Network=="Potter")
-cdfplot_displ_exp(dgp$Degree, fit_p) + theme_new + 
+cdfplot_displ_exp(dgp$Degree, fit_p) + theme_new 
 
 fit_b <- filter(fitML, Network=="Beagle")
 cdfplot_displ_exp(dgb, fit_b) + theme_new
