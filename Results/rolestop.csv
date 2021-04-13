@@ -1,0 +1,256 @@
+"","type","node","name","Network","modulo"
+"name...1","hubcon",107,"Notothenia coriiceps","Potter",1
+"name1...2","modspe",8,"Zooplankton","Potter",4
+"name2...3","modspe",11,"Porifera","Potter",3
+"name3...4","modspe",16,"Gondogeneia antarctica","Potter",1
+"name4...5","modspe",17,"Paradexamine sp.","Potter",1
+"name5...6","modspe",18,"Prostebbingia gracilis","Potter",1
+"name6...7","modspe",19,"Prostebbingia sp.","Potter",1
+"name7...8","modspe",20,"Pariphimedia integricauda","Potter",1
+"name8...9","modspe",21,"Euphausia superba","Potter",4
+"name9...10","modspe",23,"Chaenocephalus aceratus","Potter",4
+"name10...11","modspe",31,"Parachaenichthys charcoti","Potter",4
+"name11...12","modspe",34,"Neobuccinum eatoni","Potter",3
+"name12...13","modspe",35,"Chalinidae","Potter",3
+"name13...14","modspe",36,"Dendrilla antarctica","Potter",3
+"name14...15","modspe",37,"Rosella antartica","Potter",3
+"name15...16","modspe",38,"Rossella sp.","Potter",3
+"name16...17","modspe",39,"Stylo_Myca","Potter",3
+"name17...18","modspe",40,"Bryozoa","Potter",3
+"name18...19","modspe",41,"Epiphytic Diatomea","Potter",3
+"name19...20","modspe",42,"Salpidae","Potter",4
+"name20...21","modspe",43,"Desmarestia anceps","Potter",1
+"name21...22","modspe",44,"Desmarestia antarctica","Potter",1
+"name22...23","modspe",45,"Desmarestia menziesii","Potter",1
+"name23...24","modspe",48,"Palmaria decipiens","Potter",1
+"name24...25","modspe",49,"Oligochaeta","Potter",2
+"name25...26","modspe",58,"Adenocystis utricularis","Potter",1
+"name26...27","modspe",59,"Gigartina skottsbergii","Potter",1
+"name27...28","modspe",60,"Iridaea cordata","Potter",1
+"name28...29","modspe",61,"Myriogramme manginii","Potter",1
+"name29...30","modspe",62,"Phaeurus antarcticus ","Potter",1
+"name30...31","modspe",63,"Plocamium cartilagineum","Potter",1
+"name31...32","modspe",66,"Eatoniella sp.","Potter",3
+"name32...33","modspe",67,"Laevilacunaria antarctica","Potter",1
+"name33...34","modspe",72,"Nemertea","Potter",2
+"name34...35","modspe",73,"Curdiea racovitzae","Potter",1
+"name35...36","modspe",74,"Georgiella confluens ","Potter",1
+"name36...37","modspe",75,"Monostroma hariotii","Potter",1
+"name37...38","modspe",78,"Ascoseira mirabilis","Potter",1
+"name38...39","modspe",79,"Ulothrix sp.","Potter",1
+"name39...40","modspe",80,"Spionidae","Potter",2
+"name40...41","modspe",81,"Terebellidae","Potter",2
+"name41...42","modspe",82,"Laternula elliptica","Potter",3
+"name42...43","modspe",83,"Callophyllis atrosanguinea ","Potter",1
+"name43...44","modspe",84,"Cephalopoda","Potter",4
+"name44...45","modspe",87,"Hyperiidea","Potter",4
+"name45...46","modspe",88,"Lambia antarctica ","Potter",1
+"name46...47","modspe",89,"Neuroglossum delesseriae","Potter",1
+"name47...48","modspe",90,"Pantoneura plocamioides ","Potter",1
+"name48...49","modspe",91,"Picconiella plumosa ","Potter",1
+"name49...50","modspe",92,"Porphyra plocamiestris ","Potter",1
+"name50...51","modspe",93,"Trematocarpus antarcticus","Potter",1
+"name51...52","modspe",94,"Urospora penicilliformis","Potter",1
+"name52...53","modspe",96,"Doris kerguelenensis","Potter",3
+"name53...54","modspe",98,"Geminocarpus geminatus","Potter",1
+"name54...55","modspe",101,"Diplasterias brucei","Potter",3
+"name55...56","modspe",102,"Odontaster meridionalis","Potter",3
+"name56...57","modspe",103,"Odontaster validus","Potter",3
+"name57...58","modspe",104,"Perknaster fuscus antarticus","Potter",3
+"name58...59","modspe",106,"Malacobelemnon daytoni","Potter",4
+"name59...60","modspe",108,"Parborlasia corrugatus","Potter",3
+"name60...61","modspe",109,"Perknaster aurorae","Potter",3
+"name61...62","modspe",110,"Urticinopsis antarctica","Potter",3
+"name110...63","modcon",1,"Aged detritus","Potter",2
+"name210...64","modcon",2,"Benthic Diatomea","Potter",3
+"name310...65","modcon",3,"Fresh detritus","Potter",3
+"name410...66","modcon",4,"Phytoplankton","Potter",4
+"name510...67","modcon",5,"Polychaeta","Potter",4
+"name62...68","modcon",6,"Copepoda","Potter",4
+"name71...69","modcon",7,"Polynoidae","Potter",2
+"name81...70","modcon",9,"Gastropoda","Potter",3
+"name91...71","modcon",10,"Hydrozoa","Potter",2
+"name101...72","modcon",12,"Bovallia gigantea","Potter",1
+"name111...73","modcon",13,"Charcotia obesa","Potter",3
+"name121...74","modcon",14,"Eurymera monticulosa","Potter",1
+"name131...75","modcon",15,"Gitanopsis squamosa","Potter",1
+"name141...76","modcon",22,"Priapulida","Potter",2
+"name151...77","modcon",24,"Gobionotothen gibberifrons","Potter",4
+"name161...78","modcon",25,"Harpagifer antarcticus","Potter",1
+"name171...79","modcon",26,"Lindbergichthys nudifrons","Potter",4
+"name181...80","modcon",27,"Mysida","Potter",4
+"name191...81","modcon",28,"Notothenia rossii","Potter",1
+"name201...82","modcon",29,"Octopoda","Potter",4
+"name211...83","modcon",30,"Ophionotus victoriae","Potter",3
+"name221...84","modcon",32,"Necromass","Potter",3
+"name231...85","modcon",33,"Aequiyoldia eightsii","Potter",3
+"name241...86","modcon",46,"Gammaridea","Potter",2
+"name251...87","modcon",47,"Ostracoda","Potter",4
+"name261...88","modcon",50,"Polyplacophora","Potter",3
+"name271...89","modcon",51,"Tanaidacea","Potter",3
+"name281...90","modcon",52,"Glyptonotus antarcticus","Potter",4
+"name291...91","modcon",53,"Nereididae","Potter",2
+"name301...92","modcon",54,"Cumacea","Potter",2
+"name311...93","modcon",55,"Oradarea bidentata","Potter",1
+"name321...94","modcon",56,"Probolisca ovata","Potter",1
+"name331...95","modcon",57,"Serolis sp.","Potter",4
+"name341...96","modcon",64,"Cheirimedon femoratus","Potter",1
+"name351...97","modcon",65,"Djerboa furcipes","Potter",1
+"name361...98","modcon",68,"Margarella antarctica","Potter",1
+"name371...99","modcon",69,"Nacella concinna","Potter",1
+"name381...100","modcon",70,"Orchomenella sp.","Potter",3
+"name391...101","modcon",71,"Paradexamine fissicauda","Potter",1
+"name401","modcon",76,"Ascidiacea","Potter",4
+"name411","modcon",77,"Pseudorchomene plebs","Potter",2
+"name421","modcon",85,"Hemiarthrum setulosum","Potter",3
+"name431","modcon",86,"Hippomedon kergueleni","Potter",2
+"name441","modcon",95,"Sterechinus neumayeri","Potter",3
+"name451","modcon",97,"Aglaophamus trissophyllus","Potter",2
+"name461","modcon",99,"Barrukia cristata","Potter",2
+"name471","modcon",100,"Trematomus newnesi","Potter",1
+"name481","modcon",105,"Trematomus bernacchii","Potter",2
+"name...111","hubcon",55,"Munida gregaria","Beagle",4
+"name1...112","modspe",1,"Calliostoma nudum","Beagle",3
+"name2...113","modspe",3,"Fissurella picta","Beagle",3
+"name3...114","modspe",7,"Macrocystis pyrifera","Beagle",4
+"name4...115","modspe",8,"Margarella violacea","Beagle",3
+"name5...116","modspe",10,"Aged detritus","Beagle",2
+"name6...117","modspe",16,"Anasterias antarctica","Beagle",3
+"name7...118","modspe",17,"Ascidiacea","Beagle",3
+"name8...119","modspe",18,"Aulacomya atra","Beagle",3
+"name9...120","modspe",19,"Bivalvia","Beagle",3
+"name10...121","modspe",20,"Crepipatella dilatata","Beagle",3
+"name11...122","modspe",21,"Eurhomalea exalbida","Beagle",3
+"name12...123","modspe",22,"Eurypodius latreillii","Beagle",3
+"name13...124","modspe",24,"Fissurella oriens","Beagle",3
+"name14...125","modspe",25,"Gaimardia trapesina","Beagle",3
+"name15...126","modspe",28,"Mytilus edulis chilensis","Beagle",3
+"name16...127","modspe",29,"Nacella deaurata","Beagle",4
+"name17...128","modspe",31,"Nacella mytilina","Beagle",3
+"name18...129","modspe",33,"Notochthamalus scabrosus ","Beagle",3
+"name19...130","modspe",35,"Pareuthria fuscata","Beagle",3
+"name20...131","modspe",36,"Perumytilus purpuratus","Beagle",3
+"name21...132","modspe",37,"Plaxiphora sp.","Beagle",3
+"name22...133","modspe",39,"Polyplacophora","Beagle",4
+"name23...134","modspe",41,"Siphonaria lessonii","Beagle",4
+"name24...135","modspe",42,"Spirorbinae","Beagle",3
+"name25...136","modspe",43,"Tonicia sp.","Beagle",3
+"name26...137","modspe",44,"Trophon geversianus","Beagle",3
+"name27...138","modspe",45,"Xymenopsis muriciformis ","Beagle",4
+"name28...139","modspe",49,"Membranipora isabelleana","Beagle",3
+"name29...140","modspe",51,"Serpulidae","Beagle",3
+"name30...141","modspe",53,"Adenocystis utricularis","Beagle",4
+"name31...142","modspe",58,"Cephalopoda","Beagle",1
+"name32...143","modspe",59,"Dissostichus eleginoides","Beagle",1
+"name33...144","modspe",60,"Euphausiacea","Beagle",1
+"name34...145","modspe",61,"Gammaridea","Beagle",2
+"name35...146","modspe",62,"Glyceridae","Beagle",2
+"name36...147","modspe",63,"Myxine glutinosa","Beagle",1
+"name37...148","modspe",65,"Peltarion spinosulum","Beagle",3
+"name38...149","modspe",67,"Bathyraja brachyurops","Beagle",1
+"name39...150","modspe",68,"Cottoperca gobio","Beagle",1
+"name40...151","modspe",69,"Genypterus blacodes","Beagle",1
+"name41...152","modspe",70,"Macruronus magellanicus","Beagle",1
+"name42...153","modspe",71,"Merluccius hubbsi","Beagle",1
+"name43...154","modspe",72,"Patagonotothen sp.","Beagle",1
+"name44...155","modspe",73,"Priapulida","Beagle",1
+"name45...156","modspe",74,"Sprattus fuegensis","Beagle",1
+"name46...157","modspe",75,"Bathyraja griseocauda","Beagle",1
+"name47...158","modspe",76,"Bathyraja scaphiops","Beagle",1
+"name48...159","modspe",77,"Careproctus pallidus","Beagle",1
+"name49...160","modspe",79,"Patagonotothen sima","Beagle",1
+"name50...161","modspe",81,"Arbacia dufresnii","Beagle",3
+"name51...162","modspe",82,"Loxechinus albus","Beagle",4
+"name52...163","modspe",83,"Notobalanus flosculus","Beagle",3
+"name53...164","modspe",84,"Paralomis granulosa","Beagle",3
+"name54...165","modspe",85,"Bathyraja albomaculata","Beagle",1
+"name55...166","modspe",87,"Patagonotothen brevicauda brevicauda","Beagle",1
+"name56...167","modspe",88,"Patagonotothen ramsayi","Beagle",1
+"name57...168","modspe",89,"Salilota australis","Beagle",1
+"name58...169","modspe",90,"Echiura","Beagle",1
+"name59...170","modspe",91,"Holothuroidea","Beagle",1
+"name60...171","modspe",92,"Callophyllis pinnata","Beagle",4
+"name61...172","modspe",93,"Ceramium diaphanum","Beagle",4
+"name62...173","modspe",94,"Cladophora sp.","Beagle",3
+"name63","modspe",95,"Delesseriaceae ","Beagle",4
+"name64","modspe",96,"Ectocarpus sp.","Beagle",4
+"name65","modspe",97,"Nereididae","Beagle",2
+"name66","modspe",98,"Nothogenia fastigiata","Beagle",4
+"name67","modspe",99,"Polynoidae","Beagle",2
+"name68","modspe",100,"Rhizoclonium sp.","Beagle",4
+"name69","modspe",101,"Scytothamus fasciculatus","Beagle",4
+"name70","modspe",103,"Ulva rigida","Beagle",4
+"name71...182","modspe",104,"Hiatella arctica","Beagle",3
+"name72","modspe",106,"Codium sp.","Beagle",3
+"name73","modspe",108,"Galaxias maculatus","Beagle",1
+"name74","modspe",109,"Desmarestia sp.","Beagle",2
+"name75","modspe",110,"Oligochaeta","Beagle",2
+"name76","modspe",112,"Porphyra sp.","Beagle",2
+"name77","modspe",113,"Campylonotus vagans","Beagle",1
+"name78","modspe",114,"Hyperiidea","Beagle",1
+"name79","modspe",115,"Stromateus brasiliensis","Beagle",1
+"name80","modspe",117,"Cirripedia","Beagle",3
+"name81...192","modspe",118,"Halopteris sp.","Beagle",4
+"name82","modspe",119,"Ctenophora","Beagle",1
+"name83","modspe",120,"Ballia sp.","Beagle",4
+"name84","modspe",121,"Bostrychia sp.","Beagle",4
+"name85","modspe",122,"Ceramium sp.","Beagle",4
+"name86","modspe",123,"Griffithsia sp.","Beagle",4
+"name87","modspe",124,"Hincksia sp.","Beagle",4
+"name88","modspe",125,"Hymenena sp.","Beagle",4
+"name89","modspe",126,"Monostroma sp.","Beagle",4
+"name90","modspe",127,"Myriogramme sp.","Beagle",4
+"name91...202","modspe",128,"Sphacelaria sp.","Beagle",4
+"name92","modspe",129,"Trailliella sp.","Beagle",4
+"name93","modspe",130,"Cirratulidae","Beagle",2
+"name94","modspe",131,"Blidingia minima","Beagle",3
+"name95","modspe",132,"Derbesia sp.","Beagle",3
+"name96","modspe",133,"Ulothrix sp.","Beagle",3
+"name97","modspe",134,"Congiopodus peruvianus","Beagle",1
+"name98","modspe",135,"Raja (Dipturus) chilensis","Beagle",1
+"name99","modspe",136,"Champsocephalus esox","Beagle",1
+"name100","modspe",137,"Chthamalus sp.","Beagle",3
+"name101...212","modspe",138,"Asterina fimbriata","Beagle",3
+"name102","modspe",140,"Cosmasterias lurida","Beagle",3
+"name103","modspe",142,"Glabraster antarctica","Beagle",2
+"name104","modspe",143,"Lithodes santolla","Beagle",3
+"name105","modspe",145,"Schroederichthys bivius","Beagle",1
+"name110...217","modcon",2,"Crustacea","Beagle",1
+"name210...218","modcon",4,"Gastropoda","Beagle",1
+"name310...219","modcon",5,"Isopoda","Beagle",4
+"name410...220","modcon",6,"Macroalgae","Beagle",3
+"name510...221","modcon",9,"Zooplankton","Beagle",3
+"name610","modcon",11,"Ulva sp.","Beagle",4
+"name710","modcon",12,"Fresh detritus","Beagle",3
+"name810","modcon",13,"Ostracoda","Beagle",2
+"name910","modcon",14,"Acanthocyclus albatrossis","Beagle",3
+"name106","modcon",15,"Amphipoda","Beagle",1
+"name111...227","modcon",23,"Exosphaeroma gigas","Beagle",2
+"name121...228","modcon",26,"Halicarcinus planatus ","Beagle",3
+"name131...229","modcon",27,"Laevilitorina caliginosa","Beagle",2
+"name141...230","modcon",30,"Nacella magellanica","Beagle",4
+"name151...231","modcon",32,"Necromass","Beagle",2
+"name161...232","modcon",34,"Pagurus comptus","Beagle",3
+"name171...233","modcon",38,"Polychaeta","Beagle",1
+"name181...234","modcon",40,"Pseudechinus magellanicus","Beagle",3
+"name191...235","modcon",46,"Bryozoa","Beagle",3
+"name201...236","modcon",47,"Copepoda","Beagle",1
+"name211...237","modcon",48,"Cumacea","Beagle",2
+"name221...238","modcon",50,"Phytoplankton","Beagle",3
+"name231...239","modcon",52,"Diatomea","Beagle",2
+"name241...240","modcon",54,"Harpagifer bispinis","Beagle",2
+"name251...241","modcon",56,"Patagonotothen cornucola","Beagle",2
+"name261...242","modcon",57,"Nemertea","Beagle",2
+"name271...243","modcon",64,"Ophiuroidea","Beagle",1
+"name281...244","modcon",66,"Terebellidae","Beagle",2
+"name291...245","modcon",78,"Patagonotothen longipes","Beagle",1
+"name301...246","modcon",80,"Patagonotothen tessellata","Beagle",4
+"name311...247","modcon",86,"Paranotothenia magellanica","Beagle",2
+"name321...248","modcon",102,"Tanaidacea","Beagle",2
+"name331...249","modcon",105,"Hydrozoa","Beagle",2
+"name341...250","modcon",107,"Porifera","Beagle",1
+"name351...251","modcon",111,"Polysiphonia sp.","Beagle",2
+"name361...252","modcon",116,"Zygochlamys patagonica","Beagle",1
+"name371...253","modcon",139,"Austrolycus depressiceps","Beagle",4
+"name381...254","modcon",141,"Eleginops maclovinus","Beagle",4
+"name391...255","modcon",144,"Odontesthes nigricans","Beagle",1
