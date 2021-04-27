@@ -1,7 +1,7 @@
 ## R code and data for the paper: 
 # **Are Antarctic and sub-Antarctic marine food webs different?**
 
-Iara Diamela Rodriguez<sup>1,2</sup>, Tomás Ignacio Marina<sup>2,3</sup>, Leonardo Ariel Saravia<sup>1</sup>
+Iara Diamela Rodriguez<sup>1,2</sup>, Tomás Ignacio Marina<sup>2,3</sup>, Irene Ruth Schloss<sup>2,3</sup>, Leonardo Ariel Saravia<sup>1</sup>
 
 (1) Instituto de Ciencias, Universidad Nacional de General Sarmiento (UNGS), Los Polvorines, Argentina.
 (2) Consejo Nacional de Investigaciones Científicas y Técnicas (CONICET), Argentina
