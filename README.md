@@ -1,5 +1,5 @@
 ## R code and data for the paper: 
-# **Are Antarctic and sub-Antarctic marine food webs different?**
+# **Marine food webs are more complex but less stable in sub-Antarctic (Beagle Channel, Argentina) than in Antarctic (Potter Cove, Antarctic Peninsula) regions**
 
 Iara Diamela Rodriguez<sup>1,2</sup>, Tomás Ignacio Marina<sup>2,3</sup>, Irene Ruth Schloss<sup>2,3</sup>, Leonardo Ariel Saravia<sup>1</sup>
 
